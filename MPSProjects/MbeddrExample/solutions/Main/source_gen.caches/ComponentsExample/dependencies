@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="ComponentsExample.ComponentsSample" file="ComponentsSample.c" />
+  <dependency className="ComponentsExample.ComponentsSample" file="ComponentsSample.h" />
+  <dependency className="ComponentsExample.Makefile" file="Makefile" />
+  <dependency className="ComponentsExample.TypeSizeConfiguration (ComponentsExample)" file="TypeSizeConfiguration (ComponentsExample)" />
+</dependenciesRoot>
+
