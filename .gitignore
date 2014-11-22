@@ -1,2 +1,4 @@
 *.o
 *.exe
+*.ecorediag
+MPSProjects/MbeddrExample/.mps/workspace.xml
