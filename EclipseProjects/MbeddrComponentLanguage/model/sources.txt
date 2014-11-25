@@ -1,0 +1,4 @@
+http://slps.github.io/zoo/c/iso-9899-1999.html
+
+http://www.emn.fr/z-info/atlanmod/index.php/Ecore#C_1.0
+
