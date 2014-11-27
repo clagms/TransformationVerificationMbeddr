@@ -42,7 +42,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ComponentsSample" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ComponentsSample" pinned="false" current="false" current-in-tab="false">
         <entry file="mps://node://Main/ComponentsExample/ComponentsSample">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
@@ -51,10 +51,10 @@
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
                     <property name="caretXRelative" value="12" />
-                    <property name="caretX" value="159" />
+                    <property name="caretX" value="127" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_u338ov_a0" cellNumber="0" isInList="false">
-                      <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" />
+                    <cellInfo cellId="Constant_i0gfbw_a4a" cellNumber="0" isInList="false">
+                      <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944364431" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -62,12 +62,43 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalVariableDeclaration" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://node://com.mbeddr.core.statements/com.mbeddr.core.statements.structure/LocalVariableDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="60" />
+                    <property name="caretX" value="159" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                      <node node_reference="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+              <node node_ref="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4185783222026475238" />
             </state>
           </provider>
         </entry>
@@ -92,7 +123,7 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
@@ -122,7 +153,7 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
@@ -162,7 +193,7 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
@@ -536,7 +567,7 @@
     <configuration>C:\Users\cgg\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Search" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -5085,35 +5116,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://node://com.mbeddr.core.expressions/com.mbeddr.core.expressions.structure/PrimitiveType">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="44" />
-                <property name="caretX" value="191" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="TransactionalProperty_ueqr71_d0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:c371cf98-dcc8-4a43-8eb8-8a8096de18b2(com.mbeddr.core.expressions.structure)/8860443239512128056" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/9141254329931944225" viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:c371cf98-dcc8-4a43-8eb8-8a8096de18b2(com.mbeddr.core.expressions.structure)/8860443239512128056" />
-        </state>
-      </provider>
-    </entry>
     <entry file="mps://node://com.mbeddr.core.pointers/com.mbeddr.core.pointers.structure/StringArrayType">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
@@ -5628,7 +5630,7 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
@@ -6452,7 +6454,7 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
@@ -6566,7 +6568,7 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/8001866789944378633" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
@@ -6600,6 +6602,35 @@
             <folded />
             <enabledHints />
           </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://com.mbeddr.core.statements/com.mbeddr.core.statements.structure/LocalVariableDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="60" />
+                <property name="caretX" value="159" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4129593283361406846" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)/4185783222026475238" />
         </state>
       </provider>
     </entry>

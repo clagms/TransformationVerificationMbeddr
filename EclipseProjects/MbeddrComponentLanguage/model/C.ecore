@@ -63,4 +63,5 @@
         eType="#//IType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
 </ecore:EPackage>
