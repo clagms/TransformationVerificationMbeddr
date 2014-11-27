@@ -25,9 +25,9 @@ struct ComponentsSample_BadServer__cdata {
 
 struct ComponentsSample_ClientComponent__cdata {
     /* required ports */
-void *server__port;
+void *serverInterface__port;
     /* Req port ops */
-ComponentsSample_Server__idata_t *server__ops;
+ComponentsSample_Server__idata_t *serverInterface__ops;
 };
 
 struct ComponentsSample_Client__idata {
@@ -42,13 +42,13 @@ struct ComponentsSample_Server__idata {
   char* (*process)(char*,void*);
 };
 
-char*  ComponentsSample_BadServer_server_process(char *request, void *___id);
+char*  ComponentsSample_BadServer_serverInterface_process(char *request, void *___id);
 
-void  ComponentsSample_ClientComponent_client_process(void *___id);
+void  ComponentsSample_ClientComponent_clientInterface_process(void *___id);
 
-char*  ComponentsSample_GoodServer_server_process(char *request, void *___id);
+char*  ComponentsSample_GoodServer_serverInterface_process(char *request, void *___id);
 
-int32_t  ComponentsSample_Main(void);
+int32_t  ComponentsSample_MainTest(void);
 
 int32_t  ComponentsSample_main(int32_t argc, char *(argv[]));
 

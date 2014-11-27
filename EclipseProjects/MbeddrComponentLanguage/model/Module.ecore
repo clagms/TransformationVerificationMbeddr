@@ -7,7 +7,7 @@
         eType="#//IModuleContent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationModule" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IModuleContent" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IModuleContent" abstract="true" eSuperTypes="#//IIdentifierNamedConcept"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//IModuleContent"/>
   <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true" eSuperTypes="#//IModuleContent"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClientServerInterface" eSuperTypes="#//Interface">
@@ -20,17 +20,17 @@
         eType="#//OperationParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationParameter" eSuperTypes="#//IArgumentLike #//ITyped #//IVariableDeclaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ITyped">
+  <eClassifiers xsi:type="ecore:EClass" name="ITyped" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="IIdentifierNamedConcept" abstract="true"
       eSuperTypes="#//INamedConcept"/>
   <eClassifiers xsi:type="ecore:EClass" name="INamedConcept" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IArgumentLike" abstract="true" eSuperTypes="#//IControlledNamedConcept"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IArgumentLike" abstract="true" eSuperTypes="#//IControlledNamedConcept #//ITyped"/>
   <eClassifiers xsi:type="ecore:EClass" name="IControlledNamedConcept" abstract="true"
       eSuperTypes="#//IIdentifierNamedConcept"/>
   <eClassifiers xsi:type="ecore:EClass" name="IVariableDeclaration" eSuperTypes="#//INamedConcept"/>
@@ -129,7 +129,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Int32tType" eSuperTypes="#//PrimitiveC99IntegralType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Int32Type" eSuperTypes="#//PrimitiveC99IntegralType"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveC99IntegralType" abstract="true"
       eSuperTypes="#//PrimitiveType"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" abstract="true" eSuperTypes="#//Type"/>
@@ -154,4 +154,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" lowerBound="1"
         eType="#//TestCase"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//IArgumentLike"/>
 </ecore:EPackage>

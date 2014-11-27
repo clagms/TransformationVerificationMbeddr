@@ -7,32 +7,32 @@ static int32_t  ComponentsSample_blockexpr_main_2(void);
 
 static void  ComponentsSample_instances__init(void);
 
-static inline void  ComponentsSample_instances_bserver__wire(void);
+static inline void  ComponentsSample_instances_bserverComponent__wire(void);
 
-static inline void  ComponentsSample_instances_client__wire(void);
+static inline void  ComponentsSample_instances_clientComponent__wire(void);
 
-static inline void  ComponentsSample_instances_gserver__wire(void);
+static inline void  ComponentsSample_instances_gserverComponent__wire(void);
 
-static ComponentsSample_Server__idata_t ComponentsSample_bserver_server__ops;
+static ComponentsSample_Server__idata_t ComponentsSample_bserverComponent_serverInterface__ops;
 
-static ComponentsSample_Client__idata_t ComponentsSample_client_client__ops;
+static ComponentsSample_Client__idata_t ComponentsSample_clientComponent_clientInterface__ops;
 
-static ComponentsSample_Server__idata_t ComponentsSample_gserver_server__ops;
-
-/* instance */
-static ComponentsSample_BadServer__cdata_t ComponentsSample_instances_bserver__instance;
+static ComponentsSample_Server__idata_t ComponentsSample_gserverComponent_serverInterface__ops;
 
 /* instance */
-static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_client__instance;
+static ComponentsSample_BadServer__cdata_t ComponentsSample_instances_bserverComponent__instance;
 
 /* instance */
-static ComponentsSample_GoodServer__cdata_t ComponentsSample_instances_gserver__instance;
+static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_clientComponent__instance;
 
-char*  ComponentsSample_BadServer_server_process(char *request, void *___id) 
+/* instance */
+static ComponentsSample_GoodServer__cdata_t ComponentsSample_instances_gserverComponent__instance;
+
+char*  ComponentsSample_BadServer_serverInterface_process(char *request, void *___id) 
 {
   ComponentsSample_BadServer__cdata_t *___cid = ((ComponentsSample_BadServer__cdata_t*)(___id));
   printf("$$BServerStart: Bad server started. (");
-  printf(") @ComponentsSample:BadServer_server_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757789149\n");
+  printf(") @ComponentsSample:BadServer_serverInterface_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757789149\n");
   
   int32_t x = 0;
   while (x >= 0)
@@ -41,37 +41,37 @@ char*  ComponentsSample_BadServer_server_process(char *request, void *___id)
   }
   printf("$$BServerEnd: Bad server ended. (");
   printf("result=%s",(((char*)(request))));
-  printf(") @ComponentsSample:BadServer_server_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757789151\n");
+  printf(") @ComponentsSample:BadServer_serverInterface_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757789151\n");
   
   return request;
   
   
 }
 
-void  ComponentsSample_ClientComponent_client_process(void *___id) 
+void  ComponentsSample_ClientComponent_clientInterface_process(void *___id) 
 {
   ComponentsSample_ClientComponent__cdata_t *___cid = ((ComponentsSample_ClientComponent__cdata_t*)(___id));
   printf("$$ClientStart: Client started. (");
-  printf(") @ComponentsSample:ClientComponent_client_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757768527\n");
+  printf(") @ComponentsSample:ClientComponent_clientInterface_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757768527\n");
   
-  (*___cid->server__ops->process)("Hello",___cid->server__port);
+  (*___cid->serverInterface__ops->process)("Hello",___cid->serverInterface__port);
   printf("$$ClientEnd: Client ended. (");
-  printf(") @ComponentsSample:ClientComponent_client_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757787073\n");
+  printf(") @ComponentsSample:ClientComponent_clientInterface_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757787073\n");
   
   return ;
   
   
 }
 
-char*  ComponentsSample_GoodServer_server_process(char *request, void *___id) 
+char*  ComponentsSample_GoodServer_serverInterface_process(char *request, void *___id) 
 {
   ComponentsSample_GoodServer__cdata_t *___cid = ((ComponentsSample_GoodServer__cdata_t*)(___id));
   printf("$$GServerStart: Good server started. (");
-  printf(") @ComponentsSample:GoodServer_server_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757787685\n");
+  printf(") @ComponentsSample:GoodServer_serverInterface_process?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757787685\n");
   
   printf("$$GServerEnd: Good server ended. (");
   printf("result=%s",(((char*)(request))));
-  printf(") @ComponentsSample:GoodServer_server_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757788164\n");
+  printf(") @ComponentsSample:GoodServer_serverInterface_process:1?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757788164\n");
   
   return request;
   
@@ -79,15 +79,15 @@ char*  ComponentsSample_GoodServer_server_process(char *request, void *___id)
 }
 
 /* - - */
-int32_t  ComponentsSample_Main(void) 
+int32_t  ComponentsSample_MainTest(void) 
 {
   int32_t ___failuresVal = 0;
   int32_t *___failures = &___failuresVal;
   printf("$$runningTest: running test (");
-  printf(") @ComponentsSample:Main?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757823876\n");
+  printf(") @ComponentsSample:MainTest?r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)#3749681781757823876\n");
   
   ComponentsSample_instances__init();
-  ComponentsSample_ClientComponent_client_process(&ComponentsSample_instances_client__instance);
+  ComponentsSample_ClientComponent_clientInterface_process(&ComponentsSample_instances_clientComponent__instance);
   return ___failuresVal;
 }
 
@@ -95,7 +95,7 @@ static int32_t  ComponentsSample_blockexpr_main_2(void)
 {
   int32_t ___failuresVal = 0;
   int32_t *___failures = &___failuresVal;
-  *___failures = *___failures + ComponentsSample_Main();
+  *___failures = *___failures + ComponentsSample_MainTest();
   return ___failuresVal;
 }
 
@@ -103,28 +103,28 @@ static void  ComponentsSample_instances__init(void)
 {
   void *___componentInstance = 0;
   
-  ComponentsSample_instances_client__wire();
-  ComponentsSample_instances_gserver__wire();
-  ComponentsSample_instances_bserver__wire();
+  ComponentsSample_instances_clientComponent__wire();
+  ComponentsSample_instances_gserverComponent__wire();
+  ComponentsSample_instances_bserverComponent__wire();
   
   
   
   {
-    ___componentInstance = &ComponentsSample_instances_client__instance;
+    ___componentInstance = &ComponentsSample_instances_clientComponent__instance;
     
   }
   {
-    ___componentInstance = &ComponentsSample_instances_gserver__instance;
+    ___componentInstance = &ComponentsSample_instances_gserverComponent__instance;
     
   }
   {
-    ___componentInstance = &ComponentsSample_instances_bserver__instance;
+    ___componentInstance = &ComponentsSample_instances_bserverComponent__instance;
     
   }
   
 }
 
-static inline void  ComponentsSample_instances_bserver__wire(void) 
+static inline void  ComponentsSample_instances_bserverComponent__wire(void) 
 {
   /* 
    * COMPONENT
@@ -134,10 +134,10 @@ static inline void  ComponentsSample_instances_bserver__wire(void)
    * prov port
    */
 
-  ComponentsSample_bserver_server__ops.process = &ComponentsSample_BadServer_server_process;
+  ComponentsSample_bserverComponent_serverInterface__ops.process = &ComponentsSample_BadServer_serverInterface_process;
 }
 
-static inline void  ComponentsSample_instances_client__wire(void) 
+static inline void  ComponentsSample_instances_clientComponent__wire(void) 
 {
   /* 
    * COMPONENT
@@ -147,20 +147,20 @@ static inline void  ComponentsSample_instances_client__wire(void)
    * prov port
    */
 
-  ComponentsSample_client_client__ops.process = &ComponentsSample_ClientComponent_client_process;
+  ComponentsSample_clientComponent_clientInterface__ops.process = &ComponentsSample_ClientComponent_clientInterface_process;
   /* 
    * connected :1 req cs port
    */
 
-  ComponentsSample_instances_client__instance.server__port = &ComponentsSample_instances_gserver__instance;
+  ComponentsSample_instances_clientComponent__instance.serverInterface__port = &ComponentsSample_instances_gserverComponent__instance;
   /* 
    * required port ops
    */
 
-  ComponentsSample_instances_client__instance.server__ops = &ComponentsSample_gserver_server__ops;
+  ComponentsSample_instances_clientComponent__instance.serverInterface__ops = &ComponentsSample_gserverComponent_serverInterface__ops;
 }
 
-static inline void  ComponentsSample_instances_gserver__wire(void) 
+static inline void  ComponentsSample_instances_gserverComponent__wire(void) 
 {
   /* 
    * COMPONENT
@@ -170,7 +170,7 @@ static inline void  ComponentsSample_instances_gserver__wire(void)
    * prov port
    */
 
-  ComponentsSample_gserver_server__ops.process = &ComponentsSample_GoodServer_server_process;
+  ComponentsSample_gserverComponent_serverInterface__ops.process = &ComponentsSample_GoodServer_serverInterface_process;
 }
 
 int32_t  main(int32_t argc, char *(argv[])) 
