@@ -1,9 +1,12 @@
 *.o
 *.exe
 *.ecorediag
+*.class
 MPSProjects/MbeddrExample/.mps/workspace.xml
 EclipseProjects/MbeddrComponentLanguage/.settings/org.eclipse.core.resources.prefs
 MPSProjects/MbeddrExample/solutions/Main/classes_gen/ComponentsExample/trace.info
 MPSProjects/MbeddrExample/solutions/Main/classes_gen/ComponentsExample/trace.info
 MPSProjects/MbeddrExample/solutions/Main/source_gen/ComponentsExample/trace.info
 MPSProjects/MbeddrExample/solutions/Main/source_gen.caches/ComponentsExample/generated
+*.dsltrans_diagram
+MPSProjects/MbeddrExample/.mps/workspace.xml

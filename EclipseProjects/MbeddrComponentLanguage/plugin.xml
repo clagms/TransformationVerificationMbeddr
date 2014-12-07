@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Module -->
+      <package
+            uri="http://mcgill.transformationverification.org/1.0"
+            class="Module.ModulePackage"
+            genModel="model/Module.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated C -->
+      <package
+            uri="http://mcgill.transformationverification.org/1.0"
+            class="CModel.CModelPackage"
+            genModel="model/C.genmodel"/>
+   </extension>
+
+</plugin>

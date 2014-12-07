@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CModule" nsURI="http://mcgill.transformationverification.org/1.0"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CModel" nsURI="http://mcgill.transformationverification.org/CModel/1.0"
     nsPrefix="org.mcgill.transformationverification">
-  <eClassifiers xsi:type="ecore:EClass" name="ImplementationModule" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationModule" eSuperTypes="#//CModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CModule" abstract="true" eSuperTypes="#//IModuleContentContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
-        eType="#//IModuleContent"/>
+        eType="#//IModuleContent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IModuleContent" abstract="true" eSuperTypes="#//IIdentifierNamedConcept"/>
   <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//FunctionSignature #//IFunctionLike">
@@ -111,4 +111,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="SUType" abstract="true" eSuperTypes="#//TypeWithDeclaration"/>
   <eClassifiers xsi:type="ecore:EClass" name="TypeWithDeclaration" abstract="true"
       eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IModuleContentContainer" abstract="true"
+      eSuperTypes="#//IIdentifierNamedConcept"/>
 </ecore:EPackage>

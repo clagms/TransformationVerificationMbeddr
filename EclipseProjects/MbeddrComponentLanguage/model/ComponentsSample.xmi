@@ -3,8 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/1.0"
-    xsi:schemaLocation="http://mcgill.transformationverification.org/1.0 Module.ecore"
+    xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/Module/1.0"
+    xsi:schemaLocation="http://mcgill.transformationverification.org/Module/1.0 Module.ecore"
     name="ComponentsSample">
   <contents
       xsi:type="org.mcgill.transformationverification:ClientServerInterface"
@@ -43,7 +43,7 @@
         name="clientcomp_serverInterface"
         intf="//@contents.1"/>
     <contents
-        xsi:type="org.mcgill.transformationverification:Runnable"
+        xsi:type="org.mcgill.transformationverification:Executable"
         name="clientInterface_process">
       <type
           xsi:type="org.mcgill.transformationverification:VoidType"/>
@@ -57,11 +57,12 @@
           <expr
               xsi:type="org.mcgill.transformationverification:RequiredPortOpCallExpr"
               operation="//@contents.1/@contents.0">
+            <expression
+                xsi:type="org.mcgill.transformationverification:PortRefExpr"
+                port="//@contents.3/@contents.0"/>
             <actuals
                 xsi:type="org.mcgill.transformationverification:StringLiteral"
                 value="Hello"/>
-            <port
-                port="//@contents.2/@contents.1"/>
           </expr>
         </statements>
       </body>
@@ -75,7 +76,7 @@
         name="goodserver_serverInterface"
         intf="//@contents.1"/>
     <contents
-        xsi:type="org.mcgill.transformationverification:Runnable"
+        xsi:type="org.mcgill.transformationverification:Executable"
         name="serverInterface_process">
       <type
           xsi:type="org.mcgill.transformationverification:StringType"/>
@@ -107,7 +108,7 @@
         name="badserver_serverInterface"
         intf="//@contents.1"/>
     <contents
-        xsi:type="org.mcgill.transformationverification:Runnable"
+        xsi:type="org.mcgill.transformationverification:Executable"
         name="serverInterface_server_process">
       <type
           xsi:type="org.mcgill.transformationverification:StringType"/>
@@ -176,15 +177,15 @@
       xsi:type="org.mcgill.transformationverification:InstanceConfiguration"
       name="instances">
     <contents
-        xsi:type="org.mcgill.transformationverification: ComponentInstance"
+        xsi:type="org.mcgill.transformationverification:ComponentInstance"
         name="clientComponent"
         component="//@contents.2"/>
     <contents
-        xsi:type="org.mcgill.transformationverification: ComponentInstance"
+        xsi:type="org.mcgill.transformationverification:ComponentInstance"
         name="gserverComponent"
         component="//@contents.3"/>
     <contents
-        xsi:type="org.mcgill.transformationverification: ComponentInstance"
+        xsi:type="org.mcgill.transformationverification:ComponentInstance"
         name="bserverComponent"
         component="//@contents.4"/>
     <contents
@@ -207,6 +208,7 @@
   <contents
       xsi:type="org.mcgill.transformationverification:TestCase"
       name="MainTest">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
     <body>
       <statements
           xsi:type="org.mcgill.transformationverification:InitializeConfiguration"
@@ -216,7 +218,8 @@
         <expr
             xsi:type="org.mcgill.transformationverification:PortAdapterOpCallExpr"
             operation="//@contents.0/@contents.0">
-          <portAdapter
+          <expression
+              xsi:type="org.mcgill.transformationverification:PortAdapterRefExpr"
               portAdater="//@contents.5/@contents.4"/>
         </expr>
       </statements>

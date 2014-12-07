@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.mcgill.transformationverification:ImplementationModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/Module/1.0"
+    xsi:schemaLocation="http://mcgill.transformationverification.org/Module/1.0 Module.ecore"/>

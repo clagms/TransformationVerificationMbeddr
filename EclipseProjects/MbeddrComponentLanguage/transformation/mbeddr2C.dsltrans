@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="inputModel" filePathURI="model/ComponentsSample.xmi">
+    <metaModelId metaModelURI="model/Module.ecore" metaModelName="Module.Module"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Mappings" description="Mappings" previousSource="//@source.0" outputFilePathURI="model/ComponentsSampleInC.xmi" groupName="">
+    <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
+    <hasRule>
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule">
+          <attribute attributeName="name"/>
+        </class>
+      </match>
+      <apply>
+        <class packageName="CModel" className="ImplementationModule">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

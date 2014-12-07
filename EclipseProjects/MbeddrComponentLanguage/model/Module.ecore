@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Module" nsURI="http://mcgill.transformationverification.org/1.0"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Module" nsURI="http://mcgill.transformationverification.org/Module/1.0"
     nsPrefix="org.mcgill.transformationverification">
-  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" eSuperTypes="#//IModuleContentContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="MbeddrModule" abstract="true" eSuperTypes="#//IModuleContentContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
         eType="#//IModuleContent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImplementationModule" eSuperTypes="#//Module"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationModule" eSuperTypes="#//MbeddrModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="IModuleContent" abstract="true" eSuperTypes="#//IIdentifierNamedConcept"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//IModuleContent"/>
   <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true" eSuperTypes="#//IModuleContent"/>
@@ -44,7 +44,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="intf" lowerBound="1" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredPort" eSuperTypes="#//Port"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Runnable" eSuperTypes="#//IComponentContent #//IFunctionLike">
+  <eClassifiers xsi:type="ecore:EClass" name="Executable" eSuperTypes="#//IComponentContent #//IFunctionLike">
     <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="#//RunnableTrigger"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//StatementList"
@@ -74,13 +74,10 @@
         eType="#//InstanceConfigContents" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceConfigContents" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name=" ComponentInstance" eSuperTypes="#//IIdentifierNamedConcept #//InstanceConfigContents">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initializers" upperBound="-1"
-        eType="#//AbstractComponentInitializer" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="#//IIdentifierNamedConcept #//InstanceConfigContents">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="#//Component"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentInitializer" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//InstanceConfigContents">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//InstancePortRef" containment="true"/>
@@ -89,7 +86,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstancePortRef" eSuperTypes="#//PortRef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instance" lowerBound="1"
-        eType="#//%20ComponentInstance"/>
+        eType="#//ComponentInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRef" abstract="true"/>
@@ -98,7 +95,7 @@
         eType="#//AdapterInstancePortRef" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdapterInstancePortRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//%20ComponentInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//ComponentInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//ProvidedPort"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestCase" eSuperTypes="#//IModuleContent #//IFunctionLike">
@@ -109,10 +106,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" lowerBound="1"
         eType="#//InstanceConfiguration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortAdapterOpCallExpr" eSuperTypes="#//InterfaceOperationCallExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portAdapter" lowerBound="1"
-        eType="#//PortAdapterRefExpr" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortAdapterOpCallExpr" eSuperTypes="#//InterfaceOperationCallExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceOperationCallExpr" abstract="true"
       eSuperTypes="#//UnaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuals" upperBound="-1"
@@ -164,10 +158,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredPortOpCallExpr" eSuperTypes="#//InterfaceOperationCallExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//PortRefExpr"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredPortOpCallExpr" eSuperTypes="#//InterfaceOperationCallExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
