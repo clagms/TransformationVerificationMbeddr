@@ -7,14 +7,14 @@
     <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
     <hasRule>
       <match>
-        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule">
-          <attribute attributeName="name"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule" id="ImplementationModuleMatch">
+          <attribute attributeName="name" id="ImplementationModuleMatch.name"/>
         </class>
       </match>
       <apply>
-        <class packageName="CModel" className="ImplementationModule">
-          <attribute attributeName="name">
-            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
+        <class packageName="CModel" className="ImplementationModule" id="ImplementationModuleApply">
+          <attribute attributeName="name" id="ImplementationModuleApply.name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="ImplementationModuleMatch.name"/>
           </attribute>
         </class>
       </apply>
