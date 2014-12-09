@@ -312,6 +312,10 @@
         <property name="name" nameId="tpck.1169194664001" value="clientComponent" />
         <link role="component" roleId="v7ag.4491876417845649015" targetNodeId="3749681781757728399" resolveInfo="ClientComponent" />
       </node>
+      <node role="contents" roleId="v7ag.7780999115923944213" type="v7ag.ComponentInstance" typeId="v7ag.4491876417845649014" id="3288758077146310530" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="clientComponent2" />
+        <link role="component" roleId="v7ag.4491876417845649015" targetNodeId="3749681781757728399" resolveInfo="ClientComponent" />
+      </node>
       <node role="contents" roleId="v7ag.7780999115923944213" type="v7ag.ComponentInstance" typeId="v7ag.4491876417845649014" id="3749681781757819578" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="gserverComponent" />
         <link role="component" roleId="v7ag.4491876417845649015" targetNodeId="3749681781757732249" resolveInfo="GoodServer" />
@@ -328,6 +332,16 @@
         <node role="target" roleId="v7ag.4491876417845649021" type="v7ag.InstancePortRef" typeId="v7ag.4491876417845649017" id="2439180850586940488" nodeInfo="ng">
           <link role="port" roleId="v7ag.3444913373458569211" targetNodeId="3749681781757732390" resolveInfo="serverInterface" />
           <link role="instance" roleId="v7ag.4491876417845649018" targetNodeId="3749681781757819578" resolveInfo="gserverComponent" />
+        </node>
+      </node>
+      <node role="contents" roleId="v7ag.7780999115923944213" type="v7ag.AssemblyConnector" typeId="v7ag.4491876417845649016" id="3288758077146310714" nodeInfo="ng">
+        <node role="source" roleId="v7ag.4491876417845649020" type="v7ag.InstancePortRef" typeId="v7ag.4491876417845649017" id="3288758077146310715" nodeInfo="ng">
+          <link role="instance" roleId="v7ag.4491876417845649018" targetNodeId="3288758077146310530" resolveInfo="clientComponent2" />
+          <link role="port" roleId="v7ag.3444913373458569211" targetNodeId="3749681781757728432" resolveInfo="clientcomp_serverInterface" />
+        </node>
+        <node role="target" roleId="v7ag.4491876417845649021" type="v7ag.InstancePortRef" typeId="v7ag.4491876417845649017" id="3288758077146310716" nodeInfo="ng">
+          <link role="instance" roleId="v7ag.4491876417845649018" targetNodeId="3749681781757819627" resolveInfo="bserverComponent" />
+          <link role="port" roleId="v7ag.3444913373458569211" targetNodeId="3749681781757737956" resolveInfo="serverInterface" />
         </node>
       </node>
       <node role="contents" roleId="v7ag.7780999115923944213" type="v7ag.PortAdapter" typeId="v7ag.5172178961828157634" id="3749681781757826094" nodeInfo="ng">

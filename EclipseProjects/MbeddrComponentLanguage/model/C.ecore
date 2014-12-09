@@ -113,4 +113,10 @@
       eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="IModuleContentContainer" abstract="true"
       eSuperTypes="#//IIdentifierNamedConcept"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionStatement" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssignmentExpr" eSuperTypes="#//BinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression"/>
 </ecore:EPackage>
