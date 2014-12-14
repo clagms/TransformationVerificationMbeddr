@@ -119,4 +119,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignmentExpr" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionRefType" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
+        eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argTypes" upperBound="-1"
+        eType="#//Type" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

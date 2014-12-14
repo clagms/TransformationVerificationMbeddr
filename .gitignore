@@ -8,7 +8,6 @@ MPSProjects/MbeddrExample/solutions/Main/classes_gen/ComponentsExample/trace.inf
 MPSProjects/MbeddrExample/solutions/Main/classes_gen/ComponentsExample/trace.info
 MPSProjects/MbeddrExample/solutions/Main/source_gen/ComponentsExample/trace.info
 MPSProjects/MbeddrExample/solutions/Main/source_gen.caches/ComponentsExample/generated
-*.dsltrans_diagram
 MPSProjects/MbeddrExample/.mps/workspace.xml
 EclipseProjects/MbeddrComponentLanguage/model/ComponentsSampleInC.xmi
 MPSProjects/MbeddrExample/.mps/workspace.xml
