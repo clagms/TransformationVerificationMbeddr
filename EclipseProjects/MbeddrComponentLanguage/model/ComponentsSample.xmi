@@ -192,7 +192,7 @@
         xsi:type="org.mcgill.transformationverification:AssemblyConnector">
       <source
           instance="//@contents.5/@contents.0"
-          port="//@contents.2/@contents.0"/>
+          port="//@contents.2/@contents.1"/>
       <target
           instance="//@contents.5/@contents.1"
           port="//@contents.3/@contents.0"/>

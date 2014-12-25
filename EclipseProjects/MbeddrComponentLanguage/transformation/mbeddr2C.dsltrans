@@ -996,6 +996,9 @@
               </rightTerm>
             </attributeValue>
           </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalComponentInstanceDeclaration"/>
+          </attribute>
         </class>
         <class packageName="CModel" className="TypeDef">
           <attribute>
@@ -1163,6 +1166,107 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.0/@apply/@class.1" sourceClass="//@source.6/@hasRule.0/@match.0/@class.2"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.0/@apply/@class.8" sourceClass="//@source.6/@hasRule.0/@match.0/@class.4"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.0/@apply/@class.9" sourceClass="//@source.6/@hasRule.0/@match.0/@class.2"/>
+    </hasRule>
+    <hasRule description="create instance components wire body">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ComponentInstance"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="AtomicComponent"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="RequiredPort"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InstanceConfiguration"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="AssemblyConnector"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InstancePortRef"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InstancePortRef"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ComponentInstance"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="AtomicComponent"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ProvidedPort"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ClientServerInterface"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="component" source="//@source.6/@hasRule.1/@match.0/@class.0" target="//@source.6/@hasRule.1/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.1/@match.0/@class.1" target="//@source.6/@hasRule.1/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.1/@match.0/@class.3" target="//@source.6/@hasRule.1/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.1/@match.0/@class.3" target="//@source.6/@hasRule.1/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="source" source="//@source.6/@hasRule.1/@match.0/@class.4" target="//@source.6/@hasRule.1/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="instance" source="//@source.6/@hasRule.1/@match.0/@class.5" target="//@source.6/@hasRule.1/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="port" source="//@source.6/@hasRule.1/@match.0/@class.5" target="//@source.6/@hasRule.1/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.1/@match.0/@class.3" target="//@source.6/@hasRule.1/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="instance" source="//@source.6/@hasRule.1/@match.0/@class.6" target="//@source.6/@hasRule.1/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="target" source="//@source.6/@hasRule.1/@match.0/@class.4" target="//@source.6/@hasRule.1/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="component" source="//@source.6/@hasRule.1/@match.0/@class.7" target="//@source.6/@hasRule.1/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.1/@match.0/@class.8" target="//@source.6/@hasRule.1/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="//@source.6/@hasRule.1/@match.0/@class.9" target="//@source.6/@hasRule.1/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="//@source.6/@hasRule.1/@match.0/@class.2" target="//@source.6/@hasRule.1/@match.0/@class.10"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="WireFunctionStatements"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="GlobalVariableDeclaration">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalComponentInstanceDeclaration"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ExpressionStatement" groupName=""/>
+        <class packageName="CModel" className="AssignmentExpr" groupName=""/>
+        <class packageName="CModel" className="GenericDotExpression" groupName=""/>
+        <class packageName="CModel" className="ReferenceExpr" groupName=""/>
+        <class packageName="CModel" className="GlobalVarRef" groupName=""/>
+        <class packageName="CModel" className="GenericMemberRef" groupName=""/>
+        <class packageName="CModel" className="Member">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RequiredPort_port"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="GlobalVariableDeclaration">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalComponentInstanceDeclaration"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="GlobalVarRef" groupName=""/>
+        <class packageName="CModel" className="ExpressionStatement" groupName=""/>
+        <class packageName="CModel" className="AssignmentExpr" groupName=""/>
+        <class packageName="CModel" className="GenericDotExpression" groupName=""/>
+        <class packageName="CModel" className="GlobalVarRef" groupName=""/>
+        <class packageName="CModel" className="GenericMemberRef" groupName=""/>
+        <class packageName="CModel" className="Member">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="RequiredPort_ops"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ReferenceExpr" groupName=""/>
+        <class packageName="CModel" className="GlobalVarRef" groupName=""/>
+        <class packageName="CModel" className="GlobalVariableDeclaration">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalVarOps"/>
+          </attribute>
+        </class>
+        <association associationName="statements" source="//@source.6/@hasRule.1/@apply/@class.0" target="//@source.6/@hasRule.1/@apply/@class.2"/>
+        <association associationName="expr" source="//@source.6/@hasRule.1/@apply/@class.2" target="//@source.6/@hasRule.1/@apply/@class.3"/>
+        <association associationName="left" source="//@source.6/@hasRule.1/@apply/@class.3" target="//@source.6/@hasRule.1/@apply/@class.4"/>
+        <association associationName="right" source="//@source.6/@hasRule.1/@apply/@class.3" target="//@source.6/@hasRule.1/@apply/@class.5"/>
+        <association associationName="expression" source="//@source.6/@hasRule.1/@apply/@class.4" target="//@source.6/@hasRule.1/@apply/@class.6"/>
+        <association associationName="target" source="//@source.6/@hasRule.1/@apply/@class.4" target="//@source.6/@hasRule.1/@apply/@class.7"/>
+        <association associationName="var" source="//@source.6/@hasRule.1/@apply/@class.6" target="//@source.6/@hasRule.1/@apply/@class.1"/>
+        <association associationName="member" source="//@source.6/@hasRule.1/@apply/@class.7" target="//@source.6/@hasRule.1/@apply/@class.8"/>
+        <association associationName="expression" source="//@source.6/@hasRule.1/@apply/@class.5" target="//@source.6/@hasRule.1/@apply/@class.10"/>
+        <association associationName="var" source="//@source.6/@hasRule.1/@apply/@class.10" target="//@source.6/@hasRule.1/@apply/@class.9"/>
+        <association associationName="statements" source="//@source.6/@hasRule.1/@apply/@class.0" target="//@source.6/@hasRule.1/@apply/@class.11"/>
+        <association associationName="expr" source="//@source.6/@hasRule.1/@apply/@class.11" target="//@source.6/@hasRule.1/@apply/@class.12"/>
+        <association associationName="left" source="//@source.6/@hasRule.1/@apply/@class.12" target="//@source.6/@hasRule.1/@apply/@class.13"/>
+        <association associationName="expression" source="//@source.6/@hasRule.1/@apply/@class.13" target="//@source.6/@hasRule.1/@apply/@class.14"/>
+        <association associationName="var" source="//@source.6/@hasRule.1/@apply/@class.14" target="//@source.6/@hasRule.1/@apply/@class.1"/>
+        <association associationName="target" source="//@source.6/@hasRule.1/@apply/@class.13" target="//@source.6/@hasRule.1/@apply/@class.15"/>
+        <association associationName="member" source="//@source.6/@hasRule.1/@apply/@class.15" target="//@source.6/@hasRule.1/@apply/@class.16"/>
+        <association associationName="right" source="//@source.6/@hasRule.1/@apply/@class.12" target="//@source.6/@hasRule.1/@apply/@class.17"/>
+        <association associationName="expression" source="//@source.6/@hasRule.1/@apply/@class.17" target="//@source.6/@hasRule.1/@apply/@class.18"/>
+        <association associationName="var" source="//@source.6/@hasRule.1/@apply/@class.18" target="//@source.6/@hasRule.1/@apply/@class.19"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.0" sourceClass="//@source.6/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.1" sourceClass="//@source.6/@hasRule.1/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.8" sourceClass="//@source.6/@hasRule.1/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.9" sourceClass="//@source.6/@hasRule.1/@match.0/@class.7"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.16" sourceClass="//@source.6/@hasRule.1/@match.0/@class.2"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.19" sourceClass="//@source.6/@hasRule.1/@match.0/@class.9"/>
     </hasRule>
   </source>
 </dsltrans:TransformationModel>
