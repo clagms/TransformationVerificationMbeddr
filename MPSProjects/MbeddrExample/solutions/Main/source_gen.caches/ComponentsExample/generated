@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6rkzbpkqiv79c9cfaf1gedeov9sa4er">
-  <dep model="e2f2198e-8851-4dfc-a7be-fafb33533095/r:1abae6cb-c3be-490d-9137-2a17f14c92e6(com.mbeddr.mpsutil.modelcache.CacheState_fakeModule/com.mbeddr.mpsutil.modelcache.CacheState_fakeModel)" />
+<dependencies version="2" modelHash="mnpi5an1ty1jxgb0t7kuxlpdu9oxqy">
+  <dep model="56720680-36bc-4e1e-bb5e-5796db8bc374/r:d0191261-f96c-43a6-85c5-76b55d392e29(com.mbeddr.mpsutil.modelcache.CacheState_fakeModule/com.mbeddr.mpsutil.modelcache.CacheState_fakeModel)" />
   <dep model="r:2ff3ad32-451f-46a7-91af-9ce87f286536(com.mbeddr.core.modules.generator.main.addReturnToClosure@generator)" hash="-6tn75ztmx3sqw4tu4nn64u65wv4rykl" />
   <dep model="r:33527e56-fea6-47d6-9105-ca1061f3d17e(com.mbeddr.core.unittest.generator.template.main@generator)" hash="700blh5ps5nerztlcbm823e89poa7r7" />
   <dep model="r:359a1f2d-1387-40bb-b161-9ae44585a023(com.mbeddr.core.udt.generator.template.main@generator)" hash="22n3gd1bb3cs7745m3t60o6muwfoaxc" />
@@ -12,7 +12,7 @@
   <dep model="r:7db67fb8-d2c9-4e02-89e5-cbea9152661c(com.mbeddr.core.util.generator.template.main@generator)" hash="-ajmqqylj4gagniqfdp8dq14vy3vchhy" />
   <dep model="r:9f0e84b6-2ec7-4f9e-83e0-feedc77b63a3(com.mbeddr.core.statements.structure)" hash="-11lgcgrcxn83jocj442vvwi0mc5rp3b" />
   <common hash="ddniz0dzfsehis787ltsortvetajx7q" dependsOnNodes="true">
-    <dep model="e2f2198e-8851-4dfc-a7be-fafb33533095/r:1abae6cb-c3be-490d-9137-2a17f14c92e6(com.mbeddr.mpsutil.modelcache.CacheState_fakeModule/com.mbeddr.mpsutil.modelcache.CacheState_fakeModel)" />
+    <dep model="56720680-36bc-4e1e-bb5e-5796db8bc374/r:d0191261-f96c-43a6-85c5-76b55d392e29(com.mbeddr.mpsutil.modelcache.CacheState_fakeModule/com.mbeddr.mpsutil.modelcache.CacheState_fakeModel)" />
     <dep model="r:2ff3ad32-451f-46a7-91af-9ce87f286536(com.mbeddr.core.modules.generator.main.addReturnToClosure@generator)" />
     <dep model="r:33527e56-fea6-47d6-9105-ca1061f3d17e(com.mbeddr.core.unittest.generator.template.main@generator)" />
     <dep model="r:359a1f2d-1387-40bb-b161-9ae44585a023(com.mbeddr.core.udt.generator.template.main@generator)" />
@@ -28,7 +28,7 @@
     <file name="Makefile" />
     <file name="TypeSizeConfiguration (ComponentsExample)" />
   </common>
-  <source id="3749681781757542307" name="ComponentsSample" hash="27p67pe969vabp54waqgukfkv732dhi" />
+  <source id="3749681781757542307" name="ComponentsSample" hash="-qah9027fzd22ly3ta37usny9sz5iex" />
   <source id="3749681781758022709" name="BuildConfiguration (ComponentsExample)" hash="-ajkupbzrx2fdp34uzhmpqr4ml6jydxo" />
 </dependencies>
 

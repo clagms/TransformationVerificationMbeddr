@@ -9,15 +9,11 @@ static void  ComponentsSample_instances__init(void);
 
 static inline void  ComponentsSample_instances_bserverComponent__wire(void);
 
-static inline void  ComponentsSample_instances_clientComponent2__wire(void);
-
 static inline void  ComponentsSample_instances_clientComponent__wire(void);
 
 static inline void  ComponentsSample_instances_gserverComponent__wire(void);
 
 static ComponentsSample_Server__idata_t ComponentsSample_bserverComponent_serverInterface__ops;
-
-static ComponentsSample_Client__idata_t ComponentsSample_clientComponent2_clientInterface__ops;
 
 static ComponentsSample_Client__idata_t ComponentsSample_clientComponent_clientInterface__ops;
 
@@ -25,9 +21,6 @@ static ComponentsSample_Server__idata_t ComponentsSample_gserverComponent_server
 
 /* instance */
 static ComponentsSample_BadServer__cdata_t ComponentsSample_instances_bserverComponent__instance;
-
-/* instance */
-static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_clientComponent2__instance;
 
 /* instance */
 static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_clientComponent__instance;
@@ -111,7 +104,6 @@ static void  ComponentsSample_instances__init(void)
   void *___componentInstance = 0;
   
   ComponentsSample_instances_clientComponent__wire();
-  ComponentsSample_instances_clientComponent2__wire();
   ComponentsSample_instances_gserverComponent__wire();
   ComponentsSample_instances_bserverComponent__wire();
   
@@ -119,10 +111,6 @@ static void  ComponentsSample_instances__init(void)
   
   {
     ___componentInstance = &ComponentsSample_instances_clientComponent__instance;
-    
-  }
-  {
-    ___componentInstance = &ComponentsSample_instances_clientComponent2__instance;
     
   }
   {
@@ -147,29 +135,6 @@ static inline void  ComponentsSample_instances_bserverComponent__wire(void)
    */
 
   ComponentsSample_bserverComponent_serverInterface__ops.server_process = &ComponentsSample_BadServer_serverInterface_server_process;
-}
-
-static inline void  ComponentsSample_instances_clientComponent2__wire(void) 
-{
-  /* 
-   * COMPONENT
-   */
-
-  /* 
-   * prov port
-   */
-
-  ComponentsSample_clientComponent2_clientInterface__ops.client_process = &ComponentsSample_ClientComponent_clientInterface_client_process;
-  /* 
-   * connected :1 req cs port
-   */
-
-  ComponentsSample_instances_clientComponent2__instance.clientcomp_serverInterface__port = &ComponentsSample_instances_bserverComponent__instance;
-  /* 
-   * required port ops
-   */
-
-  ComponentsSample_instances_clientComponent2__instance.clientcomp_serverInterface__ops = &ComponentsSample_bserverComponent_serverInterface__ops;
 }
 
 static inline void  ComponentsSample_instances_clientComponent__wire(void) 

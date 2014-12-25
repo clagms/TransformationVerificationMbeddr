@@ -133,4 +133,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeDef" lowerBound="1"
         eType="#//TypeDef"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalVariableDeclaration" eSuperTypes="#//IModuleContent #//IControlledNamedConcept #//ITyped">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
