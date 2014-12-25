@@ -118,7 +118,10 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignmentExpr" eSuperTypes="#//BinaryExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionRefType" eSuperTypes="#//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
         eType="#//Type" containment="true"/>
@@ -136,5 +139,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="GlobalVariableDeclaration" eSuperTypes="#//IModuleContent #//IControlledNamedConcept #//ITyped">
     <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//Expression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericDotExpression" eSuperTypes="#//UnaryExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//IGenericDotTarget" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IGenericDotTarget" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericMemberRef" eSuperTypes="#//IGenericDotTarget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" lowerBound="1"
+        eType="#//Member"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalVarRef" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" lowerBound="1" eType="#//GlobalVariableDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PointerExpr" abstract="true" eSuperTypes="#//UnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DerefExpr" eSuperTypes="#//PointerExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceExpr" eSuperTypes="#//PointerExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionRefExpr" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+        eType="#//FunctionSignature"/>
   </eClassifiers>
 </ecore:EPackage>
