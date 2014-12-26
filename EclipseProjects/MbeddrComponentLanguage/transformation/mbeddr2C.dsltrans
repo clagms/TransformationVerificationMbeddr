@@ -1268,5 +1268,31 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.16" sourceClass="//@source.6/@hasRule.1/@match.0/@class.2"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.1/@apply/@class.19" sourceClass="//@source.6/@hasRule.1/@match.0/@class.9"/>
     </hasRule>
+    <hasRule description="create instances init function">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InstanceConfiguration"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ComponentInstance"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.2/@match.0/@class.0" target="//@source.6/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="InstancesInitFunctionBody"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="WireFunctionPrototype"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ExpressionStatement"/>
+        <class packageName="CModel" className="FunctionCall"/>
+        <association associationName="statements" source="//@source.6/@hasRule.2/@apply/@class.0" target="//@source.6/@hasRule.2/@apply/@class.2"/>
+        <association associationName="expr" source="//@source.6/@hasRule.2/@apply/@class.2" target="//@source.6/@hasRule.2/@apply/@class.3"/>
+        <association associationName="function" source="//@source.6/@hasRule.2/@apply/@class.3" target="//@source.6/@hasRule.2/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.2/@apply/@class.0" sourceClass="//@source.6/@hasRule.2/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.2/@apply/@class.1" sourceClass="//@source.6/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
   </source>
 </dsltrans:TransformationModel>
