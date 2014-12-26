@@ -1,257 +1,122 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.mcgill.transformationverification:ImplementationModule
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/Module/1.0"
-    xsi:schemaLocation="http://mcgill.transformationverification.org/Module/1.0 Module.ecore"
-    name="ComponentsSample">
-  <contents
-      xsi:type="org.mcgill.transformationverification:ClientServerInterface"
-      name="Client">
-    <contents
-        xsi:type="org.mcgill.transformationverification:Operation"
-        name="client_process">
-      <type
-          xsi:type="org.mcgill.transformationverification:VoidType"/>
+<org.mcgill.transformationverification:ImplementationModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/Module/1.0" xsi:schemaLocation="http://mcgill.transformationverification.org/Module/1.0 Module.ecore" name="ComponentsSample">
+  <contents xsi:type="org.mcgill.transformationverification:ClientServerInterface" name="Client">
+    <contents xsi:type="org.mcgill.transformationverification:Operation" name="client_process">
+      <type xsi:type="org.mcgill.transformationverification:VoidType"/>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:ClientServerInterface"
-      name="Server">
-    <contents
-        xsi:type="org.mcgill.transformationverification:Operation"
-        name="server_process">
-      <type
-          xsi:type="org.mcgill.transformationverification:StringType"/>
-      <parameters
-          name="serverinterface_request">
-        <type
-            xsi:type="org.mcgill.transformationverification:StringType"/>
+  <contents xsi:type="org.mcgill.transformationverification:ClientServerInterface" name="Server">
+    <contents xsi:type="org.mcgill.transformationverification:Operation" name="server_process">
+      <type xsi:type="org.mcgill.transformationverification:StringType"/>
+      <parameters name="serverinterface_request">
+        <type xsi:type="org.mcgill.transformationverification:StringType"/>
       </parameters>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:AtomicComponent"
-      name="ClientComponent">
-    <contents
-        xsi:type="org.mcgill.transformationverification:ProvidedPort"
-        name="clientcomp_clientInterface"
-        intf="//@contents.0"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:RequiredPort"
-        name="clientcomp_serverInterface"
-        intf="//@contents.1"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:Executable"
-        name="clientInterface_process">
-      <type
-          xsi:type="org.mcgill.transformationverification:VoidType"/>
-      <trigger
-          xsi:type="org.mcgill.transformationverification:OperationTrigger"
-          providedPort="//@contents.2/@contents.0"
-          calledOperation="//@contents.0/@contents.0"/>
+  <contents xsi:type="org.mcgill.transformationverification:AtomicComponent" name="ClientComponent">
+    <contents xsi:type="org.mcgill.transformationverification:ProvidedPort" name="clientcomp_clientInterface" intf="//@contents.0"/>
+    <contents xsi:type="org.mcgill.transformationverification:RequiredPort" name="clientcomp_serverInterface" intf="//@contents.1"/>
+    <contents xsi:type="org.mcgill.transformationverification:Executable" name="clientInterface_process">
+      <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+      <trigger xsi:type="org.mcgill.transformationverification:OperationTrigger" providedPort="//@contents.2/@contents.0" calledOperation="//@contents.0/@contents.0"/>
       <body>
-        <statements
-            xsi:type="org.mcgill.transformationverification:ExpressionStatement">
-          <expr
-              xsi:type="org.mcgill.transformationverification:RequiredPortOpCallExpr"
-              operation="//@contents.1/@contents.0">
-            <expression
-                xsi:type="org.mcgill.transformationverification:PortRefExpr"
-                port="//@contents.3/@contents.0"/>
-            <actuals
-                xsi:type="org.mcgill.transformationverification:StringLiteral"
-                value="Hello"/>
+        <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+          <expr xsi:type="org.mcgill.transformationverification:RequiredPortOpCallExpr" operation="//@contents.1/@contents.0">
+            <expression xsi:type="org.mcgill.transformationverification:PortRefExpr" port="//@contents.3/@contents.0"/>
+            <actuals xsi:type="org.mcgill.transformationverification:StringLiteral" value="Hello"/>
           </expr>
         </statements>
       </body>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:AtomicComponent"
-      name="GoodServer">
-    <contents
-        xsi:type="org.mcgill.transformationverification:ProvidedPort"
-        name="goodserver_serverInterface"
-        intf="//@contents.1"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:Executable"
-        name="serverInterface_process">
-      <type
-          xsi:type="org.mcgill.transformationverification:StringType"/>
-      <arguments
-          xsi:type="org.mcgill.transformationverification:OperationParameter"
-          name="goodserver_request">
-        <type
-            xsi:type="org.mcgill.transformationverification:StringType"/>
+  <contents xsi:type="org.mcgill.transformationverification:AtomicComponent" name="GoodServer">
+    <contents xsi:type="org.mcgill.transformationverification:ProvidedPort" name="goodserver_serverInterface" intf="//@contents.1"/>
+    <contents xsi:type="org.mcgill.transformationverification:Executable" name="serverInterface_process">
+      <type xsi:type="org.mcgill.transformationverification:StringType"/>
+      <arguments xsi:type="org.mcgill.transformationverification:OperationParameter" name="goodserver_request">
+        <type xsi:type="org.mcgill.transformationverification:StringType"/>
       </arguments>
-      <trigger
-          xsi:type="org.mcgill.transformationverification:OperationTrigger"
-          providedPort="//@contents.3/@contents.0"
-          calledOperation="//@contents.1/@contents.0"/>
+      <trigger xsi:type="org.mcgill.transformationverification:OperationTrigger" providedPort="//@contents.3/@contents.0" calledOperation="//@contents.1/@contents.0"/>
       <body>
-        <statements
-            xsi:type="org.mcgill.transformationverification:ReturnStatement">
-          <expression
-              xsi:type="org.mcgill.transformationverification:ArgumentRef"
-              arg="//@contents.3/@contents.1/@arguments.0"/>
+        <statements xsi:type="org.mcgill.transformationverification:ReturnStatement">
+          <expression xsi:type="org.mcgill.transformationverification:ArgumentRef" arg="//@contents.3/@contents.1/@arguments.0"/>
         </statements>
       </body>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:AtomicComponent"
-      name="BadServer">
-    <contents
-        xsi:type="org.mcgill.transformationverification:ProvidedPort"
-        name="badserver_serverInterface"
-        intf="//@contents.1"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:Executable"
-        name="serverInterface_server_process">
-      <type
-          xsi:type="org.mcgill.transformationverification:StringType"/>
-      <arguments
-          xsi:type="org.mcgill.transformationverification:OperationParameter"
-          name="badserver_request">
-        <type
-            xsi:type="org.mcgill.transformationverification:StringType"/>
+  <contents xsi:type="org.mcgill.transformationverification:AtomicComponent" name="BadServer">
+    <contents xsi:type="org.mcgill.transformationverification:ProvidedPort" name="badserver_serverInterface" intf="//@contents.1"/>
+    <contents xsi:type="org.mcgill.transformationverification:Executable" name="serverInterface_server_process">
+      <type xsi:type="org.mcgill.transformationverification:StringType"/>
+      <arguments xsi:type="org.mcgill.transformationverification:OperationParameter" name="badserver_request">
+        <type xsi:type="org.mcgill.transformationverification:StringType"/>
       </arguments>
-      <trigger
-          xsi:type="org.mcgill.transformationverification:OperationTrigger"
-          providedPort="//@contents.4/@contents.0"
-          calledOperation="//@contents.1/@contents.0"/>
+      <trigger xsi:type="org.mcgill.transformationverification:OperationTrigger" providedPort="//@contents.4/@contents.0" calledOperation="//@contents.1/@contents.0"/>
       <body>
-        <statements
-            xsi:type="org.mcgill.transformationverification:LocalVariableDeclaration"
-            name="x">
-          <type
-              xsi:type="org.mcgill.transformationverification:Int32Type"/>
-          <init
-              xsi:type="org.mcgill.transformationverification:NumberLiteral"
-              value="0"/>
+        <statements xsi:type="org.mcgill.transformationverification:LocalVariableDeclaration" name="x">
+          <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
+          <init xsi:type="org.mcgill.transformationverification:NumberLiteral" value="0"/>
         </statements>
-        <statements
-            xsi:type="org.mcgill.transformationverification:WhileStatement">
-          <condition
-              xsi:type="org.mcgill.transformationverification:GreaterEqualsExpression">
-            <left
-                xsi:type="org.mcgill.transformationverification:LocalVarRef"
-                var="//@contents.4/@contents.1/@body/@statements.0"/>
-            <right
-                xsi:type="org.mcgill.transformationverification:NumberLiteral"
-                value="0"/>
+        <statements xsi:type="org.mcgill.transformationverification:WhileStatement">
+          <condition xsi:type="org.mcgill.transformationverification:GreaterEqualsExpression">
+            <left xsi:type="org.mcgill.transformationverification:LocalVarRef" var="//@contents.4/@contents.1/@body/@statements.0"/>
+            <right xsi:type="org.mcgill.transformationverification:NumberLiteral" value="0"/>
           </condition>
           <body>
-            <statements
-                xsi:type="org.mcgill.transformationverification:ExpressionStatement">
-              <expr
-                  xsi:type="org.mcgill.transformationverification:AssignmentExpr">
-                <left
-                    xsi:type="org.mcgill.transformationverification:LocalVarRef"
-                    var="//@contents.4/@contents.1/@body/@statements.0"/>
-                <right
-                    xsi:type="org.mcgill.transformationverification:PlusExpression">
-                  <left
-                      xsi:type="org.mcgill.transformationverification:LocalVarRef"
-                      var="//@contents.4/@contents.1/@body/@statements.0"/>
-                  <right
-                      xsi:type="org.mcgill.transformationverification:NumberLiteral"
-                      value="1"/>
+            <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+              <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+                <left xsi:type="org.mcgill.transformationverification:LocalVarRef" var="//@contents.4/@contents.1/@body/@statements.0"/>
+                <right xsi:type="org.mcgill.transformationverification:PlusExpression">
+                  <left xsi:type="org.mcgill.transformationverification:LocalVarRef" var="//@contents.4/@contents.1/@body/@statements.0"/>
+                  <right xsi:type="org.mcgill.transformationverification:NumberLiteral" value="1"/>
                 </right>
               </expr>
             </statements>
           </body>
         </statements>
-        <statements
-            xsi:type="org.mcgill.transformationverification:ReturnStatement">
-          <expression
-              xsi:type="org.mcgill.transformationverification:ArgumentRef"
-              arg="//@contents.4/@contents.1/@arguments.0"/>
+        <statements xsi:type="org.mcgill.transformationverification:ReturnStatement">
+          <expression xsi:type="org.mcgill.transformationverification:ArgumentRef" arg="//@contents.4/@contents.1/@arguments.0"/>
         </statements>
       </body>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:InstanceConfiguration"
-      name="instances">
-    <contents
-        xsi:type="org.mcgill.transformationverification:ComponentInstance"
-        name="clientComponent"
-        component="//@contents.2"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:ComponentInstance"
-        name="gserverComponent"
-        component="//@contents.3"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:ComponentInstance"
-        name="bserverComponent"
-        component="//@contents.4"/>
-    <contents
-        xsi:type="org.mcgill.transformationverification:AssemblyConnector">
-      <source
-          instance="//@contents.5/@contents.0"
-          port="//@contents.2/@contents.1"/>
-      <target
-          instance="//@contents.5/@contents.1"
-          port="//@contents.3/@contents.0"/>
+  <contents xsi:type="org.mcgill.transformationverification:InstanceConfiguration" name="instances">
+    <contents xsi:type="org.mcgill.transformationverification:ComponentInstance" name="clientComponent" component="//@contents.2"/>
+    <contents xsi:type="org.mcgill.transformationverification:ComponentInstance" name="gserverComponent" component="//@contents.3"/>
+    <contents xsi:type="org.mcgill.transformationverification:ComponentInstance" name="bserverComponent" component="//@contents.4"/>
+    <contents xsi:type="org.mcgill.transformationverification:AssemblyConnector">
+      <source instance="//@contents.5/@contents.0" port="//@contents.2/@contents.1"/>
+      <target instance="//@contents.5/@contents.1" port="//@contents.3/@contents.0"/>
     </contents>
-    <contents
-        xsi:type="org.mcgill.transformationverification:PortAdapter"
-        name="clientPort">
-      <portRef
-          instance="//@contents.5/@contents.0"
-          port="//@contents.2/@contents.0"/>
+    <contents xsi:type="org.mcgill.transformationverification:PortAdapter" name="clientPort">
+      <portRef instance="//@contents.5/@contents.0" port="//@contents.2/@contents.0"/>
     </contents>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:TestCase"
-      name="MainTest">
+  <contents xsi:type="org.mcgill.transformationverification:TestCase" name="MainTest">
     <type xsi:type="org.mcgill.transformationverification:VoidType"/>
     <body>
-      <statements
-          xsi:type="org.mcgill.transformationverification:InitializeConfiguration"
-          config="//@contents.5"/>
-      <statements
-          xsi:type="org.mcgill.transformationverification:ExpressionStatement">
-        <expr
-            xsi:type="org.mcgill.transformationverification:PortAdapterOpCallExpr"
-            operation="//@contents.0/@contents.0">
-          <expression
-              xsi:type="org.mcgill.transformationverification:PortAdapterRefExpr"
-              portAdater="//@contents.5/@contents.4"/>
+      <statements xsi:type="org.mcgill.transformationverification:InitializeConfiguration" config="//@contents.5"/>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:PortAdapterOpCallExpr" operation="//@contents.0/@contents.0">
+          <expression xsi:type="org.mcgill.transformationverification:PortAdapterRefExpr" portAdater="//@contents.5/@contents.4"/>
         </expr>
       </statements>
     </body>
   </contents>
-  <contents
-      xsi:type="org.mcgill.transformationverification:Function"
-      name="main">
+  <contents xsi:type="org.mcgill.transformationverification:Function" name="main">
     <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
-    <arguments
-        xsi:type="org.mcgill.transformationverification:Argument"
-        name="argc">
-      <type
-          xsi:type="org.mcgill.transformationverification:Int32Type"/>
+    <arguments xsi:type="org.mcgill.transformationverification:Argument" name="argc">
+      <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
     </arguments>
-    <arguments
-        xsi:type="org.mcgill.transformationverification:Argument"
-        name="argv">
-      <type
-          xsi:type="org.mcgill.transformationverification:ArrayType">
-        <baseType
-            xsi:type="org.mcgill.transformationverification:StringType"/>
+    <arguments xsi:type="org.mcgill.transformationverification:Argument" name="argv">
+      <type xsi:type="org.mcgill.transformationverification:ArrayType">
+        <baseType xsi:type="org.mcgill.transformationverification:StringType"/>
       </type>
     </arguments>
     <body>
-      <statements
-          xsi:type="org.mcgill.transformationverification:ReturnStatement">
-        <expression
-            xsi:type="org.mcgill.transformationverification:ExecuteTestExpression">
-          <tests
-              xsi:type="org.mcgill.transformationverification:TestCaseRef"
-              testcase="//@contents.6"/>
+      <statements xsi:type="org.mcgill.transformationverification:ReturnStatement">
+        <expression xsi:type="org.mcgill.transformationverification:ExecuteTestExpression">
+          <tests xsi:type="org.mcgill.transformationverification:TestCaseRef" testcase="//@contents.6"/>
         </expression>
       </statements>
     </body>

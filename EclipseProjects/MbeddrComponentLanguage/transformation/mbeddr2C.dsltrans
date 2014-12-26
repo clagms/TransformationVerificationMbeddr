@@ -285,13 +285,13 @@
     </hasRule>
     <hasRule>
       <match>
-        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ProvidedPort"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ProvidedPort">
+          <attribute attributeName="name"/>
+        </class>
         <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="AtomicComponent">
           <attribute attributeName="name"/>
         </class>
-        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ClientServerInterface">
-          <attribute attributeName="name"/>
-        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ClientServerInterface"/>
         <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Operation">
           <attribute attributeName="name"/>
         </class>
@@ -315,7 +315,7 @@
                   <rightTerm xsi:type="dsltrans:Concat">
                     <leftTerm xsi:type="dsltrans:Atom" value="_"/>
                     <rightTerm xsi:type="dsltrans:Concat">
-                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.2/@attribute.0"/>
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.0/@attribute.0"/>
                       <rightTerm xsi:type="dsltrans:Concat">
                         <leftTerm xsi:type="dsltrans:Atom" value="_"/>
                         <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.1/@hasRule.11/@match.0/@class.3/@attribute.0"/>
@@ -801,8 +801,11 @@
               <rightTerm xsi:type="dsltrans:Atom" value="_blockexpr_main_2"/>
             </attributeValue>
           </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Main2Prototype"/>
+          </attribute>
         </class>
-        <class packageName="CModel" className="Int32Type"/>
+        <class packageName="CModel" className="VoidType"/>
         <association associationName="contents" source="//@source.4/@hasRule.0/@apply/@class.0" target="//@source.4/@hasRule.0/@apply/@class.1"/>
         <association associationName="type" source="//@source.4/@hasRule.0/@apply/@class.1" target="//@source.4/@hasRule.0/@apply/@class.2"/>
       </apply>
@@ -836,6 +839,9 @@
                 </rightTerm>
               </rightTerm>
             </attributeValue>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="InstanceConfigurationInit"/>
           </attribute>
         </class>
         <class packageName="CModel" className="VoidType" groupName=""/>
@@ -1013,6 +1019,42 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.4/@apply/@class.0" sourceClass="//@source.4/@hasRule.4/@match.0/@class.0"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.4/@apply/@class.2" sourceClass="//@source.4/@hasRule.4/@match.0/@class.3"/>
     </hasRule>
+    <hasRule description="create testcase prototype">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCase">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.4/@hasRule.5/@match.0/@class.0" target="//@source.4/@hasRule.5/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="ImplementationModule">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ImplementationModule"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.4/@hasRule.5/@match.0/@class.1/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestCasePrototype"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="VoidType"/>
+        <association associationName="contents" source="//@source.4/@hasRule.5/@apply/@class.0" target="//@source.4/@hasRule.5/@apply/@class.1"/>
+        <association associationName="type" source="//@source.4/@hasRule.5/@apply/@class.1" target="//@source.4/@hasRule.5/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.4/@hasRule.5/@apply/@class.0" sourceClass="//@source.4/@hasRule.5/@match.0/@class.0"/>
+    </hasRule>
   </source>
   <source xsi:type="dsltrans:Sequential" description="C File contents: component related functions declarations" previousSource="//@source.4" outputFilePathURI="model/ComponentsSampleInC.xmi">
     <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
@@ -1107,6 +1149,110 @@
         <association associationName="body" source="//@source.5/@hasRule.1/@apply/@class.1" target="//@source.5/@hasRule.1/@apply/@class.2"/>
       </apply>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.1/@apply/@class.0" sourceClass="//@source.5/@hasRule.1/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="create testcase function">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCase">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.5/@hasRule.2/@match.0/@class.0" target="//@source.5/@hasRule.2/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="ImplementationModule">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ImplementationModule"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.5/@hasRule.2/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.5/@hasRule.2/@match.0/@class.1/@attribute.0"/>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="VoidType"/>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestCaseFunctionStatements"/>
+          </attribute>
+        </class>
+        <association associationName="contents" source="//@source.5/@hasRule.2/@apply/@class.0" target="//@source.5/@hasRule.2/@apply/@class.1"/>
+        <association associationName="type" source="//@source.5/@hasRule.2/@apply/@class.1" target="//@source.5/@hasRule.2/@apply/@class.2"/>
+        <association associationName="body" source="//@source.5/@hasRule.2/@apply/@class.1" target="//@source.5/@hasRule.2/@apply/@class.3"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.2/@apply/@class.0" sourceClass="//@source.5/@hasRule.2/@match.0/@class.0"/>
+    </hasRule>
+    <hasRule description="create blockexpr_main_2 fand main functions">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ImplementationModule">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="main"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Int32Type"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.5/@hasRule.3/@match.0/@class.0" target="//@source.5/@hasRule.3/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="type" source="//@source.5/@hasRule.3/@match.0/@class.1" target="//@source.5/@hasRule.3/@match.0/@class.2"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="ImplementationModule">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ImplementationModule"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.5/@hasRule.3/@match.0/@class.0/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:Atom" value="_blockexpr_main_2"/>
+            </attributeValue>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="VoidType"/>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Main2Body"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="main"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MainBody"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="Int32Type"/>
+        <class packageName="CModel" className="ExpressionStatement"/>
+        <class packageName="CModel" className="FunctionCall"/>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Main2Prototype"/>
+          </attribute>
+        </class>
+        <association associationName="contents" source="//@source.5/@hasRule.3/@apply/@class.0" target="//@source.5/@hasRule.3/@apply/@class.1"/>
+        <association associationName="type" source="//@source.5/@hasRule.3/@apply/@class.1" target="//@source.5/@hasRule.3/@apply/@class.2"/>
+        <association associationName="body" source="//@source.5/@hasRule.3/@apply/@class.1" target="//@source.5/@hasRule.3/@apply/@class.3"/>
+        <association associationName="contents" source="//@source.5/@hasRule.3/@apply/@class.0" target="//@source.5/@hasRule.3/@apply/@class.4"/>
+        <association associationName="type" source="//@source.5/@hasRule.3/@apply/@class.4" target="//@source.5/@hasRule.3/@apply/@class.6"/>
+        <association associationName="body" source="//@source.5/@hasRule.3/@apply/@class.4" target="//@source.5/@hasRule.3/@apply/@class.5"/>
+        <association associationName="statements" source="//@source.5/@hasRule.3/@apply/@class.5" target="//@source.5/@hasRule.3/@apply/@class.7"/>
+        <association associationName="expr" source="//@source.5/@hasRule.3/@apply/@class.7" target="//@source.5/@hasRule.3/@apply/@class.8"/>
+        <association associationName="function" source="//@source.5/@hasRule.3/@apply/@class.8" target="//@source.5/@hasRule.3/@apply/@class.9"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.3/@apply/@class.0" sourceClass="//@source.5/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.5/@hasRule.3/@apply/@class.9" sourceClass="//@source.5/@hasRule.3/@match.0/@class.1"/>
     </hasRule>
   </source>
   <source xsi:type="dsltrans:Sequential" description="C File contents: component related functions implementation" previousSource="//@source.5" outputFilePathURI="model/ComponentsSampleInC.xmi">
@@ -1293,6 +1439,158 @@
       </apply>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.2/@apply/@class.0" sourceClass="//@source.6/@hasRule.2/@match.0/@class.0"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.2/@apply/@class.1" sourceClass="//@source.6/@hasRule.2/@match.0/@class.1"/>
+    </hasRule>
+    <hasRule description="call instances init function">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCase"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="StatementList"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InitializeConfiguration"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="InstanceConfiguration"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="body" source="//@source.6/@hasRule.3/@match.0/@class.0" target="//@source.6/@hasRule.3/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="statements" source="//@source.6/@hasRule.3/@match.0/@class.1" target="//@source.6/@hasRule.3/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="config" source="//@source.6/@hasRule.3/@match.0/@class.2" target="//@source.6/@hasRule.3/@match.0/@class.3"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestCaseFunctionStatements"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ExpressionStatement"/>
+        <class packageName="CModel" className="FunctionCall"/>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="InstanceConfigurationInit"/>
+          </attribute>
+        </class>
+        <association associationName="statements" source="//@source.6/@hasRule.3/@apply/@class.0" target="//@source.6/@hasRule.3/@apply/@class.1"/>
+        <association associationName="expr" source="//@source.6/@hasRule.3/@apply/@class.1" target="//@source.6/@hasRule.3/@apply/@class.2"/>
+        <association associationName="function" source="//@source.6/@hasRule.3/@apply/@class.2" target="//@source.6/@hasRule.3/@apply/@class.3"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.3/@apply/@class.0" sourceClass="//@source.6/@hasRule.3/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.3/@apply/@class.3" sourceClass="//@source.6/@hasRule.3/@match.0/@class.3"/>
+    </hasRule>
+    <hasRule description="call instances init function">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCase"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="StatementList"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ExpressionStatement"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="PortAdapterOpCallExpr"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="PortAdapterRefExpr"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="PortAdapter"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Operation"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="AdapterInstancePortRef"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ComponentInstance"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ProvidedPort"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ClientServerInterface"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="body" source="//@source.6/@hasRule.4/@match.0/@class.0" target="//@source.6/@hasRule.4/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="statements" source="//@source.6/@hasRule.4/@match.0/@class.1" target="//@source.6/@hasRule.4/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="expr" source="//@source.6/@hasRule.4/@match.0/@class.2" target="//@source.6/@hasRule.4/@match.0/@class.3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="expression" source="//@source.6/@hasRule.4/@match.0/@class.3" target="//@source.6/@hasRule.4/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="portAdater" source="//@source.6/@hasRule.4/@match.0/@class.4" target="//@source.6/@hasRule.4/@match.0/@class.5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="operation" source="//@source.6/@hasRule.4/@match.0/@class.3" target="//@source.6/@hasRule.4/@match.0/@class.6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="portRef" source="//@source.6/@hasRule.4/@match.0/@class.5" target="//@source.6/@hasRule.4/@match.0/@class.7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="instance" source="//@source.6/@hasRule.4/@match.0/@class.7" target="//@source.6/@hasRule.4/@match.0/@class.8"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="port" source="//@source.6/@hasRule.4/@match.0/@class.7" target="//@source.6/@hasRule.4/@match.0/@class.9"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="//@source.6/@hasRule.4/@match.0/@class.9" target="//@source.6/@hasRule.4/@match.0/@class.10"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="//@source.6/@hasRule.4/@match.0/@class.10" target="//@source.6/@hasRule.4/@match.0/@class.6"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestCaseFunctionStatements"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ExpressionStatement"/>
+        <class packageName="CModel" className="FunctionCall"/>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="ProvidedPortFunctionPrototype"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ReferenceExpr"/>
+        <class packageName="CModel" className="GlobalVarRef"/>
+        <class packageName="CModel" className="GlobalVariableDeclaration">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalComponentInstanceDeclaration"/>
+          </attribute>
+        </class>
+        <association associationName="statements" source="//@source.6/@hasRule.4/@apply/@class.0" target="//@source.6/@hasRule.4/@apply/@class.1"/>
+        <association associationName="expr" source="//@source.6/@hasRule.4/@apply/@class.1" target="//@source.6/@hasRule.4/@apply/@class.2"/>
+        <association associationName="function" source="//@source.6/@hasRule.4/@apply/@class.2" target="//@source.6/@hasRule.4/@apply/@class.3"/>
+        <association associationName="actuals" source="//@source.6/@hasRule.4/@apply/@class.2" target="//@source.6/@hasRule.4/@apply/@class.4"/>
+        <association associationName="expression" source="//@source.6/@hasRule.4/@apply/@class.4" target="//@source.6/@hasRule.4/@apply/@class.5"/>
+        <association associationName="var" source="//@source.6/@hasRule.4/@apply/@class.5" target="//@source.6/@hasRule.4/@apply/@class.6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.4/@apply/@class.0" sourceClass="//@source.6/@hasRule.4/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.4/@apply/@class.3" sourceClass="//@source.6/@hasRule.4/@match.0/@class.9"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.4/@apply/@class.6" sourceClass="//@source.6/@hasRule.4/@match.0/@class.8"/>
+    </hasRule>
+    <hasRule description="main and main_2 body">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="StatementList"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ReturnStatement"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="ExecuteTestExpression"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="main"/>
+          </attribute>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCaseRef"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="TestCase"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="body" source="//@source.6/@hasRule.5/@match.0/@class.3" target="//@source.6/@hasRule.5/@match.0/@class.0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="statements" source="//@source.6/@hasRule.5/@match.0/@class.0" target="//@source.6/@hasRule.5/@match.0/@class.1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="expression" source="//@source.6/@hasRule.5/@match.0/@class.1" target="//@source.6/@hasRule.5/@match.0/@class.2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="tests" source="//@source.6/@hasRule.5/@match.0/@class.2" target="//@source.6/@hasRule.5/@match.0/@class.4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="testcase" source="//@source.6/@hasRule.5/@match.0/@class.4" target="//@source.6/@hasRule.5/@match.0/@class.5"/>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="Main2Body"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ExpressionStatement"/>
+        <class packageName="CModel" className="FunctionCall"/>
+        <class packageName="CModel" className="FunctionPrototype">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="TestCasePrototype"/>
+          </attribute>
+        </class>
+        <association associationName="statements" source="//@source.6/@hasRule.5/@apply/@class.0" target="//@source.6/@hasRule.5/@apply/@class.1"/>
+        <association associationName="expr" source="//@source.6/@hasRule.5/@apply/@class.1" target="//@source.6/@hasRule.5/@apply/@class.2"/>
+        <association associationName="function" source="//@source.6/@hasRule.5/@apply/@class.2" target="//@source.6/@hasRule.5/@apply/@class.3"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.5/@apply/@class.0" sourceClass="//@source.6/@hasRule.5/@match.0/@class.3"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.6/@hasRule.5/@apply/@class.3" sourceClass="//@source.6/@hasRule.5/@match.0/@class.5"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" description="C file contents" previousSource="//@source.6" outputFilePathURI="model/ComponentsSampleInC.xmi">
+    <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
+    <hasRule description="main return 0">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Module" className="Function">
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Atom" value="main"/>
+          </attribute>
+        </class>
+      </match>
+      <apply>
+        <class packageName="CModel" className="StatementList">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="MainBody"/>
+          </attribute>
+        </class>
+        <class packageName="CModel" className="ReturnStatement"/>
+        <class packageName="CModel" className="NumberLiteral">
+          <attribute attributeName="value">
+            <attributeValue xsi:type="dsltrans:Atom" value="0"/>
+          </attribute>
+        </class>
+        <association associationName="statements" source="//@source.7/@hasRule.0/@apply/@class.0" target="//@source.7/@hasRule.0/@apply/@class.1"/>
+        <association associationName="expression" source="//@source.7/@hasRule.0/@apply/@class.1" target="//@source.7/@hasRule.0/@apply/@class.2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.7/@hasRule.0/@apply/@class.0" sourceClass="//@source.7/@hasRule.0/@match.0/@class.0"/>
     </hasRule>
   </source>
 </dsltrans:TransformationModel>
