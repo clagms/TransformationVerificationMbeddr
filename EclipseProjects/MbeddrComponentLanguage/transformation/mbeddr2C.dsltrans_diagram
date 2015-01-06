@@ -42,35 +42,7 @@
         </children>
         <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaD4w7EeSISuCwqfsCqQ" type="7004">
           <children xmi:type="notation:Node" xmi:id="_DgPaY4w7EeSISuCwqfsCqQ" type="3010">
-            <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaaYw7EeSISuCwqfsCqQ" type="7010">
-              <children xmi:type="notation:Shape" xmi:id="_wAIXUIzWEeSdL4agNxLI_Q" type="3011" fontName="Segoe UI">
-                <children xmi:type="notation:DecorationNode" xmi:id="_wAIXU4zWEeSdL4agNxLI_Q" type="5031"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_wAIXVIzWEeSdL4agNxLI_Q" type="7011">
-                  <children xmi:type="notation:Shape" xmi:id="_wAIXVYzWEeSdL4agNxLI_Q" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_wAIXWIzWEeSdL4agNxLI_Q" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_wAIXWYzWEeSdL4agNxLI_Q" type="7012"/>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_wAIXVozWEeSdL4agNxLI_Q"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="mbeddr2C.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wAIXV4zWEeSdL4agNxLI_Q"/>
-                  </children>
-                  <children xmi:type="notation:Shape" xmi:id="_wAIXWozWEeSdL4agNxLI_Q" type="3012" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_wAIXXYzWEeSdL4agNxLI_Q" type="5030"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_wAIXXozWEeSdL4agNxLI_Q" type="7012">
-                      <children xmi:type="notation:Shape" xmi:id="_wASIU4zWEeSdL4agNxLI_Q" type="3015" fontName="Segoe UI">
-                        <element xmi:type="dsltrans:AttributeRef" href="mbeddr2C.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.1/@attributeValue"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wASIVIzWEeSdL4agNxLI_Q"/>
-                      </children>
-                    </children>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_wAIXW4zWEeSdL4agNxLI_Q"/>
-                    <element xmi:type="dsltrans:ApplyAttribute" href="mbeddr2C.dsltrans#//@source.1/@hasRule.0/@apply/@class.0/@attribute.1"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wAIXXIzWEeSdL4agNxLI_Q" x="218"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_wAIXUYzWEeSdL4agNxLI_Q"/>
-                <element xmi:type="dsltrans:ApplyClass" href="mbeddr2C.dsltrans#"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wAIXUozWEeSdL4agNxLI_Q"/>
-              </children>
-            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaaYw7EeSISuCwqfsCqQ" type="7010"/>
             <styles xmi:type="notation:DescriptionStyle" xmi:id="_DgPaZIw7EeSISuCwqfsCqQ"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_DgPaZYw7EeSISuCwqfsCqQ" fontName="Segoe UI"/>
             <styles xmi:type="notation:LineStyle" xmi:id="_DgPaZow7EeSISuCwqfsCqQ"/>
@@ -6809,15 +6781,6 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CPviYozXEeSdL4agNxLI_Q" points="[2, 38, 0, -93]$[-2, 114, -4, -17]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CPviY4zXEeSdL4agNxLI_Q" id="(0.4965986394557823,0.13636363636363635)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CPviZIzXEeSdL4agNxLI_Q" id="(0.453125,0.1349206349206349)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_EoIWEIzXEeSdL4agNxLI_Q" type="4013" source="_wASIU4zWEeSdL4agNxLI_Q" target="_DgPaXow7EeSISuCwqfsCqQ">
-    <children xmi:type="notation:DecorationNode" xmi:id="_EoIWE4zXEeSdL4agNxLI_Q" type="6008">
-      <styles xmi:type="notation:DescriptionStyle" xmi:id="_EoIWFIzXEeSdL4agNxLI_Q"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_EoIWFYzXEeSdL4agNxLI_Q" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_EoIWEYzXEeSdL4agNxLI_Q" fontName="Segoe UI"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EoIWEozXEeSdL4agNxLI_Q" points="[-20, -15, 198, 141]$[-188, -135, 30, 21]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_FkyLkIzXEeSdL4agNxLI_Q" type="4003" source="_-BhOgozWEeSdL4agNxLI_Q" target="_En-lEIzXEeSdL4agNxLI_Q">
     <children xmi:type="notation:DecorationNode" xmi:id="_FkyLk4zXEeSdL4agNxLI_Q" type="6011">
