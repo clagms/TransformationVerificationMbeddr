@@ -15,26 +15,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_DgPaDYw7EeSISuCwqfsCqQ" type="5033"/>
         <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaDow7EeSISuCwqfsCqQ" type="7003">
           <children xmi:type="notation:Shape" xmi:id="_DgPaUow7EeSISuCwqfsCqQ" type="3003" fontName="Segoe UI">
-            <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaVYw7EeSISuCwqfsCqQ" type="7005">
-              <children xmi:type="notation:Node" xmi:id="_DgPaVow7EeSISuCwqfsCqQ" type="3004">
-                <children xmi:type="notation:DecorationNode" xmi:id="_DgPaXIw7EeSISuCwqfsCqQ" type="5005"/>
-                <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaXYw7EeSISuCwqfsCqQ" type="7006">
-                  <children xmi:type="notation:Shape" xmi:id="_DgPaXow7EeSISuCwqfsCqQ" type="3005" fontName="Segoe UI">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_DgPaYYw7EeSISuCwqfsCqQ" type="5004"/>
-                    <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaYow7EeSISuCwqfsCqQ" type="7007"/>
-                    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_DgPaX4w7EeSISuCwqfsCqQ"/>
-                    <element xmi:type="dsltrans:MatchAttribute" href="mbeddr2C.dsltrans#//@source.1/@hasRule.0/@match.0/@class.0/@attribute.0"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgPaYIw7EeSISuCwqfsCqQ"/>
-                  </children>
-                </children>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_DgPaV4w7EeSISuCwqfsCqQ"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_DgPaWIw7EeSISuCwqfsCqQ" fontName="Segoe UI"/>
-                <styles xmi:type="notation:FillStyle" xmi:id="_DgPaWYw7EeSISuCwqfsCqQ"/>
-                <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_DgPaWow7EeSISuCwqfsCqQ"/>
-                <element xmi:type="dsltrans:AnyMatchClass" href="mbeddr2C.dsltrans#"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgPaW4w7EeSISuCwqfsCqQ"/>
-              </children>
-            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_DgPaVYw7EeSISuCwqfsCqQ" type="7005"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_DgPaU4w7EeSISuCwqfsCqQ"/>
             <element xmi:type="dsltrans:MatchModel" href="mbeddr2C.dsltrans#//@source.1/@hasRule.0/@match.0"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgPaVIw7EeSISuCwqfsCqQ"/>

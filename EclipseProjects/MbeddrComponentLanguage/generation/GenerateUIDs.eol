@@ -1,47 +1,112 @@
 // This script implements Dijkstra"s shortest 
 // path algorighm
+var layerId = 0;
 
-var s : Node;
-s = Node.allInstances.select(n|n.label = "a").first();
-
-for (n in Node.allInstances) {
-  n.~distance = 10000;
+for (layer in Layer.allInstances) {
+	("Processing layer" + layer.name + "...").println();
+	
+	layer.description = "layer_" + layerId;
+	
+	layer.name = "layer_" + layerId;
+	
+	var ruleId = 0;
+	for (rule in layer.hasRule) {
+		("Processing rule " + rule.description + "...").println();
+		
+		rule.description = layer.name + "_rule_" + ruleId;
+		
+		var classId = 0;
+		
+		for (match in rule.match){
+			for(class in match.class){
+				processClass(class, classId, rule.description);
+				classId = classId + 1;
+			}
+		}
+		
+		for (class in rule.apply.class){
+			processClass(class, classId, rule.description);
+			classId = classId + 1;
+		}
+		
+		("Rule " + rule.description + " processed.").println();
+		
+		ruleId = ruleId + 1;
+	}
+	
+	
+	
+	("Layer " + layer.name + " processed.").println();
+	
+	layerId = layerId + 1;
 }
 
-s.~distance = 0;
 
-var Q : Sequence(Node);
-Q = Node.allInstances.clone();
-
-while (not Q.isEmpty()) {
-  var u : Node;
-  u = Q.extractMin();
-  for (e in u.outgoing) {
-    var v : Node;
-    v = e.target;
-    if (u.~distance + e.weight < v.~distance) {
-      v.~distance = u.~distance + e.weight;
-      v.~previous = u;
-    }
-  }
+("Validating layer ids...").println();
+for (x in Layer.allInstances) {
+	for (y in Layer.allInstances) {
+		if (x.name == y.name and x <> y){
+			("!!!!Duplicate name found: " + x.name).println();
+		}
+	}
 }
+("Validating layer ids... DONE").println();
 
-// Print distances and paths
-for (n in Node.allInstances){
-  ("Distance of " + n.label + " from " + s.label + " : " + 
-    n.~distance + " via " + n.getPath()).println();
+("Validating rule ids...").println();
+for (x in Rule.allInstances) {
+	for (y in Rule.allInstances) {
+		if (x.description == y.description and x <> y){
+			("!!!!Duplicate description found: " + x.description).println();
+		}
+	}
 }
+("Validating rule ids... DONE").println();
 
-operation Sequence(Node) extractMin() : Node {
-  var min : Node;
-  min = self.select(n|self.forAll(
-    n1|n.~distance <= n1.~distance)).first();
-  self.remove(min);
-  return min;
+("Validating class ids...").println();
+for (x in AbstractClass.allInstances) {
+	for (y in AbstractClass.allInstances) {
+		if (x.id == y.id and x <> y){
+			("!!!!Duplicate id found: " + x.id).println();
+		}
+	}
 }
+("Validating class ids... DONE").println();
 
-operation Node getPath() : String {
-  if (self.~previous.isDefined()) {
-    return self.~previous.getPath() + "->" + self.label;
-  }return self.label;
+("Validating attribute ids...").println();
+for (x in Attribute.allInstances) {
+	for (y in Attribute.allInstances) {
+		if (x.id == y.id and x <> y){
+			("!!!!Duplicate id found: " + x.id).println();
+		}
+	}
+}
+("Validating attribute ids... DONE").println();
+
+
+
+
+
+
+
+operation processClass(class, classId, rule_description){
+	("Processing class " + class.id + "...").println();
+	
+	class.id = rule_description + "_class_" + classId;
+	
+	class.description = rule_description + "_class_" + classId;
+	
+	var attributeId = 0;
+	for (attribute in class.attribute){
+		("Processing attribute " + attribute.id + "...").println();
+		
+		attribute.id = class.id + "_attribute_" + attributeId;
+		
+		attribute.description = class.id + "_attribute_" + attributeId;
+		
+		("Attribute " + attribute.id + " processed.").println();
+		
+		attributeId = attributeId + 1;
+	}
+	
+	("Class " + class.id + " processed.").println();
 }
