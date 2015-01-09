@@ -11,6 +11,14 @@ var matchContainsClassNodeMap : new Map;
 var applyClassNodeMap : new Map;
 var applyContainsClassNodeMap : new Map;
 
+
+var matchAssociationNodeMap : new Map;
+
+var applyAssociationNodeMap : new Map;
+
+var backwardAssociationNodeMap: new Map;
+
+
 %]
 from core.himesis import Himesis
 import cPickle as pickle
@@ -114,6 +122,46 @@ class H[%=rule.description%](Himesis):
     	}
         %]
         
+        
+        [%
+		for(association in rule.match.first.association){
+			matchAssociationNodeMap.put(association, nodeIndex);
+			%]
+    	# match association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
+    	self.vs[[%=nodeIndex%]]["associationType"] = """[%=association.associationName%]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """directLink_S"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
+        [%
+		for(association in rule.apply.association){
+			applyAssociationNodeMap.put(association, nodeIndex);
+			%]
+    	# apply association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
+    	self.vs[[%=nodeIndex%]]["associationType"] = """[%=association.associationName%]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """directLink_T"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
+        [%
+		for(backwardAssociation in rule.backwards){
+			backwardAssociationNodeMap.put(backwardAssociation, nodeIndex);
+			%]
+    	# backward association [%=backwardAssociation.sourceClass.className%]---->[%=backwardAssociation.targetClass.className%] node
+    	self.vs[[%=nodeIndex%]]["type"] = """ruleDef"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """backward_link"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=backwardAssociation.sourceClass.id + ("blink" + nodeIndex) + backwardAssociation.targetClass.id %]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
         # Add the edges
         self.add_edges([
         	([%=matchModelIndex%],[%=pairedWithNodeIndex%]), # matchmodel -> pairedwith
@@ -130,6 +178,27 @@ class H[%=rule.description%](Himesis):
     		%]
     		([%= applyModelIndex%],[%= applyContainsClassNodeMap.get(class)%]), # applymodel -> apply_contains
     		([%= applyContainsClassNodeMap.get(class)%],[%= applyClassNodeMap.get(class)%]), # apply_contains -> apply_class [%=class.className%]([%=class.id%])
+    		[%
+    		}
+    		
+    		for(association in rule.match.first.association){
+    		%]
+    		([%= matchClassNodeMap.get(association.source)%],[%= matchAssociationNodeMap.get(association)%]), # match_class [%=association.source.className%]([%=association.source.id%]) -> association [%=association.associationName%]
+    		([%= matchAssociationNodeMap.get(association) %],[%= matchClassNodeMap.get(association.target)%]), # association [%=association.associationName%]  -> match_class [%=association.target.className%]([%=association.target.id%])
+    		[%
+    		}
+    		
+    		for(association in rule.apply.association){
+    		%]
+    		([%= applyClassNodeMap.get(association.source)%],[%= applyAssociationNodeMap.get(association)%]), # apply_class [%=association.source.className%]([%=association.source.id%]) -> association [%=association.associationName%]
+    		([%= applyAssociationNodeMap.get(association) %],[%= applyClassNodeMap.get(association.target)%]), # association [%=association.associationName%]  -> apply_class [%=association.target.className%]([%=association.target.id%])
+    		[%
+    		}
+    		
+    		for(backwardAssociation in rule.backwards){
+    		%]
+    		([%= applyClassNodeMap.get(backwardAssociation.targetClass)%],[%= backwardAssociationNodeMap.get(backwardAssociation)%]), # apply_class [%=backwardAssociation.targetClass.className%]([%=backwardAssociation.targetClass.id%]) -> backward_association
+    		([%= backwardAssociationNodeMap.get(backwardAssociation) %],[%= matchClassNodeMap.get(backwardAssociation.sourceClass)%]), #  backward_association -> apply_class [%=backwardAssociation.sourceClass.className%]([%=backwardAssociation.sourceClass.id%])
     		[%
     		}
         	%]
