@@ -3,17 +3,17 @@
 var layerId = 0;
 
 for (layer in Layer.allInstances) {
-	("Processing layer" + layer.name + "...").println();
+	("Processing layer " + layer.name + "...").println();
 	
-	layer.description = "layer_" + layerId;
+	layer.description = "layer" + layerId;
 	
-	layer.name = "layer_" + layerId;
+	layer.name = "layer" + layerId;
 	
 	var ruleId = 0;
 	for (rule in layer.hasRule) {
 		("Processing rule " + rule.description + "...").println();
 		
-		rule.description = layer.name + "_rule_" + ruleId;
+		rule.description = layer.name + "rule" + ruleId;
 		
 		var classId = 0;
 		
@@ -91,17 +91,17 @@ for (x in Attribute.allInstances) {
 operation processClass(class, classId, rule_description){
 	("Processing class " + class.id + "...").println();
 	
-	class.id = rule_description + "_class_" + classId;
+	class.id = rule_description + "class" + classId;
 	
-	class.description = rule_description + "_class_" + classId;
+	class.description = rule_description + "class" + classId;
 	
 	var attributeId = 0;
 	for (attribute in class.attribute){
 		("Processing attribute " + attribute.id + "...").println();
 		
-		attribute.id = class.id + "_attribute_" + attributeId;
+		attribute.id = class.id + "attribute" + attributeId;
 		
-		attribute.description = class.id + "_attribute_" + attributeId;
+		attribute.description = class.id + "attribute" + attributeId;
 		
 		("Attribute " + attribute.id + " processed.").println();
 		

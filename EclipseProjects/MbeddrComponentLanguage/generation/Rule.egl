@@ -1,76 +1,113 @@
 [%
-  out.setContentType("HTML");
-  
-  var package : String = dataType.getEPackage().name;
+var nodeIndex = 0;
+
+var matchModelIndex = 0;
+var applyModelIndex = 0;
+var pairedWithNodeIndex = 0;
+
+var matchClassNodeMap : new Map;
+var matchContainsClassNodeMap : new Map;
+
+
 %]
-<h1>Package: [%=package%]</h1>
-<h2>DataType [%=dataType.name%]</h2>
+from core.himesis import Himesis
+import cPickle as pickle
+from uuid import UUID
+
+class H[%=rule.description%](Himesis):
+    def __init__(self):
+        """
+        Creates the himesis graph representing the DSLTrans rule [%=rule.description%].
+        """
+        # Flag this instance as compiled now
+        self.is_compiled = True
         
-[% if (dataType.getEAnnotation("doc").isDefined()) { %]
-
-  [% for (entry in dataType.getEAnnotation("doc").getDetails().
-    select(e|e.key="description")) { %]
-    <hr />
-    <p id="description">
-      [%=entry.value%]
-    </p>
-  [% } %]
-  
-  [% for (entry in dataType.getEAnnotation("doc").getDetails()) { %]
-    [% if (entry.key = "version") { %]
-      <h3>Version:</h3>
-      <p id="version">[%=entry.value%]</p>
-    [% } %]
-    [% if (entry.key = "see") { %]
-      <h3>See also: </h3>
-      <ul>
-        [% for (see in entry.value.split(",")) { %]
-          <li>
-          <a href="[%=see.trim().asClassifierFileName(package)%]">
-          [%=see.trim()%]</a>
-          </li>
-        [% } %]
-      </ul>
-    [% } %]
-  [% } %]
-[% } %]
-
-[% 
-if (dataType.isKindOf(EEnum)) {
-  var enumeration : EEnum = dataType;  
-  
-  if (enumeration.eLiterals.size() > 0) { %]
-    <hr />
-  
-    <h4>Literals</h4>
-    <table cellspacing="0">
-      <tr>
-        <th>Name</th>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-      [% for (literal in enumeration.eLiterals.sortBy(l|l.name)) { %]
-        <tr>
-          <td>[%=literal.name%]</td>
-          <td>[%=literal.value%]</td>
-      
-        [% if (literal.getEAnnotation("doc").isDefined()) { %]
-          [% for (entry in literal.getEAnnotation("doc").
-            getDetails()) { %]
-            [% if (entry.key = "description") { %]
-              <td>[%=enrry.value%]</td>
-            [% } %]
-          [% } %]
-        [% } else { %]
-          <td>&nbsp;</td>
-        [% } %]  
-        </tr>
-      [% } %]
-    </table>
-  [% } %]
-[% }
-
-  operation String asClassifierFileName(package : String) : String {
-    return package + "-" + self + ".html";
-  }
+        # TODO: compute total number of vertices
+        super(H[%=rule.description%], self).__init__(name='H[%=rule.description%]', num_nodes=[%=0%], edges=[])
+        
+        
+        # Set the graph attributes
+        # TODO Levi, need some help here
+        self["mm__"] = pickle.loads("""I have no idea what goes here""")
+        
+        self["name"] = """[%=rule.description%]"""
+        self["GUID__"] = UUID('[%=rule.description%]')
+        
+        # match model. We only support one match model
+        [%
+        matchModelIndex = nodeIndex;
+    	%]
+        self.vs[[%=nodeIndex%]]["mm__"] = """MatchModel"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]matchmodel[%=nodeIndex%]')
+    	[%
+		nodeIndex = nodeIndex + 1;
+        %]
+        
+        # apply model node
+        [%
+    	applyModelIndex = nodeIndex;
+    	%]
+        self.vs[[%=nodeIndex%]]["mm__"] = """ApplyModel"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]applymodel[%=nodeIndex%]')
+    	[%
+    	nodeIndex = nodeIndex + 1;
+        %]
+        
+        # paired with relation between match and apply models
+        [%
+    	pairedWithNodeIndex = nodeIndex;
+    	%]
+        self.vs[[%=nodeIndex%]]["mm__"] = """paired_with"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]pairedwith[%=nodeIndex%]')
+        [%
+    	nodeIndex = nodeIndex + 1;
+        %]
+        
+        [%
+		for(class in rule.match.first().class){
+			matchClassNodeMap.put(class, nodeIndex);
+			%]
+    	# match class [%=class.className%]([%=class.id%]) node
+    	self.vs[[%=nodeIndex%]["name"] = """[%=class.id%]"""
+        self.vs[[%=nodeIndex%]["classtype"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]["mm__"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]["cardinality"] = """[%= getClassCardinality(class) %]"""
+        self.vs[[%=nodeIndex%]["GUID__"] = UUID('[%=class.id%]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    		%]
+    	# match_contains node for class [%=class.className%]([%=class.id%])
+        	[%
+    		matchContainsClassNodeMap.put(class, nodeIndex);
+    		%]
+        self.vs[[%=nodeIndex%]]["mm__"] = """match_contains"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]matchcontains[%=nodeIndex%]')
+        	[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
+        
+        # Add the edges
+        self.add_edges([
+        	([%=matchModelIndex%],[%=pairedWithNodeIndex%]), # matchmodel -> pairedwith
+        	([%=pairedWithNodeIndex%],[%=applyModelIndex%]), # pairedwith -> applyModel
+        	[%
+    		for(class in rule.match.first().class){
+    		%]
+    		([%= matchModelIndex%],[%= matchContainsClassNodeMap.get(class)%]), # matchmodel -> match_contains
+    		([%= matchContainsClassNodeMap.get(class)%],[%= matchClassNodeMap.get(class)%]), # match_contains -> match_class
+    		[%
+    		}
+        	%]
+        ])
+        
+[%
+operation getClassCardinality(class){
+	if (class.isKindOf(AnyMatchClass)){
+		return "+";
+	} else {
+		throw "Only Any Match Class is supported!";
+	}
+}
 %]
