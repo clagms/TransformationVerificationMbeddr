@@ -8,6 +8,8 @@ var pairedWithNodeIndex = 0;
 var matchClassNodeMap : new Map;
 var matchContainsClassNodeMap : new Map;
 
+var applyClassNodeMap : new Map;
+var applyContainsClassNodeMap : new Map;
 
 %]
 from core.himesis import Himesis
@@ -64,15 +66,15 @@ class H[%=rule.description%](Himesis):
         %]
         
         [%
-		for(class in rule.match.first().class){
+		for(class in rule.match.first.class){
 			matchClassNodeMap.put(class, nodeIndex);
 			%]
     	# match class [%=class.className%]([%=class.id%]) node
-    	self.vs[[%=nodeIndex%]["name"] = """[%=class.id%]"""
-        self.vs[[%=nodeIndex%]["classtype"] = """[%=class.className%]"""
-        self.vs[[%=nodeIndex%]["mm__"] = """[%=class.className%]"""
-        self.vs[[%=nodeIndex%]["cardinality"] = """[%= getClassCardinality(class) %]"""
-        self.vs[[%=nodeIndex%]["GUID__"] = UUID('[%=class.id%]')
+    	self.vs[[%=nodeIndex%]]["name"] = """[%=class.id%]"""
+        self.vs[[%=nodeIndex%]]["classtype"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]]["cardinality"] = """[%= getClassCardinality(class) %]"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]')
     		[%
     		nodeIndex = nodeIndex + 1;
     		%]
@@ -88,15 +90,46 @@ class H[%=rule.description%](Himesis):
         %]
         
         
+        [%
+		for(class in rule.apply.class){
+			applyClassNodeMap.put(class, nodeIndex);
+			%]
+    	# apply class [%=class.className%]([%=class.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """[%=class.id%]"""
+        self.vs[[%=nodeIndex%]]["classtype"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """[%=class.className%]"""
+        self.vs[[%=nodeIndex%]]["cardinality"] = """1"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    		%]
+    	# apply_contains node for class [%=class.className%]([%=class.id%])
+        	[%
+    		applyContainsClassNodeMap.put(class, nodeIndex);
+    		%]
+        self.vs[[%=nodeIndex%]]["mm__"] = """apply_contains"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]applycontains[%=nodeIndex%]')
+        	[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
         # Add the edges
         self.add_edges([
         	([%=matchModelIndex%],[%=pairedWithNodeIndex%]), # matchmodel -> pairedwith
         	([%=pairedWithNodeIndex%],[%=applyModelIndex%]), # pairedwith -> applyModel
         	[%
-    		for(class in rule.match.first().class){
+    		for(class in rule.match.first.class){
     		%]
     		([%= matchModelIndex%],[%= matchContainsClassNodeMap.get(class)%]), # matchmodel -> match_contains
-    		([%= matchContainsClassNodeMap.get(class)%],[%= matchClassNodeMap.get(class)%]), # match_contains -> match_class
+    		([%= matchContainsClassNodeMap.get(class)%],[%= matchClassNodeMap.get(class)%]), # match_contains -> match_class [%=class.className%]([%=class.id%])
+    		[%
+    		}
+    		
+    		for(class in rule.apply.class){
+    		%]
+    		([%= applyModelIndex%],[%= applyContainsClassNodeMap.get(class)%]), # applymodel -> apply_contains
+    		([%= applyContainsClassNodeMap.get(class)%],[%= applyClassNodeMap.get(class)%]), # apply_contains -> apply_class [%=class.className%]([%=class.id%])
     		[%
     		}
         	%]
