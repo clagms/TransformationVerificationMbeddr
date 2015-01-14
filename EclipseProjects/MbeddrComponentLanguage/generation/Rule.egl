@@ -26,6 +26,14 @@ var hasApplyAttributeNodeMap: new Map;
 
 var applyAttributeNodeMap: new Map;
 
+var applyAttributeEquationNodeMap: new Map;
+
+var applyAttributeEquationLeftExpNodeMap : new Map;
+
+var applyAttributeEquationRightExpNodeMap : new Map;
+
+var applyAttributeAtomNodeMap : new Map;
+
 %]
 from core.himesis import Himesis
 import cPickle as pickle
@@ -212,7 +220,7 @@ a.""")
 	    		applyAttributeNodeMap.put(applyAttribute, nodeIndex);
 	    		
 	    		var attrName = applyAttribute.attributeName;
-	    		if (applyAttribute.attributeName == ""){
+	    		if (applyAttribute.attributeName == null){
 	    			attrName = "ApplyAttribute";
 	    		}
 	    		%]
@@ -222,7 +230,36 @@ a.""")
         self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
         self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=applyAttribute.id %]')
 	    		[%
-	    		nodeIndex = nodeIndex + 1;	
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		applyAttributeEquationNodeMap.put(applyAttribute, nodeIndex);
+	    		%]
+    	# apply attribute equation [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """eq_"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """Equation"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('Equation[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		
+	    		applyAttributeEquationLeftExpNodeMap.put(applyAttribute, nodeIndex);
+	    		%]
+    	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """leftExpr"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationLeftExpr[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		
+	    		applyAttributeEquationRightExpNodeMap.put(applyAttribute, nodeIndex);
+	    		%]
+    	# apply attribute equation right expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """rightExpr"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationRightExpr[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    
+	    		nodeIndex = generateApplyAttributeTermNodes(applyAttribute, nodeIndex, applyAttributeAtomNodeMap);
 			}
 		}
         %]
@@ -282,7 +319,11 @@ a.""")
     		%]
     		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
     		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationLeftExpNodeMap.get(attribute) %]), #  equation of appply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> left_expr
+    		([%= applyAttributeEquationLeftExpNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  left_expr -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationRightExpNodeMap.get(attribute) %]), #  equation of appply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> right_expr
     		[%
+    			generateApplyAttributeTermEdges(attribute, applyAttributeAtomNodeMap, applyAttributeEquationRightExpNodeMap);
     			}
     		}
         	
@@ -296,5 +337,50 @@ operation getClassCardinality(class){
 	} else {
 		throw "Only Any Match Class is supported!";
 	}
+}
+
+operation generateApplyAttributeTermNodes(applyAttribute, nodeIndex, applyAttributeAtomNodeMap){
+	var term = applyAttribute.attributeValue;
+	
+	var returnNodeIndex = nodeIndex;
+	
+	if (term.isKindOf(Atom)){
+		returnNodeIndex = generateApplyAttributeAtomNode(applyAttribute, term, nodeIndex, applyAttributeAtomNodeMap);
+	} else {
+		// TODO
+	}
+	
+	return returnNodeIndex;
+}
+
+operation generateApplyAttributeAtomNode(applyAttribute, atom, nodeIndex, applyAttributeAtomNodeMap) {
+	var returnNodeIndex = nodeIndex;
+	applyAttributeAtomNodeMap.put(atom, nodeIndex);
+	%]
+    	# apply attribute atom [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """[%=atom.value%]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """Constant"""
+        self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('Atom[%=applyAttribute.id + nodeIndex %]')
+	[%
+	returnNodeIndex = returnNodeIndex + 1;
+	
+	return returnNodeIndex;
+}
+
+operation generateApplyAttributeTermEdges(applyAttribute, applyAttributeAtomNodeMap, applyAttributeEquationRightExpNodeMap){
+	var term = applyAttribute.attributeValue;
+	
+	if (term.isKindOf(Atom)){
+		generateApplyAttributeAtomEdges(applyAttribute, term, applyAttributeAtomNodeMap, applyAttributeEquationRightExpNodeMap);
+	} else {
+		// TODO
+	}
+}
+
+operation generateApplyAttributeAtomEdges(applyAttribute, atom, applyAttributeAtomNodeMap, applyAttributeEquationRightExpNodeMap){
+	%]
+    		([%= applyAttributeEquationRightExpNodeMap.get(applyAttribute) %],[%= applyAttributeAtomNodeMap.get(atom) %]), #  right_expr -> atom node
+	[%
 }
 %]
