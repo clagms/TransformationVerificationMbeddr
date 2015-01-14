@@ -18,6 +18,13 @@ var applyAssociationNodeMap : new Map;
 
 var backwardAssociationNodeMap: new Map;
 
+var hasMatchAttributeNodeMap: new Map;
+
+var matchAttributeNodeMap: new Map;
+
+var hasApplyAttributeNodeMap: new Map;
+
+var applyAttributeNodeMap: new Map;
 
 %]
 from core.himesis import Himesis
@@ -37,8 +44,11 @@ class H[%=rule.description%](Himesis):
         
         
         # Set the graph attributes
-        # TODO Levi, need some help here
-        self["mm__"] = pickle.loads("""I have no idea what goes here""")
+        # TODO Levi, need some help here because I don't know where does this value come from.
+        self["mm__"] = pickle.loads("""(lp1
+S'mbeddr2C_MM'
+p2
+a.""")
         
         self["name"] = """[%=rule.description%]"""
         self["GUID__"] = UUID('[%=rule.description%]')
@@ -162,6 +172,62 @@ class H[%=rule.description%](Himesis):
     	}
         %]
         
+        
+        [%
+		for(class in rule.match.first.class){
+			for(matchAttribute in class.attribute){
+				hasMatchAttributeNodeMap.put(matchAttribute, nodeIndex);
+				%]
+    	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["mm__"] = """hasAttribute_S"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('has[%=matchAttribute.id %]')
+    			[%
+    			nodeIndex = nodeIndex + 1;
+    		
+    			matchAttributeNodeMap.put(matchAttribute, nodeIndex);
+    			%]
+    	# match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """[%=matchAttribute.attributeName %]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """Attribute"""
+        self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=matchAttribute.id %]')
+    			[%
+    			nodeIndex = nodeIndex + 1;
+    		}
+    	}
+        %]
+        
+        
+        [%
+		for(class in rule.apply.class){
+			for(applyAttribute in class.attribute){
+				hasApplyAttributeNodeMap.put(applyAttribute, nodeIndex);
+				%]
+    	# has apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["mm__"] = """hasAttribute_T"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('has[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		applyAttributeNodeMap.put(applyAttribute, nodeIndex);
+	    		
+	    		var attrName = applyAttribute.attributeName;
+	    		if (applyAttribute.attributeName == ""){
+	    			attrName = "ApplyAttribute";
+	    		}
+	    		%]
+    	# apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.vs[[%=nodeIndex%]]["name"] = """[%= attrName %]"""
+        self.vs[[%=nodeIndex%]]["mm__"] = """Attribute"""
+        self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;	
+			}
+		}
+        %]
+        
+        
         # Add the edges
         self.add_edges([
         	([%=matchModelIndex%],[%=pairedWithNodeIndex%]), # matchmodel -> pairedwith
@@ -201,6 +267,25 @@ class H[%=rule.description%](Himesis):
     		([%= backwardAssociationNodeMap.get(backwardAssociation) %],[%= matchClassNodeMap.get(backwardAssociation.sourceClass)%]), #  backward_association -> apply_class [%=backwardAssociation.sourceClass.className%]([%=backwardAssociation.sourceClass.id%])
     		[%
     		}
+    		
+    		for(class in rule.match.first.class){
+    			for(attribute in class.attribute){
+    		%]
+    		([%= matchClassNodeMap.get(class)%],[%= hasMatchAttributeNodeMap.get(attribute)%]), # match_class [%=class.className%]([%=class.id%]) -> has_match_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= hasMatchAttributeNodeMap.get(attribute) %],[%= matchAttributeNodeMap.get(attribute) %]), #  has_match_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> match_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		[%
+    			}
+    		}
+    		
+    		for(class in rule.apply.class){
+    			for(attribute in class.attribute){
+    		%]
+    		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		[%
+    			}
+    		}
+        	
         	%]
         ])
         
