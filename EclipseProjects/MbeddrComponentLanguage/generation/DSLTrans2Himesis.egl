@@ -1,6 +1,5 @@
 [%
-  
-  for (rule in Rule.allInstances){
+  for (rule in Rule.allInstances()){
   	var t : Template = TemplateFactory.load("Rule.egl");
   	t.populate("rule", rule);
   	t.generate("./generated/H" + rule.description + ".py");

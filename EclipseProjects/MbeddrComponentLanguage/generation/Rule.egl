@@ -61,9 +61,10 @@ class H[%=rule.description%](Himesis):
         
         
         # Set the graph attributes
-        # TODO Levi, need some help here because I don't know where does this value come from.
+        # TODO Levi, need some help here because I don't know where does 
+        # this value come from.
         self["mm__"] = pickle.loads("""(lp1
-S'mbeddr2C_MM'
+S'HimesisMM'
 p2
 a.""")
         
