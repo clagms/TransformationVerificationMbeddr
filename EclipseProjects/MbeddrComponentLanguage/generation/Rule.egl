@@ -265,7 +265,7 @@ a.""")
         
         [%
 		for(class in rule.apply.class){
-			for(applyAttribute in class.attribute.reject(attr | attr.attributeName == "")){
+			for(applyAttribute in class.attribute.reject(attr | attr.attributeName == "" or attr.attributeName == null)){
 				hasApplyAttributeNodeMap.put(applyAttribute, nodeIndex);
 				%]
     	# has apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
@@ -389,7 +389,7 @@ a.""")
     		}
     		
     		for(class in rule.apply.class){
-    			for(attribute in class.attribute.reject(attr | attr.attributeName == "")){
+    			for(attribute in class.attribute.reject(attr | attr.attributeName == "" or attr.attributeName == null)){
     		%]
     		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
     		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
