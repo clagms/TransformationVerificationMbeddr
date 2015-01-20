@@ -47,7 +47,7 @@ var matchAttributeConcatRightHasArgsNodeMap: new Map;
 %]
 from core.himesis import Himesis
 import cPickle as pickle
-from uuid import UUID
+import uuid
 
 class H[%=rule.description%](Himesis):
     def __init__(self):
