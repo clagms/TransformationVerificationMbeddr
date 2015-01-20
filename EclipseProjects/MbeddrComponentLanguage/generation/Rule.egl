@@ -69,14 +69,14 @@ p2
 a.""")
         
         self["name"] = """[%=rule.description%]"""
-        self["GUID__"] = UUID('[%=rule.description%]')
+        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=rule.description%]')
         
         # match model. We only support one match model
         [%
         matchModelIndex = nodeIndex;
     	%]
         self.vs[[%=nodeIndex%]]["mm__"] = """MatchModel"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]matchmodel[%=nodeIndex%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=rule.description%]matchmodel[%=nodeIndex%]')
     	[%
 		nodeIndex = nodeIndex + 1;
         %]
@@ -86,7 +86,7 @@ a.""")
     	applyModelIndex = nodeIndex;
     	%]
         self.vs[[%=nodeIndex%]]["mm__"] = """ApplyModel"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]applymodel[%=nodeIndex%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=rule.description%]applymodel[%=nodeIndex%]')
     	[%
     	nodeIndex = nodeIndex + 1;
         %]
@@ -96,7 +96,7 @@ a.""")
     	pairedWithNodeIndex = nodeIndex;
     	%]
         self.vs[[%=nodeIndex%]]["mm__"] = """paired_with"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=rule.description%]pairedwith[%=nodeIndex%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=rule.description%]pairedwith[%=nodeIndex%]')
         [%
     	nodeIndex = nodeIndex + 1;
         %]
@@ -110,7 +110,7 @@ a.""")
         self.vs[[%=nodeIndex%]]["classtype"] = """[%=class.className%]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """[%=class.className%]"""
         self.vs[[%=nodeIndex%]]["cardinality"] = """[%= getClassCardinality(class) %]"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]')
     		[%
     		nodeIndex = nodeIndex + 1;
     		%]
@@ -119,7 +119,7 @@ a.""")
     		matchContainsClassNodeMap.put(class, nodeIndex);
     		%]
         self.vs[[%=nodeIndex%]]["mm__"] = """match_contains"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]matchcontains[%=nodeIndex%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]matchcontains[%=nodeIndex%]')
         	[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -135,7 +135,7 @@ a.""")
         self.vs[[%=nodeIndex%]]["classtype"] = """[%=class.className%]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """[%=class.className%]"""
         self.vs[[%=nodeIndex%]]["cardinality"] = """1"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]')
     		[%
     		nodeIndex = nodeIndex + 1;
     		%]
@@ -144,7 +144,7 @@ a.""")
     		applyContainsClassNodeMap.put(class, nodeIndex);
     		%]
         self.vs[[%=nodeIndex%]]["mm__"] = """apply_contains"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=class.id%]applycontains[%=nodeIndex%]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]applycontains[%=nodeIndex%]')
         	[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -158,7 +158,7 @@ a.""")
     	# match association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
     	self.vs[[%=nodeIndex%]]["associationType"] = """[%=association.associationName%]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """directLink_S"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
     		[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -171,7 +171,7 @@ a.""")
     	# apply association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
     	self.vs[[%=nodeIndex%]]["associationType"] = """[%=association.associationName%]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """directLink_T"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
     		[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -184,7 +184,7 @@ a.""")
     	# backward association [%=backwardAssociation.sourceClass.className%]---->[%=backwardAssociation.targetClass.className%] node
     	self.vs[[%=nodeIndex%]]["type"] = """ruleDef"""
         self.vs[[%=nodeIndex%]]["mm__"] = """backward_link"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=backwardAssociation.sourceClass.id + ("blink" + nodeIndex) + backwardAssociation.targetClass.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=backwardAssociation.sourceClass.id + ("blink" + nodeIndex) + backwardAssociation.targetClass.id %]')
     		[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -198,7 +198,7 @@ a.""")
 				%]
     	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["mm__"] = """hasAttribute_S"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('has[%=matchAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=matchAttribute.id %]')
     			[%
     			nodeIndex = nodeIndex + 1;
     		
@@ -208,7 +208,7 @@ a.""")
     	self.vs[[%=nodeIndex%]]["name"] = """[%=matchAttribute.attributeName %]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """Attribute"""
         self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=matchAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=matchAttribute.id %]')
     			[%
     			nodeIndex = nodeIndex + 1;
     			
@@ -218,7 +218,7 @@ a.""")
     	# match attribute equation [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """eq_"""
         self.vs[[%=nodeIndex%]]["mm__"] = """Equation"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('Equation[%=matchAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -227,7 +227,7 @@ a.""")
 	    			%]
     	# match attribute equation left expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """leftExpr"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationLeftExpr[%=matchAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -235,7 +235,7 @@ a.""")
 	    			%]
     	# match attribute equation right expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """rightExpr"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationRightExpr[%=matchAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -255,7 +255,7 @@ a.""")
 				%]
     	# has apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["mm__"] = """hasAttribute_T"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('has[%=applyAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -270,7 +270,7 @@ a.""")
     	self.vs[[%=nodeIndex%]]["name"] = """[%= attrName %]"""
         self.vs[[%=nodeIndex%]]["mm__"] = """Attribute"""
         self.vs[[%=nodeIndex%]]["Type"] = """'String'"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('[%=applyAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -279,7 +279,7 @@ a.""")
     	# apply attribute equation [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """eq_"""
         self.vs[[%=nodeIndex%]]["mm__"] = """Equation"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('Equation[%=applyAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -288,7 +288,7 @@ a.""")
 	    		%]
     	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """leftExpr"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationLeftExpr[%=applyAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -297,7 +297,7 @@ a.""")
 	    		%]
     	# apply attribute equation right expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.vs[[%=nodeIndex%]]["name"] = """rightExpr"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = UUID('EquationRightExpr[%=applyAttribute.id %]')
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -436,7 +436,7 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
     	self.vs[[%=returnNodeIndex%]]["name"] = """Concat[%=attribute.id + returnNodeIndex %]"""
         self.vs[[%=returnNodeIndex%]]["mm__"] = """Concat"""
         self.vs[[%=returnNodeIndex%]]["Type"] = """'String'"""
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = UUID('Concat[%=attribute.id + returnNodeIndex %]')
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Concat[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -445,7 +445,7 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
 	%]
     	# apply attribute concat has left args [%=attribute.attributeName%]([%=attribute.id%]) node
         self.vs[[%=returnNodeIndex%]]["mm__"] = """hasArgs"""
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = UUID('ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -453,7 +453,7 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
 	%]
     	# apply attribute concat has right args [%=attribute.attributeName%]([%=attribute.id%]) node
         self.vs[[%=returnNodeIndex%]]["mm__"] = """hasArgs"""
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = UUID('ConcatHasRightArgs[%=attribute.id + returnNodeIndex %]')
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasRightArgs[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -476,7 +476,7 @@ operation generateAttributeAtomNode(attribute, atom, nodeIndex, attributeAtomNod
     	self.vs[[%=returnNodeIndex%]]["name"] = """[%=atom.value%]"""
         self.vs[[%=returnNodeIndex%]]["mm__"] = """Constant"""
         self.vs[[%=returnNodeIndex%]]["Type"] = """'String'"""
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = UUID('Atom[%=attribute.id + returnNodeIndex %]')
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Atom[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
