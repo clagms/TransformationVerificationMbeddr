@@ -240,7 +240,7 @@ a.""")
 	    			%]
     	# match attribute equation left expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.add_node()
-    	self.vs[[%=nodeIndex%]]["name"] = """leftExpr"""
+    	self.vs[[%=nodeIndex%]]["mm__"] = """leftExpr"""
         #self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
@@ -249,7 +249,7 @@ a.""")
 	    			%]
     	# match attribute equation right expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
     	self.add_node()
-    	self.vs[[%=nodeIndex%]]["name"] = """rightExpr"""
+    	self.vs[[%=nodeIndex%]]["mm__"] = """rightExpr"""
         #self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
@@ -306,7 +306,7 @@ a.""")
 	    		%]
     	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.add_node()
-    	self.vs[[%=nodeIndex%]]["name"] = """leftExpr"""
+    	self.vs[[%=nodeIndex%]]["mm__"] = """leftExpr"""
         #self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
@@ -316,7 +316,7 @@ a.""")
 	    		%]
     	# apply attribute equation right expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
     	self.add_node()
-    	self.vs[[%=nodeIndex%]]["name"] = """rightExpr"""
+    	self.vs[[%=nodeIndex%]]["mm__"] = """rightExpr"""
         #self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
