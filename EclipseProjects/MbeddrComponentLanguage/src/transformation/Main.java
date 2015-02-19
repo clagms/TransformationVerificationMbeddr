@@ -6,9 +6,8 @@ import transformerProcessor.TransformerProcessor;
 public class Main {
 
 	public static void main(String[] args) {
-		String projectDir = new File(".").getAbsolutePath();
-		String transformation = new File("./transformation/mbeddr2C.dsltrans").getAbsolutePath();
-		
+		String projectDir = new File("/home/levi/git/TransformationVerificationMbeddr/EclipseProjects/MbeddrComponentLanguage/").getAbsolutePath();
+		String transformation = new File("/home/levi/git/TransformationVerificationMbeddr/EclipseProjects/MbeddrComponentLanguage/transformation/mbeddr2C.dsltrans").getAbsolutePath();		
 		try {
 			TransformerProcessor tP = new TransformerProcessor(projectDir);
 			tP.LoadModel(transformation);
