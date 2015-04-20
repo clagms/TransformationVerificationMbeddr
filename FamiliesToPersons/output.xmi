@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<org.mcgill.householdsToCommunities:CommunityRoot xmlns:org.mcgill.householdsToCommunities="http://mcgill.householdsToCommunities.org/Community/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://mcgill.householdsToCommunities.org/Community/1.0 Community.ecore">
+  <has name="JoLucio" xsi:type="org.mcgill.householdsToCommunities:Man"/>
+  <has name="MariaLucio" xsi:type="org.mcgill.householdsToCommunities:Woman"/>
+</org.mcgill.householdsToCommunities:CommunityRoot>

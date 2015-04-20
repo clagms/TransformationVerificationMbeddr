@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="maininput" filePathURI="Household_input.xmi">
+    <metaModelId metaModelURI="Household.ecore" metaModelName="household.Household"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="TopLevel" description="TopLevel" previousSource="//@source.0" outputFilePathURI="">
+    <metaModelId metaModelURI="Community.ecore" metaModelName="community.Community"/>
+    <hasRule description="HouseholdsToCommunity">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Household" className="HouseholdRoot"/>
+      </match>
+      <apply>
+        <class packageName="Community" className="CommunityRoot">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="FamilyMembersToGender" description="FamilyMembersToGender" previousSource="//@source.1" outputFilePathURI="">
+    <metaModelId metaModelURI="Community.ecore" metaModelName="community.Community"/>
+    <hasRule description="FatherToMan">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Household" className="Family"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Household" className="Member">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="father" source="//@source.2/@hasRule.0/@match.0/@class.0" target="//@source.2/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class description="" packageName="Community" className="Man" allowInheritance="false">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="famMember"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.0/@match.0/@class.1/@attribute.0"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="BuildCommunityOfPersons" description="BuildCommunityOfPersons" previousSource="//@source.2" outputFilePathURI="Community_output.xmi">
+    <metaModelId metaModelURI="Community.ecore" metaModelName="community.Community"/>
+    <hasRule description="BuildCommunity">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Household" className="HouseholdRoot"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="Household" className="Member"/>
+        <association xsi:type="dsltrans:PositiveIndirectAssociation" source="//@source.3/@hasRule.0/@match.0/@class.0" target="//@source.3/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="Community" className="CommunityRoot">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <class packageName="Community" className="Person" groupName="">
+          <attribute>
+            <attributeValue xsi:type="dsltrans:Atom" value="famMember"/>
+          </attribute>
+        </class>
+        <association associationName="has" source="//@source.3/@hasRule.0/@apply/@class.0" target="//@source.3/@hasRule.0/@apply/@class.1"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.0" sourceClass="//@source.3/@hasRule.0/@match.0/@class.0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.3/@hasRule.0/@apply/@class.1" sourceClass="//@source.3/@hasRule.0/@match.0/@class.1"/>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<household:HouseholdRoot
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:household="http://household"
+    xsi:schemaLocation="http://household Household.ecore">
+  <have name="Lucio">
+    <father
+        name="Jo"/>
+    <mother
+        name="Maria"/>
+  </have>
+</household:HouseholdRoot>
