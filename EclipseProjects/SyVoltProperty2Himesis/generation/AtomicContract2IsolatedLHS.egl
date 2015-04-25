@@ -1,7 +1,7 @@
 [%
 var matchClassNodeMap : new Map;
+
 var nodeIndex = 0;
-var classLabel = 1;
 
 var pythonClassName = "H"+contract.name+"_IsolatedLHS";
 
@@ -52,8 +52,8 @@ return True
         [%
         
 		for(class in contract.match.first.class){
-			
 			matchClassNodeMap.put(class, nodeIndex);
+			var classLabel = nodeIndex + 1;
 			%]
     	# match class [%=class.className%]([%=class.id%]) node
     	self.add_node()
@@ -114,15 +114,14 @@ return True
 """
 		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]')
     		[%
-    		classLabel = classLabel + 1;
+    		nodeIndex = nodeIndex + 1;
     	}
         %]
         
         [%
         // define evaluation methods for each class.
-        classLabel = 1;
 		for(class in contract.match.first.class){
-			
+			var classLabel = matchClassNodeMap.get(class) + 1;
 			%]
     	def eval_classtype[%= classLabel %](self, attr_value, this):
         
@@ -167,6 +166,24 @@ return True
         
         
         	[%
-        	classLabel = classLabel + 1;
     	}
         %]
+        
+        def constraint(self, PreNode, graph):
+        """
+            Executable constraint code. 
+            @param PreNode: Function taking an integer as parameter
+                            and returns the node corresponding to that label.
+        """
+        #===============================================================================
+        # This code is executed after the nodes in the LHS have been matched.
+        # You can access a matched node labelled n by: PreNode('n').
+        # To access attribute x of node n, use: PreNode('n')['x'].
+        # The given constraint must evaluate to a boolean expression:
+        #    returning True enables the rule to be applied,
+        #    returning False forbids the rule from being applied.
+        #===============================================================================
+        
+        return True
+        
+        

@@ -34,7 +34,7 @@
       </class>
       <association associationName="has" source="//@hasProperty.0/@apply/@class.0"/>
       <association associationName="has" source="//@hasProperty.0/@apply/@class.0" target="//@hasProperty.0/@apply/@class.2"/>
-      <association associationName="has" source="//@hasProperty.0/@apply/@class.0" target=""/>
+      <association associationName="has" source="//@hasProperty.0/@apply/@class.0"/>
     </apply>
     <backwards xsi:type="syvolt:Trace" sourceClass="//@hasProperty.0/@match.0/@class.1"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.2" sourceClass="//@hasProperty.0/@match.0/@class.2"/>

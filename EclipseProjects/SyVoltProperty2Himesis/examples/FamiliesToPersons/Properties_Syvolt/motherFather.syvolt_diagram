@@ -239,14 +239,4 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zFU6IueNEeS3i5-lqhgQ4g" points="[-12, -20, 151, 258]$[-141, -256, 22, 22]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_ZczjoOeUEeS3i5-lqhgQ4g" type="4005" source="_mLNCgOeMEeS3i5-lqhgQ4g" target="_qkwcsOeMEeS3i5-lqhgQ4g">
-    <children xmi:type="notation:DecorationNode" xmi:id="_Zczjo-eUEeS3i5-lqhgQ4g" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZczjpOeUEeS3i5-lqhgQ4g" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_ZczjoeeUEeS3i5-lqhgQ4g" fontName="Ubuntu"/>
-    <element xmi:type="syvolt:ApplyAssociation" href="motherFather.syvolt#//@hasProperty.0/@apply/@association.2"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZczjoueUEeS3i5-lqhgQ4g" points="[-39, 5, 100, 0]$[-132, -28, 7, -33]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Zc5DMOeUEeS3i5-lqhgQ4g" id="(0.42857142857142855,0.11363636363636363)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Zc5DMeeUEeS3i5-lqhgQ4g" id="(0.6153846153846154,0.14473684210526316)"/>
-  </edges>
 </notation:Diagram>
