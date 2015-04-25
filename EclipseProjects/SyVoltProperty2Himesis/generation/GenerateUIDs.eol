@@ -1,64 +1,40 @@
-var layerId = 0;
+var contractId = 0;
 
-for (layer in Layer.allInstances) {
-	("Processing layer " + layer.name + "...").println();
+for (contract in AtomicContract.allInstances) {
+	("Processing contract " + contract.name + "...").println();
 	
-	layer.description = "layer" + layerId;
 	
-	layer.name = "layer" + layerId;
+	var classId = 0;
 	
-	var ruleId = 0;
-	for (rule in layer.hasRule) {
-		("Processing rule " + rule.description + "...").println();
-		
-		rule.description = layer.name + "rule" + ruleId;
-		
-		var classId = 0;
-		
-		for (match in rule.match){
-			for(class in match.class){
-				processClass(class, classId, rule.description);
-				classId = classId + 1;
-			}
-		}
-		
-		for (class in rule.apply.class){
-			processClass(class, classId, rule.description);
+	for (match in contract.match){
+		for(class in match.class){
+			processClass(class, classId, contract.name);
 			classId = classId + 1;
 		}
-		
-		("Rule " + rule.description + " processed.").println();
-		
-		ruleId = ruleId + 1;
+	}
+	
+	for (class in contract.apply.class){
+		processClass(class, classId, contract.name);
+		classId = classId + 1;
 	}
 	
 	
 	
-	("Layer " + layer.name + " processed.").println();
+	("Contract " + contract.name + " processed.").println();
 	
-	layerId = layerId + 1;
+	contractId = contractId + 1;
 }
 
 
-("Validating layer ids...").println();
-for (x in Layer.allInstances) {
-	for (y in Layer.allInstances) {
+("Validating contract ids...").println();
+for (x in AtomicContract.allInstances) {
+	for (y in AtomicContract.allInstances) {
 		if (x.name == y.name and x <> y){
 			("!!!!Duplicate name found: " + x.name).println();
 		}
 	}
 }
-("Validating layer ids... DONE").println();
-
-("Validating rule ids...").println();
-for (x in Rule.allInstances) {
-	for (y in Rule.allInstances) {
-		if (x.description == y.description and x <> y){
-			("!!!!Duplicate description found: " + x.description).println();
-		}
-	}
-}
-("Validating rule ids... DONE").println();
+("Validating contract ids... DONE").println();
 
 ("Validating class ids...").println();
 for (x in AbstractClass.allInstances) {
