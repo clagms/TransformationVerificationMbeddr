@@ -414,6 +414,8 @@ a.""")
 operation getClassCardinality(class){
 	if (class.isKindOf(AnyMatchClass)){
 		return "+";
+	} else if (class.isKindOf(ExistsMatchClass)){
+		return "1";
 	} else {
 		throw "Only Any Match Class is supported!";
 	}
