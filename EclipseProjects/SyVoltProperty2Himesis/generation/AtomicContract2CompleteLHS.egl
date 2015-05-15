@@ -1,6 +1,9 @@
 [%
 var matchClassNodeMap : new Map;
 var matchAssociationNodeMap : new Map;
+var backwardAssociationNodeMap: new Map;
+
+var applyClassNodeMap : new Map;
 
 var nodeIndex = 0;
 
@@ -45,8 +48,7 @@ return True
         self["name"] = """"""
         self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=contract.name%]')
         
-        # Set the node attributes
-        
+        # Nodes that represent match classes
         [%
         
 		for(class in contract.match.first.class){
@@ -74,7 +76,7 @@ return True
 .""")
         self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
     	self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
-    	self.vs[[%=nodeIndex%]]["MT_pre__cardinality"] = """
+    	self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -116,7 +118,67 @@ return True
     	}
         %]
         
-        # Nodes that represent the edges of the property.
+        
+        #Nodes that represent apply classes
+        [%
+		for(class in contract.apply.class){
+			applyClassNodeMap.put(class, nodeIndex);
+			var classLabel = nodeIndex + 1;
+			%]
+    	# match class [%=class.className%]([%=class.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+#===============================================================================
+# This code is executed when evaluating if a node shall be matched by this rule.
+# You can access the value of the current node's attribute value by: attr_value.
+# You can access any attribute x of this node by: this['x'].
+# If the constraint relies on attribute values from other nodes,
+# use the LHS/NAC constraint instead.
+# The given constraint must evaluate to a boolean expression.
+#===============================================================================
+
+return True
+"""
+		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+    	self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
+    	self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+#===============================================================================
+# This code is executed when evaluating if a node shall be matched by this rule.
+# You can access the value of the current node's attribute value by: attr_value.
+# You can access any attribute x of this node by: this['x'].
+# If the constraint relies on attribute values from other nodes,
+# use the LHS/NAC constraint instead.
+# The given constraint must evaluate to a boolean expression.
+#===============================================================================
+
+return True
+"""
+		self.vs[[%=nodeIndex%]]["MT_pre__name"] = """
+#===============================================================================
+# This code is executed when evaluating if a node shall be matched by this rule.
+# You can access the value of the current node's attribute value by: attr_value.
+# You can access any attribute x of this node by: this['x'].
+# If the constraint relies on attribute values from other nodes,
+# use the LHS/NAC constraint instead.
+# The given constraint must evaluate to a boolean expression.
+#===============================================================================
+
+return True
+"""
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=class.id%]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
+        
+        
+        # Nodes that represent the match associations of the property.
         [%
 		for(association in contract.match.first.association){
 			matchAssociationNodeMap.put(association, nodeIndex);
@@ -137,9 +199,20 @@ return True
     	}
         %]
         
+        
+        
         # Add the edges
         self.add_edges([
         	[%
+        	// Backward links edges
+        	for(backwardAssociation in contract.backwards){
+    		%]
+    		([%= applyClassNodeMap.get(backwardAssociation.targetClass)%],[%= backwardAssociationNodeMap.get(backwardAssociation)%]), # apply_class [%=backwardAssociation.targetClass.className%]([%=backwardAssociation.targetClass.id%]) -> backward_association
+    		([%= backwardAssociationNodeMap.get(backwardAssociation) %],[%= matchClassNodeMap.get(backwardAssociation.sourceClass)%]), #  backward_association -> apply_class [%=backwardAssociation.sourceClass.className%]([%=backwardAssociation.sourceClass.id%])
+    		[%
+    		}
+        	
+        	//direct association edges.
         	var assocsRemmaining = contract.match.first.association.size(); // This is used to avoid putting the coma at the end.
     		for(association in contract.match.first.association){
     		%]
