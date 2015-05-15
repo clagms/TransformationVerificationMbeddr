@@ -12,11 +12,9 @@ class HmotherFather_CompleteLHS(HimesisPreConditionPatternLHS):
         
         super(HmotherFather_CompleteLHS, self).__init__(name='HmotherFather_CompleteLHS', num_nodes=0, edges=[])
         
-        # TODO Claudio: Levi, how to I get the name of the metamodel "FamiliesToPersons"? From the transformation model that the property refers to?
-        
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
-S'MT_pre__FamiliesToPersonsMM'
+S'MT_pre__HimesisMM'
 p2
 aS'MoTifRule'
 p3
@@ -51,8 +49,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[0]["MT_label__"] = """1"""  
+		self.vs[0]["MT_label__"] = """1"""  
         self.vs[0]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[0]["MT_dirty__"] = False
@@ -109,8 +106,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[1]["MT_label__"] = """2"""  
+		self.vs[1]["MT_label__"] = """2"""  
         self.vs[1]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[1]["MT_dirty__"] = False
@@ -167,8 +163,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[2]["MT_label__"] = """3"""  
+		self.vs[2]["MT_label__"] = """3"""  
         self.vs[2]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[2]["MT_dirty__"] = False
@@ -228,8 +223,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[3]["MT_label__"] = """4"""  
+		self.vs[3]["MT_label__"] = """4"""  
         self.vs[3]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[3]["MT_dirty__"] = False
@@ -274,8 +268,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[4]["MT_label__"] = """5"""  
+		self.vs[4]["MT_label__"] = """5"""  
         self.vs[4]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[4]["MT_dirty__"] = False
@@ -320,8 +313,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[5]["MT_label__"] = """6"""  
+		self.vs[5]["MT_label__"] = """6"""  
         self.vs[5]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[5]["MT_dirty__"] = False
@@ -374,7 +366,6 @@ return attr_value == "father"
         self.vs[6]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[6]["MT_dirty__"] = False
-        # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[6]["mm__"] = """directLink_S"""
         self.vs[6]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc6motherFatherclass1')
     	# match association Family--mother-->Member node
@@ -396,7 +387,6 @@ return attr_value == "mother"
         self.vs[7]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[7]["MT_dirty__"] = False
-        # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[7]["mm__"] = """directLink_S"""
         self.vs[7]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc7motherFatherclass2')
         

@@ -12,8 +12,6 @@ class HmotherFather_ConnectedLHS(HimesisPreConditionPatternLHS):
         
         super(HmotherFather_ConnectedLHS, self).__init__(name='HmotherFather_ConnectedLHS', num_nodes=0, edges=[])
         
-        # TODO Claudio: Levi, how to I get the name of the metamodel "FamiliesToPersons"? From the transformation model that the property refers to?
-        
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__FamiliesToPersonsMM'
@@ -52,8 +50,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[0]["MT_label__"] = """1"""  
+		self.vs[0]["MT_label__"] = """1"""  
         self.vs[0]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[0]["MT_dirty__"] = False
@@ -110,8 +107,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[1]["MT_label__"] = """2"""  
+		self.vs[1]["MT_label__"] = """2"""  
         self.vs[1]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[1]["MT_dirty__"] = False
@@ -168,8 +164,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[2]["MT_label__"] = """3"""  
+		self.vs[2]["MT_label__"] = """3"""  
         self.vs[2]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[2]["MT_dirty__"] = False
@@ -219,7 +214,6 @@ return True
         self.vs[3]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[3]["MT_dirty__"] = False
-        # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[3]["mm__"] = """directLink_S"""
         self.vs[3]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc3motherFatherclass1')
     	# match association Family--mother-->Member node
@@ -228,7 +222,6 @@ return True
         self.vs[4]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[4]["MT_dirty__"] = False
-        # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[4]["mm__"] = """directLink_S"""
         self.vs[4]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc4motherFatherclass2')
         

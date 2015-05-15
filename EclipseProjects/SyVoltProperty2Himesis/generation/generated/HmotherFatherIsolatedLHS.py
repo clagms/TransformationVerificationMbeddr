@@ -15,8 +15,6 @@ class HmotherFather_IsolatedLHS(HimesisPreConditionPatternLHS):
         # Add the edges
         self.add_edges([])
         
-        # TODO Claudio: Levi, how to I get the name of the metamodel "FamiliesToPersons"? From the transformation model that the property refers to?
-        
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__FamiliesToPersonsMM'
@@ -55,8 +53,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[0]["MT_label__"] = """1"""  
+		self.vs[0]["MT_label__"] = """1"""  
         self.vs[0]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[0]["MT_dirty__"] = False
@@ -113,8 +110,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[1]["MT_label__"] = """2"""  
+		self.vs[1]["MT_label__"] = """2"""  
         self.vs[1]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[1]["MT_dirty__"] = False
@@ -171,8 +167,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[2]["MT_label__"] = """3"""  
+		self.vs[2]["MT_label__"] = """3"""  
         self.vs[2]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[2]["MT_dirty__"] = False

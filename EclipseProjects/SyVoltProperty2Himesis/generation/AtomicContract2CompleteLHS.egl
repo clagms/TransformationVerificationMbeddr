@@ -54,11 +54,9 @@ class [%= pythonClassName %](HimesisPreConditionPatternLHS):
         
         super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
         
-        # TODO Claudio: Levi, how to I get the name of the metamodel "FamiliesToPersons"? From the transformation model that the property refers to?
-        
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
-S'MT_pre__FamiliesToPersonsMM'
+S'MT_pre__HimesisMM'
 p2
 aS'MoTifRule'
 p3
@@ -99,8 +97,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
         self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
@@ -169,8 +166,7 @@ return True
 
 return True
 """
-		# TODO Claudio: Levi, were does this label come from? Is it the order in which the class appears inside the match model? Does it have to be unique?.
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
         self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
@@ -211,7 +207,6 @@ return True
         [%
 		for(association in contract.match.first.association){
 			matchAssociationNodeMap.put(association, nodeIndex);
-			// TODO Claudio: Levi, estes labels das associacoes nao correspondem exactamente aos labels das associacoes dos exemplos. Ha problema?
 			var associationLabel = nodeIndex + 1;
 			%]
     	# match association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
@@ -233,7 +228,6 @@ return attr_value == "[%=association.associationName%]"
         self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
         self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[[%=nodeIndex%]]["mm__"] = """directLink_S"""
         self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
     		[%
@@ -246,7 +240,6 @@ return attr_value == "[%=association.associationName%]"
         [%
 		for(association in contract.apply.association){
 			applyAssociationNodeMap.put(association, nodeIndex);
-			// TODO Claudio: Levi, estes labels das associacoes nao correspondem exactamente aos labels das associacoes dos exemplos. Ha problema?
 			var associationLabel = nodeIndex + 1;
 			%]
     	# apply association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
@@ -281,7 +274,6 @@ return True
 		for(class in contract.match.first.class){
 			for(matchAttribute in class.attribute){
 				hasMatchAttributeNodeMap.put(matchAttribute, nodeIndex);
-				// TODO Claudio: Levi, estes labels nao correspondem exactamente aos labels das associacoes dos exemplos. Ha problema?
 				var hasAttributeLabel = nodeIndex + 1;
 				%]
     	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node

@@ -67,15 +67,11 @@ operation processClass(class, classId, rule_description){
 	
 	class.id = rule_description + "class" + classId;
 	
-	class.description = rule_description + "class" + classId;
-	
 	var attributeId = 0;
 	for (attribute in class.attribute){
 		("Processing attribute " + attribute.id + "...").println();
 		
 		attribute.id = class.id + "attribute" + attributeId;
-		
-		attribute.description = class.id + "attribute" + attributeId;
 		
 		("Attribute " + attribute.id + " processed.").println();
 		
