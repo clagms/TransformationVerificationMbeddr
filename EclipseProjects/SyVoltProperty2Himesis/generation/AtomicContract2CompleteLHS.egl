@@ -9,6 +9,17 @@ var applyAssociationNodeMap : new Map;
 var hasMatchAttributeNodeMap: new Map;
 var matchAttributeNodeMap: new Map;
 
+var matchAttributeEquationNodeMap: new Map;
+var matchAttributeEquationLeftExpNodeMap : new Map;
+var matchAttributeEquationRightExpNodeMap : new Map;
+
+var matchAttributeAtomNodeMap : new Map;
+
+var matchAttributeConcatNodeMap : new Map;
+var matchAttributeConcatLeftHasArgsNodeMap: new Map;
+var matchAttributeConcatRightHasArgsNodeMap: new Map;
+
+
 var hasApplyAttributeNodeMap: new Map;
 var applyAttributeNodeMap: new Map;
 
@@ -300,6 +311,59 @@ return True
         self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=matchAttribute.id %]')
     			[%
     			nodeIndex = nodeIndex + 1;
+    			
+    			if (matchAttribute.attributeValue <> null){
+    				matchAttributeEquationNodeMap.put(matchAttribute, nodeIndex);
+    				var equationNodeLabel = nodeIndex + 1;
+    				
+	    			%]
+    	# match attribute equation [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=matchAttribute.id %]')
+	    			[%
+	    			nodeIndex = nodeIndex + 1;
+	    		
+	    		
+	    			matchAttributeEquationLeftExpNodeMap.put(matchAttribute, nodeIndex);
+	    			var leftNodeExpLabel = nodeIndex + 1;
+	    			%]
+    	# match attribute equation left expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=matchAttribute.id %]')
+	    			[%
+	    			nodeIndex = nodeIndex + 1;
+	    		
+	    			matchAttributeEquationRightExpNodeMap.put(matchAttribute, nodeIndex);
+	    			var rightNodeExpLabel = nodeIndex + 1;
+	    			%]
+    	# match attribute equation right expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=matchAttribute.id %]')
+	    			[%
+	    			nodeIndex = nodeIndex + 1;
+	    		
+	    			nodeIndex = generateAttributeTermNodes(matchAttribute, matchAttribute.attributeValue, nodeIndex, matchAttributeAtomNodeMap, 
+	    									matchAttributeConcatNodeMap, matchAttributeConcatLeftHasArgsNodeMap, 
+	    									matchAttributeConcatRightHasArgsNodeMap);	
+    			}
     		}
     	}
         %]
