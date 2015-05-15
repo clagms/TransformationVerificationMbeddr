@@ -446,7 +446,7 @@ return True
         self.vs[9]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass3assoc9motherFatherclass5')
         
         
-        #Nodes that represent match attributes
+        # Nodes that represent match attributes
     	# has match attribute lastName(motherFatherclass0attribute0) node
     	self.add_node()
     	self.vs[10]["MT_subtypeMatching__"] = False
@@ -529,28 +529,138 @@ return True
 p1
 .""")
         self.vs[17]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass4attribute0')
-    	# has apply attribute name(motherFatherclass5attribute0) node
+    	# apply attribute equation name(motherFatherclass4attribute0) node
     	self.add_node()
     	self.vs[18]["MT_subtypeMatching__"] = False
-    	self.vs[18]["MT_label__"] = """19"""
-    	self.vs[18]["MT_subtypes__"] = pickle.loads("""(lp1
+        self.vs[18]["MT_label__"] = """19"""
+        self.vs[18]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-		self.vs[18]["mm__"] = """MT_pre__hasAttr_T"""
-		self.vs[18]["MT_dirty__"] = False
-        self.vs[18]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'hasmotherFatherclass5attribute0')
+        self.vs[18]["mm__"] = """MT_pre__Equation"""
+        self.vs[18]["MT_dirty__"] = False
+        self.vs[18]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationmotherFatherclass4attribute0')
+    	# apply attribute equation left expr name(motherFatherclass4attribute0) node
+    	self.add_node()
+    	self.vs[19]["MT_subtypeMatching__"] = False
+        self.vs[19]["MT_label__"] = """20"""
+        self.vs[19]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[19]["mm__"] = """MT_pre__leftExpr"""
+        self.vs[19]["MT_dirty__"] = False
+        self.vs[19]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExprmotherFatherclass4attribute0')
+    	# apply attribute equation right expr name(motherFatherclass4attribute0) node
+    	self.add_node()
+    	self.vs[20]["MT_subtypeMatching__"] = False
+        self.vs[20]["MT_label__"] = """21"""
+        self.vs[20]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[20]["mm__"] = """MT_pre__rightExpr"""
+        self.vs[20]["MT_dirty__"] = False
+        self.vs[20]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExprmotherFatherclass4attribute0')
+    	# attribute concat name(motherFatherclass4attribute0) node
+    	self.add_node()
+    	self.vs[21]["MT_subtypeMatching__"] = False
+        self.vs[21]["MT_label__"] = """22"""
+        self.vs[21]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[21]["mm__"] = """MT_pre__Concat"""
+        self.vs[21]["MT_dirty__"] = False
+        self.vs[21]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatmotherFatherclass4attribute021')
+    	# apply attribute concat has left args name(motherFatherclass4attribute0) node
+        self.add_node()
+        
+        self.vs[22]["MT_subtypeMatching__"] = False
+        self.vs[22]["MT_label__"] = """23"""
+        self.vs[22]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[22]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[22]["MT_dirty__"] = False
+        self.vs[22]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgsmotherFatherclass4attribute022')
+    	# apply attribute concat has right args name(motherFatherclass4attribute0) node
+        self.add_node()
+    	self.vs[23]["MT_subtypeMatching__"] = False
+        self.vs[23]["MT_label__"] = """24"""
+        self.vs[23]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[23]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[23]["MT_dirty__"] = False
+        self.vs[23]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgsmotherFatherclass4attribute023')
+    	# has apply attribute name(motherFatherclass5attribute0) node
+    	self.add_node()
+    	self.vs[24]["MT_subtypeMatching__"] = False
+    	self.vs[24]["MT_label__"] = """25"""
+    	self.vs[24]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[24]["mm__"] = """MT_pre__hasAttr_T"""
+		self.vs[24]["MT_dirty__"] = False
+        self.vs[24]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'hasmotherFatherclass5attribute0')
     	
     	# apply attribute name(motherFatherclass5attribute0) node
     	self.add_node()
-    	self.vs[19]["MT_subtypeMatching__"] = False
-    	self.vs[19]["MT_label__"] = """20"""
-    	self.vs[19]["MT_subtypes__"] = pickle.loads("""(lp1
+    	self.vs[25]["MT_subtypeMatching__"] = False
+    	self.vs[25]["MT_label__"] = """26"""
+    	self.vs[25]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-		self.vs[19]["mm__"] = """MT_pre__Attribute"""
-		self.vs[19]["MT_dirty__"] = False
-		self.vs[19]["MT_pre__name"] = pickle.loads("""V\u000a#===============================================================================\u000a# This code is executed when evaluating if a node shall be matched by this rule.\u000a# You can access the value of the current node's attribute value by: attr_value.\u000a# You can access any attribute x of this node by: this['x'].\u000a# If the constraint relies on attribute values from other nodes,\u000a# use the LHS/NAC constraint instead.\u000a# The given constraint must evaluate to a boolean expression.\u000a#===============================================================================\u000a\u000areturn attr_value = "name"\u000a
+		self.vs[25]["mm__"] = """MT_pre__Attribute"""
+		self.vs[25]["MT_dirty__"] = False
+		self.vs[25]["MT_pre__name"] = pickle.loads("""V\u000a#===============================================================================\u000a# This code is executed when evaluating if a node shall be matched by this rule.\u000a# You can access the value of the current node's attribute value by: attr_value.\u000a# You can access any attribute x of this node by: this['x'].\u000a# If the constraint relies on attribute values from other nodes,\u000a# use the LHS/NAC constraint instead.\u000a# The given constraint must evaluate to a boolean expression.\u000a#===============================================================================\u000a\u000areturn attr_value = "name"\u000a
 p1
 .""")
-        self.vs[19]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass5attribute0')
+        self.vs[25]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass5attribute0')
+    	# apply attribute equation name(motherFatherclass5attribute0) node
+    	self.add_node()
+    	self.vs[26]["MT_subtypeMatching__"] = False
+        self.vs[26]["MT_label__"] = """27"""
+        self.vs[26]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[26]["mm__"] = """MT_pre__Equation"""
+        self.vs[26]["MT_dirty__"] = False
+        self.vs[26]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationmotherFatherclass5attribute0')
+    	# apply attribute equation left expr name(motherFatherclass5attribute0) node
+    	self.add_node()
+    	self.vs[27]["MT_subtypeMatching__"] = False
+        self.vs[27]["MT_label__"] = """28"""
+        self.vs[27]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[27]["mm__"] = """MT_pre__leftExpr"""
+        self.vs[27]["MT_dirty__"] = False
+        self.vs[27]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExprmotherFatherclass5attribute0')
+    	# apply attribute equation right expr name(motherFatherclass5attribute0) node
+    	self.add_node()
+    	self.vs[28]["MT_subtypeMatching__"] = False
+        self.vs[28]["MT_label__"] = """29"""
+        self.vs[28]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[28]["mm__"] = """MT_pre__rightExpr"""
+        self.vs[28]["MT_dirty__"] = False
+        self.vs[28]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExprmotherFatherclass5attribute0')
+    	# attribute concat name(motherFatherclass5attribute0) node
+    	self.add_node()
+    	self.vs[29]["MT_subtypeMatching__"] = False
+        self.vs[29]["MT_label__"] = """30"""
+        self.vs[29]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[29]["mm__"] = """MT_pre__Concat"""
+        self.vs[29]["MT_dirty__"] = False
+        self.vs[29]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatmotherFatherclass5attribute029')
+    	# apply attribute concat has left args name(motherFatherclass5attribute0) node
+        self.add_node()
+        
+        self.vs[30]["MT_subtypeMatching__"] = False
+        self.vs[30]["MT_label__"] = """31"""
+        self.vs[30]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[30]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[30]["MT_dirty__"] = False
+        self.vs[30]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgsmotherFatherclass5attribute030')
+    	# apply attribute concat has right args name(motherFatherclass5attribute0) node
+        self.add_node()
+    	self.vs[31]["MT_subtypeMatching__"] = False
+        self.vs[31]["MT_label__"] = """32"""
+        self.vs[31]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[31]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[31]["MT_dirty__"] = False
+        self.vs[31]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgsmotherFatherclass5attribute031')
         
         
         # Add the edges
@@ -567,8 +677,24 @@ p1
     		(14,15), #  has_match_attribute firstName (motherFatherclass2attribute0) -> match_attribute firstName (motherFatherclass2attribute0)
     		(4,16), # apply_class Man(motherFatherclass4) -> has_apply_attribute name (motherFatherclass4attribute0)
     		(16,17), #  has_apply_attribute name (motherFatherclass4attribute0) -> apply_attribute name (motherFatherclass4attribute0)
-    		(5,18), # apply_class Woman(motherFatherclass5) -> has_apply_attribute name (motherFatherclass5attribute0)
-    		(18,19), #  has_apply_attribute name (motherFatherclass5attribute0) -> apply_attribute name (motherFatherclass5attribute0)
+            (18,19), #  equation of apply attribute name (motherFatherclass4attribute0) -> left_expr
+    		(19,17), #  left_expr -> apply_attribute name (motherFatherclass4attribute0)
+    		(18,20), #  equation of apply attribute name (motherFatherclass4attribute0) -> right_expr
+    		(21,22), #  apply attribute concat name (motherFatherclass4attribute0) -> left has_args  
+    		(22,13), #  left has_args -> term
+    		(21,23), #  apply attribute concat name (motherFatherclass4attribute0) -> right has_args  
+    		(23,11), #  right has_args -> term
+    		(20,21), # right_expr --> term
+    		(5,24), # apply_class Woman(motherFatherclass5) -> has_apply_attribute name (motherFatherclass5attribute0)
+    		(24,25), #  has_apply_attribute name (motherFatherclass5attribute0) -> apply_attribute name (motherFatherclass5attribute0)
+            (26,27), #  equation of apply attribute name (motherFatherclass5attribute0) -> left_expr
+    		(27,25), #  left_expr -> apply_attribute name (motherFatherclass5attribute0)
+    		(26,28), #  equation of apply attribute name (motherFatherclass5attribute0) -> right_expr
+    		(29,30), #  apply attribute concat name (motherFatherclass5attribute0) -> left has_args  
+    		(30,15), #  left has_args -> term
+    		(29,31), #  apply attribute concat name (motherFatherclass5attribute0) -> right has_args  
+    		(31,11), #  right has_args -> term
+    		(28,29), # right_expr --> term
     		(3,8), # apply_class CommunityRoot(motherFatherclass3) -> association has
     		(8,4), # association has  -> apply_class Man(motherFatherclass4)
     		(3,9), # apply_class CommunityRoot(motherFatherclass3) -> association has
@@ -750,5 +876,4 @@ p1
 	        #===============================================================================
 	        
 	        return True
-        
         

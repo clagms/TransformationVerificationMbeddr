@@ -506,6 +506,8 @@ p1
 p1
 .""")
         self.vs[31]["GUID__"] = UUID('4c6e99fa-8f10-454d-a382-acf17c8a2513')
+        
+        # Attribute name of class woman.
         self.vs[32]["MT_subtypeMatching__"] = False
         self.vs[32]["MT_label__"] = """27"""
         self.vs[32]["MT_subtypes__"] = pickle.loads("""(lp1

@@ -12,6 +12,17 @@ var matchAttributeNodeMap: new Map;
 var hasApplyAttributeNodeMap: new Map;
 var applyAttributeNodeMap: new Map;
 
+var applyAttributeEquationNodeMap: new Map;
+var applyAttributeEquationLeftExpNodeMap : new Map;
+var applyAttributeEquationRightExpNodeMap : new Map;
+
+var applyAttributeAtomNodeMap : new Map;
+
+var applyAttributeConcatNodeMap : new Map;
+var applyAttributeConcatLeftHasArgsNodeMap: new Map;
+var applyAttributeConcatRightHasArgsNodeMap: new Map;
+
+
 var nodeIndex = 0;
 
 var pythonClassName = "H"+contract.name+"_CompleteLHS";
@@ -254,7 +265,7 @@ return True
         %]
         
         
-        #Nodes that represent match attributes
+        # Nodes that represent match attributes
         [%
 		for(class in contract.match.first.class){
 			for(matchAttribute in class.attribute){
@@ -333,6 +344,55 @@ p1
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
+	    		applyAttributeEquationNodeMap.put(applyAttribute, nodeIndex);
+	    		var equationNodeLabel = nodeIndex + 1;
+	    		%]
+    	# apply attribute equation [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		
+	    		applyAttributeEquationLeftExpNodeMap.put(applyAttribute, nodeIndex);
+	    		var leftNodeExpLabel = nodeIndex + 1;
+	    		%]
+    	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		
+	    		applyAttributeEquationRightExpNodeMap.put(applyAttribute, nodeIndex);
+	    		var rightNodeExpLabel = nodeIndex + 1;
+	    		%]
+    	# apply attribute equation right expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		nodeIndex = generateAttributeTermNodes(applyAttribute, applyAttribute.attributeValue, nodeIndex, applyAttributeAtomNodeMap, applyAttributeConcatNodeMap, applyAttributeConcatLeftHasArgsNodeMap, applyAttributeConcatRightHasArgsNodeMap);
+	    		
 			}
 		}
         %]
@@ -365,6 +425,15 @@ p1
     				%]
     		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
     		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+            ([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationLeftExpNodeMap.get(attribute) %]), #  equation of apply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> left_expr
+    		([%= applyAttributeEquationLeftExpNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  left_expr -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationRightExpNodeMap.get(attribute) %]), #  equation of apply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> right_expr
+    				[%
+    			var rightExprTermEdgeTarget = computeAttributeTermEdgeTarget(attribute, attribute.attributeValue, applyAttributeAtomNodeMap, applyAttributeConcatNodeMap, 
+    																				applyAttributeConcatLeftHasArgsNodeMap, applyAttributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap);
+    				%]
+    		([%= applyAttributeEquationRightExpNodeMap.get(attribute) %],[%= rightExprTermEdgeTarget %]), # right_expr --> term
             		[%
     			}
     		}
@@ -488,4 +557,155 @@ p1
 	        
 	        return True
         
+[%
+operation generateAttributeTermNodes(attribute, term, nodeIndex, attributeAtomNodeMap, attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
+										attributeConcatRightHasArgsNodeMap){
+	var returnNodeIndex = nodeIndex;
+	
+	("generateAttributeTermNodes, nodeIndex=" + nodeIndex);
+	
+	if (term.isKindOf(Atom)){
+		returnNodeIndex = generateAttributeAtomNode(attribute, term, returnNodeIndex, attributeAtomNodeMap);
+	} else if (term.isKindOf(Concat)){
+		returnNodeIndex = generateAttributeConcatNode(attribute, term, returnNodeIndex, attributeAtomNodeMap, 
+														attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
+															attributeConcatRightHasArgsNodeMap);
+	} else if (term.isKindOf(AttributeRef)){
+		returnNodeIndex = generateAttributeRefNode(attribute, term, nodeIndex);
+	} else {
+		throw "Unsupported kind of term: " + term;
+	}
+	
+	return returnNodeIndex;
+}
+
+
+operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAtomNodeMap, attributeConcatNodeMap, 
+											attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap){
+	var returnNodeIndex = nodeIndex;
+	
+	attributeConcatNodeMap.put(concat, returnNodeIndex);
+	var concatLabel = returnNodeIndex + 1;
+	%]
+    	# attribute concat [%=attribute.attributeName%]([%=attribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=concatLabel%]"""
+        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__Concat"""
+        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Concat[%=attribute.id + returnNodeIndex %]')
+	[%
+	returnNodeIndex = returnNodeIndex + 1;
+	
+	// generate sub expressions' has args nodes
+	attributeConcatLeftHasArgsNodeMap.put(concat, returnNodeIndex);
+	var hasArgsLabel = returnNodeIndex + 1;
+	%]
+    	# apply attribute concat has left args [%=attribute.attributeName%]([%=attribute.id%]) node
+        self.add_node()
         
+        self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
+        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
+	[%
+	returnNodeIndex = returnNodeIndex + 1;
+	
+	hasArgsLabel = returnNodeIndex + 1;
+	attributeConcatRightHasArgsNodeMap.put(concat, returnNodeIndex);
+	%]
+    	# apply attribute concat has right args [%=attribute.attributeName%]([%=attribute.id%]) node
+        self.add_node()
+    	self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
+        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
+        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
+	[%
+	returnNodeIndex = returnNodeIndex + 1;
+	
+	// generate sub expressions' nodes
+	returnNodeIndex = generateAttributeTermNodes(attribute, concat.leftTerm, returnNodeIndex, attributeAtomNodeMap, 
+													attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
+													attributeConcatRightHasArgsNodeMap);
+	returnNodeIndex = generateAttributeTermNodes(attribute, concat.rightTerm, returnNodeIndex, attributeAtomNodeMap, 
+													attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
+													attributeConcatRightHasArgsNodeMap);
+	
+	return returnNodeIndex;
+}
+
+operation generateAttributeRefNode(attribute, term, nodeIndex){
+	var returnNodeIndex = nodeIndex;
+	// nothing to do here because the attribute ref node is the attribute node itself, which was already generated.
+	return returnNodeIndex;
+}
+
+operation generateAttributeAtomNode(attribute, atom, nodeIndex, attributeAtomNodeMap) {
+	throw "TODO Claudio: No example was given for this kind of element.";
+	
+	// TODO Claudio: This code was copied from the dsltrans to hymesis generation. It has to be adapted.
+	
+	var returnNodeIndex = nodeIndex;
+	attributeAtomNodeMap.put(atom, returnNodeIndex);
+	%]
+    	# apply attribute atom [%=attribute.attributeName%]([%=attribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=returnNodeIndex%]]["name"] = """[%=atom.value%]"""
+        self.vs[[%=returnNodeIndex%]]["mm__"] = """Constant"""
+        self.vs[[%=returnNodeIndex%]]["Type"] = """'String'"""
+        #self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Atom[%=attribute.id + returnNodeIndex %]')
+	[%
+	returnNodeIndex = returnNodeIndex + 1;
+	
+	return returnNodeIndex;
+}
+
+
+operation computeAttributeTermEdgeTarget(attribute, term, attributeAtomNodeMap, attributeConcatNodeMap, 
+    																				attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap){
+    var edgeTarget = 0;
+	if (term.isKindOf(Atom)){
+		edgeTarget = attributeAtomNodeMap.get(term);
+	} else if (term.isKindOf(Concat)){
+		edgeTarget = generateAttributeConcatEdges(attribute, term, attributeAtomNodeMap, attributeConcatNodeMap, 
+    																				attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap);
+	} else if (term.isKindOf(AttributeRef)){
+		edgeTarget = matchAttributeNodeMap.get(term.attributeRef);
+	} else {
+		throw "Unsupported kind of term: " + term;
+	}
+	
+	return edgeTarget;
+}
+
+
+operation generateAttributeConcatEdges(attribute, concat, attributeAtomNodeMap, attributeConcatNodeMap, 
+    																				attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap){
+	var edgeTarget = attributeConcatNodeMap.get(concat);
+	var leftHasArgsTarget = computeAttributeTermEdgeTarget(attribute, concat.leftTerm, attributeAtomNodeMap, attributeConcatNodeMap, 
+    																				attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap);
+    var rightHasArgsTarget = computeAttributeTermEdgeTarget(attribute, concat.rightTerm, attributeAtomNodeMap, attributeConcatNodeMap, 
+    																				attributeConcatLeftHasArgsNodeMap, attributeConcatRightHasArgsNodeMap, 
+    																					matchAttributeNodeMap);																			
+	%]
+    		([%= attributeConcatNodeMap.get(concat) %],[%=  attributeConcatLeftHasArgsNodeMap.get(concat) %]), #  apply attribute concat [%=attribute.attributeName%] ([%=attribute.id%]) -> left has_args  
+    		([%= attributeConcatLeftHasArgsNodeMap.get(concat) %],[%=  leftHasArgsTarget %]), #  left has_args -> term
+    		([%= attributeConcatNodeMap.get(concat) %],[%=  attributeConcatRightHasArgsNodeMap.get(concat) %]), #  apply attribute concat [%=attribute.attributeName%] ([%=attribute.id%]) -> right has_args  
+    		([%= attributeConcatRightHasArgsNodeMap.get(concat) %],[%=  rightHasArgsTarget %]), #  right has_args -> term
+    [%
+	
+	return edgeTarget;    																					
+}
+%]  
