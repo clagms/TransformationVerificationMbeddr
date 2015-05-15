@@ -2,15 +2,15 @@ from core.himesis import Himesis, HimesisPreConditionPatternLHS
 import cPickle as pickle
 from uuid import UUID
 
-class HdaughterMother_IsolatedLHS(HimesisPreConditionPatternLHS):
+class HmotherFather_IsolatedLHS(HimesisPreConditionPatternLHS):
 	def __init__(self):
         """
-        Creates the himesis graph representing the AToM3 model HdaughterMother_IsolatedLHS.
+        Creates the himesis graph representing the AToM3 model HmotherFather_IsolatedLHS.
         """
         # Flag this instance as compiled now
         self.is_compiled = True
         
-        super(HdaughterMother_IsolatedLHS, self).__init__(name='HdaughterMother_IsolatedLHS', num_nodes=0, edges=[])
+        super(HmotherFather_IsolatedLHS, self).__init__(name='HmotherFather_IsolatedLHS', num_nodes=0, edges=[])
         
         # Add the edges
         self.add_edges([])
@@ -36,11 +36,11 @@ a.""")
 return True
 """
         self["name"] = """"""
-        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMother')
+        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFather')
         
         # Set the node attributes
         
-    	# match class Family(daughterMotherclass0) node
+    	# match class Family(motherFatherclass0) node
     	self.add_node()
     	self.vs[0]["MT_subtypeMatching__"] = False
         self.vs[0]["MT_pre__classtype"] = """
@@ -97,8 +97,8 @@ return True
 
 return True
 """
-		self.vs[0]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass0')
-    	# match class Member(daughterMotherclass1) node
+		self.vs[0]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0')
+    	# match class Member(motherFatherclass1) node
     	self.add_node()
     	self.vs[1]["MT_subtypeMatching__"] = False
         self.vs[1]["MT_pre__classtype"] = """
@@ -155,8 +155,8 @@ return True
 
 return True
 """
-		self.vs[1]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass1')
-    	# match class Member(daughterMotherclass2) node
+		self.vs[1]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass1')
+    	# match class Member(motherFatherclass2) node
     	self.add_node()
     	self.vs[2]["MT_subtypeMatching__"] = False
         self.vs[2]["MT_pre__classtype"] = """
@@ -213,7 +213,7 @@ return True
 
 return True
 """
-		self.vs[2]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass2')
+		self.vs[2]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass2')
         
     	def eval_classtype1(self, attr_value, this):
         

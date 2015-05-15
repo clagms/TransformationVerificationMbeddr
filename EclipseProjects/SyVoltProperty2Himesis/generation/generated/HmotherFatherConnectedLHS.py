@@ -2,15 +2,15 @@ from core.himesis import Himesis, HimesisPreConditionPatternLHS
 import cPickle as pickle
 from uuid import UUID
 
-class HdaughterMother_ConnectedLHS(HimesisPreConditionPatternLHS):
+class HmotherFather_ConnectedLHS(HimesisPreConditionPatternLHS):
 	def __init__(self):
         """
-        Creates the himesis graph representing the AToM3 model HdaughterMother_ConnectedLHS.
+        Creates the himesis graph representing the AToM3 model HmotherFather_ConnectedLHS.
         """
         # Flag this instance as compiled now
         self.is_compiled = True
         
-        super(HdaughterMother_ConnectedLHS, self).__init__(name='HdaughterMother_ConnectedLHS', num_nodes=0, edges=[])
+        super(HmotherFather_ConnectedLHS, self).__init__(name='HmotherFather_ConnectedLHS', num_nodes=0, edges=[])
         
         # TODO Claudio: Levi, how to I get the name of the metamodel "FamiliesToPersons"? From the transformation model that the property refers to?
         
@@ -33,11 +33,11 @@ a.""")
 return True
 """
         self["name"] = """"""
-        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMother')
+        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFather')
         
         # Set the node attributes
         
-    	# match class Family(daughterMotherclass0) node
+    	# match class Family(motherFatherclass0) node
     	self.add_node()
     	self.vs[0]["MT_subtypeMatching__"] = False
         self.vs[0]["MT_pre__classtype"] = """
@@ -94,8 +94,8 @@ return True
 
 return True
 """
-		self.vs[0]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass0')
-    	# match class Member(daughterMotherclass1) node
+		self.vs[0]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0')
+    	# match class Member(motherFatherclass1) node
     	self.add_node()
     	self.vs[1]["MT_subtypeMatching__"] = False
         self.vs[1]["MT_pre__classtype"] = """
@@ -152,8 +152,8 @@ return True
 
 return True
 """
-		self.vs[1]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass1')
-    	# match class Member(daughterMotherclass2) node
+		self.vs[1]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass1')
+    	# match class Member(motherFatherclass2) node
     	self.add_node()
     	self.vs[2]["MT_subtypeMatching__"] = False
         self.vs[2]["MT_pre__classtype"] = """
@@ -210,10 +210,10 @@ return True
 
 return True
 """
-		self.vs[2]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass2')
+		self.vs[2]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass2')
         
         # Nodes that represent the edges of the property.
-    	# match association Family--mother-->Member node
+    	# match association Family--father-->Member node
     	self.add_node()
     	self.vs[3]["MT_label__"] = """4"""
         self.vs[3]["MT_subtypes__"] = pickle.loads("""(lp1
@@ -221,8 +221,8 @@ return True
         self.vs[3]["MT_dirty__"] = False
         # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[3]["mm__"] = """directLink_S"""
-        self.vs[3]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass0assoc3daughterMotherclass2')
-    	# match association Family--daughter-->Member node
+        self.vs[3]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc3motherFatherclass1')
+    	# match association Family--mother-->Member node
     	self.add_node()
     	self.vs[4]["MT_label__"] = """5"""
         self.vs[4]["MT_subtypes__"] = pickle.loads("""(lp1
@@ -230,14 +230,14 @@ return True
         self.vs[4]["MT_dirty__"] = False
         # TODO Claudio: Levi, so suportas direct links? Nao suportas indirect links? Se suportares, e' preciso voltar 'a geracao do himesis da transformacao e suportar isso.
         self.vs[4]["mm__"] = """directLink_S"""
-        self.vs[4]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'daughterMotherclass0assoc4daughterMotherclass1')
+        self.vs[4]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'motherFatherclass0assoc4motherFatherclass2')
         
         # Add the edges
         self.add_edges([
-    		(0,3), # match_class Family(daughterMotherclass0) -> association mother
-    		(3,2), # association mother  -> match_class Member(daughterMotherclass2)
-    		(0,4), # match_class Family(daughterMotherclass0) -> association daughter
-    		(4,1) # association daughter  -> match_class Member(daughterMotherclass1)
+    		(0,3), # match_class Family(motherFatherclass0) -> association father
+    		(3,1), # association father  -> match_class Member(motherFatherclass1)
+    		(0,4), # match_class Family(motherFatherclass0) -> association mother
+    		(4,2) # association mother  -> match_class Member(motherFatherclass2)
         ])
         
     	def eval_classtype1(self, attr_value, this):
@@ -377,7 +377,7 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return attr_value == "mother"
+	        return attr_value == "father"
 	        
 	        
     	def eval_associationType5(self, attr_value, this):
@@ -391,7 +391,7 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return attr_value == "daughter"
+	        return attr_value == "mother"
 	        
 	        
         

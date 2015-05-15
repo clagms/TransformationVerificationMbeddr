@@ -4,6 +4,13 @@ var matchAssociationNodeMap : new Map;
 var backwardAssociationNodeMap: new Map;
 
 var applyClassNodeMap : new Map;
+var applyAssociationNodeMap : new Map;
+
+var hasMatchAttributeNodeMap: new Map;
+var matchAttributeNodeMap: new Map;
+
+var hasApplyAttributeNodeMap: new Map;
+var applyAttributeNodeMap: new Map;
 
 var nodeIndex = 0;
 
@@ -187,6 +194,19 @@ return True
 			%]
     	# match association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
     	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
+#===============================================================================
+# This code is executed when evaluating if a node shall be matched by this rule.
+# You can access the value of the current node's attribute value by: attr_value.
+# You can access any attribute x of this node by: this['x'].
+# If the constraint relies on attribute values from other nodes,
+# use the LHS/NAC constraint instead.
+# The given constraint must evaluate to a boolean expression.
+#===============================================================================
+
+return attr_value == "[%=association.associationName%]"
+"""
     	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
         self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
@@ -200,35 +220,181 @@ return True
         %]
         
         
+        # Nodes that represent the apply associations of the property.
+        [%
+		for(association in contract.apply.association){
+			applyAssociationNodeMap.put(association, nodeIndex);
+			// TODO Claudio: Levi, estes labels das associacoes nao correspondem exactamente aos labels das associacoes dos exemplos. Ha problema?
+			var associationLabel = nodeIndex + 1;
+			%]
+    	# apply association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
+#===============================================================================
+# This code is executed when evaluating if a node shall be matched by this rule.
+# You can access the value of the current node's attribute value by: attr_value.
+# You can access any attribute x of this node by: this['x'].
+# If the constraint relies on attribute values from other nodes,
+# use the LHS/NAC constraint instead.
+# The given constraint must evaluate to a boolean expression.
+#===============================================================================
+
+return True
+"""
+    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
+        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__directLink_T"""
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+    	}
+        %]
+        
+        
+        #Nodes that represent match attributes
+        [%
+		for(class in contract.match.first.class){
+			for(matchAttribute in class.attribute){
+				hasMatchAttributeNodeMap.put(matchAttribute, nodeIndex);
+				// TODO Claudio: Levi, estes labels nao correspondem exactamente aos labels das associacoes dos exemplos. Ha problema?
+				var hasAttributeLabel = nodeIndex + 1;
+				%]
+    	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
+    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__hasAttr_S"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=matchAttribute.id %]')
+    	
+    			[%
+    			nodeIndex = nodeIndex + 1;
+    			
+    			matchAttributeNodeMap.put(matchAttribute, nodeIndex);
+    			var attributeLabel = nodeIndex + 1;
+    			%]
+    	# match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
+    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Attribute"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=matchAttribute.id %]')
+    			[%
+    			nodeIndex = nodeIndex + 1;
+    		}
+    	}
+        %]
+        
+        
+        #Nodes that represent apply attributes
+        [%
+		for(class in contract.apply.class){
+			for(applyAttribute in class.attribute.reject(attr | attr.attributeName == "" or attr.attributeName == null)){
+				hasApplyAttributeNodeMap.put(applyAttribute, nodeIndex);
+				var hasAttributeLabel = nodeIndex + 1;
+				
+				%]
+    	# has apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
+    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__hasAttr_T"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=applyAttribute.id %]')
+    	
+    			[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+	    		applyAttributeNodeMap.put(applyAttribute, nodeIndex);
+	    		var attributeLabel = nodeIndex + 1;
+	    		%]
+    	# apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+    	self.add_node()
+    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
+    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Attribute"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__name"] = pickle.loads("""V\u000a#===============================================================================\u000a# This code is executed when evaluating if a node shall be matched by this rule.\u000a# You can access the value of the current node's attribute value by: attr_value.\u000a# You can access any attribute x of this node by: this['x'].\u000a# If the constraint relies on attribute values from other nodes,\u000a# use the LHS/NAC constraint instead.\u000a# The given constraint must evaluate to a boolean expression.\u000a#===============================================================================\u000a\u000areturn attr_value = "[%=applyAttribute.attributeName%]"\u000a
+p1
+.""")
+        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=applyAttribute.id %]')
+	    		[%
+	    		nodeIndex = nodeIndex + 1;
+	    		
+			}
+		}
+        %]
+        
         
         # Add the edges
         self.add_edges([
         	[%
         	// Backward links edges
         	for(backwardAssociation in contract.backwards){
-    		%]
+    			%]
     		([%= applyClassNodeMap.get(backwardAssociation.targetClass)%],[%= backwardAssociationNodeMap.get(backwardAssociation)%]), # apply_class [%=backwardAssociation.targetClass.className%]([%=backwardAssociation.targetClass.id%]) -> backward_association
     		([%= backwardAssociationNodeMap.get(backwardAssociation) %],[%= matchClassNodeMap.get(backwardAssociation.sourceClass)%]), #  backward_association -> apply_class [%=backwardAssociation.sourceClass.className%]([%=backwardAssociation.sourceClass.id%])
-    		[%
+    			[%
     		}
         	
-        	//direct association edges.
+        	// match attribute edges
+        	for(class in contract.match.first.class){
+    			for(attribute in class.attribute){
+    				%]
+    		([%= matchClassNodeMap.get(class)%],[%= hasMatchAttributeNodeMap.get(attribute)%]), # match_class [%=class.className%]([%=class.id%]) -> has_match_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= hasMatchAttributeNodeMap.get(attribute) %],[%= matchAttributeNodeMap.get(attribute) %]), #  has_match_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> match_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    				[%
+    			}
+    		}
+        	
+        	// apply attribute edges
+        	for(class in contract.apply.class){
+    			for(attribute in class.attribute.reject(attr | attr.attributeName == "" or attr.attributeName == null)){
+    				%]
+    		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+    		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
+            		[%
+    			}
+    		}
+        	
+        	//direct apply association edges.
+        	for(association in contract.apply.association){
+    			%]
+    		([%= applyClassNodeMap.get(association.source)%],[%= applyAssociationNodeMap.get(association)%]), # apply_class [%=association.source.className%]([%=association.source.id%]) -> association [%=association.associationName%]
+    		([%= applyAssociationNodeMap.get(association) %],[%= applyClassNodeMap.get(association.target)%]), # association [%=association.associationName%]  -> apply_class [%=association.target.className%]([%=association.target.id%])
+    			[%
+    		}
+        	
+        	//direct match association edges.
         	var assocsRemmaining = contract.match.first.association.size(); // This is used to avoid putting the coma at the end.
     		for(association in contract.match.first.association){
-    		%]
+    			%]
     		([%= matchClassNodeMap.get(association.source)%],[%= matchAssociationNodeMap.get(association)%]), # match_class [%=association.source.className%]([%=association.source.id%]) -> association [%=association.associationName%]
-    		[%
+    			[%
     			if (assocsRemmaining > 1){
-    		%]
+    				%]
     		([%= matchAssociationNodeMap.get(association) %],[%= matchClassNodeMap.get(association.target)%]), # association [%=association.associationName%]  -> match_class [%=association.target.className%]([%=association.target.id%])
-    		[%
+    				[%
     			} else {
-    		%]
+    				%]
     		([%= matchAssociationNodeMap.get(association) %],[%= matchClassNodeMap.get(association.target)%]) # association [%=association.associationName%]  -> match_class [%=association.target.className%]([%=association.target.id%])
-    		[%	
+    				[%	
     			}
     			assocsRemmaining = assocsRemmaining - 1;
     		}
+    		
         	%]
         ])
         
