@@ -15,7 +15,11 @@ class HMotherFather_CompleteLHS(HimesisPreConditionPatternLHS):
         super(HMotherFather_CompleteLHS, self).__init__(name='HMotherFather_CompleteLHS', num_nodes=33, edges=[])
         
         # Add the edges
-        self.add_edges([(9, 5), (5, 28), (10, 6), (6, 29), (25, 28), (26, 29), (27, 30), (7, 30), (8, 30), (12, 31), (13, 31), (11, 32), (20, 32), (17, 0), (0, 12), (9, 7), (10, 8), (18, 1), (1, 11), (23, 25), (24, 26), (3, 27), (19, 9), (14, 10), (21, 13), (22, 14), (3, 15), (15, 24), (3, 16), (16, 23), (4, 2), (2, 3), (4, 17), (4, 18), (21, 19), (22, 20)])
+        self.add_edges([
+        (9, 5), (5, 28), (10, 6), (6, 29), (25, 28), (26, 29), (27, 30), (7, 30), (8, 30), (12, 31), (13, 31), 
+        (11, 32), (20, 32), (17, 0), (0, 12), (9, 7), (10, 8), (18, 1), (1, 11), (23, 25), (24, 26), (3, 27), 
+        (19, 9), (14, 10), (21, 13), (22, 14), (3, 15), (15, 24), (3, 16), (16, 23), (4, 2), (2, 3), (4, 17), 
+        (4, 18), (21, 19), (22, 20)])
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__FamiliesToPersonsMM'
@@ -502,6 +506,8 @@ p1
 p1
 .""")
         self.vs[31]["GUID__"] = UUID('4c6e99fa-8f10-454d-a382-acf17c8a2513')
+        
+        # Attribute name of class woman.
         self.vs[32]["MT_subtypeMatching__"] = False
         self.vs[32]["MT_label__"] = """27"""
         self.vs[32]["MT_subtypes__"] = pickle.loads("""(lp1

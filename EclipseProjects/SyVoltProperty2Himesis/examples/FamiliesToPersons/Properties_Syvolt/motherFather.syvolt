@@ -15,7 +15,7 @@
       <association xsi:type="syvolt:PositiveMatchAssociation" associationName="mother" source="//@hasProperty.0/@match.0/@class.0" target="//@hasProperty.0/@match.0/@class.2"/>
     </match>
     <apply>
-      <class packageName="community" className="Community"/>
+      <class packageName="community" className="CommunityRoot"/>
       <class packageName="community" className="Man" id="">
         <attribute attributeName="name">
           <attributeValue xsi:type="syvolt:Concat">
@@ -32,12 +32,10 @@
           </attributeValue>
         </attribute>
       </class>
-      <association associationName="has" source="//@hasProperty.0/@apply/@class.0"/>
       <association associationName="has" source="//@hasProperty.0/@apply/@class.0" target="//@hasProperty.0/@apply/@class.2"/>
-      <association associationName="has" source="//@hasProperty.0/@apply/@class.0" target=""/>
     </apply>
-    <backwards xsi:type="syvolt:Trace" sourceClass="//@hasProperty.0/@match.0/@class.1"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.2" sourceClass="//@hasProperty.0/@match.0/@class.2"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.0" sourceClass="//@hasProperty.0/@match.0/@class.0"/>
   </hasProperty>
+  <specification value=""/>
 </syvolt:TransformationModel>
