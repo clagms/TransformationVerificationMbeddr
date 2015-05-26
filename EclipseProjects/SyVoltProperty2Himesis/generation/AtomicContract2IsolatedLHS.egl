@@ -9,23 +9,23 @@ var pythonClassName = "H"+contract.name+"_IsolatedLHS";
 %]
 from core.himesis import Himesis, HimesisPreConditionPatternLHS
 import cPickle as pickle
-from uuid import UUID
+import uuid
 
 class [%= pythonClassName %](HimesisPreConditionPatternLHS):
 	def __init__(self):
-        """
+		"""
         Creates the himesis graph representing the AToM3 model [%= pythonClassName %].
-        """
+		"""
         # Flag this instance as compiled now
-        self.is_compiled = True
+		self.is_compiled = True
         
-        super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
+		super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
         
         # Add the edges
-        self.add_edges([])
+		self.add_edges([])
         
         # Set the graph attributes
-        self["mm__"] = pickle.loads("""(lp1
+		self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__FamiliesToPersonsMM'
 p2
 aS'MoTifRule'
@@ -42,8 +42,8 @@ a.""")
 
 return True
 """
-        self["name"] = """"""
-        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=contract.name%]')
+		self["name"] = """"""
+		self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=contract.name%]')
         
         # Set the node attributes
         
@@ -53,10 +53,10 @@ return True
 			matchClassNodeMap.put(class, nodeIndex);
 			var classLabel = nodeIndex + 1;
 			%]
-    	# match class [%=class.className%]([%=class.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+        # match class [%=class.className%]([%=class.id%]) node
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -69,11 +69,11 @@ return True
 return True
 """
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-    	self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
-    	self.vs[[%=nodeIndex%]]["MT_pre__cardinality"] = """
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
+		self.vs[[%=nodeIndex%]]["MT_pre__cardinality"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -120,7 +120,7 @@ return True
 		for(class in contract.match.first.class){
 			var classLabel = matchClassNodeMap.get(class) + 1;
 			%]
-    	def eval_classtype[%= classLabel %](self, attr_value, this):
+		def eval_classtype[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -131,10 +131,10 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
         
         
-        def eval_cardinality[%= classLabel %](self, attr_value, this):
+		def eval_cardinality[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -145,10 +145,10 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
 
         
-        def eval_name[%= classLabel %](self, attr_value, this):
+		def eval_name[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -159,19 +159,19 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
         
         
         	[%
     	}
         %]
         
-        def constraint(self, PreNode, graph):
-        """
-            Executable constraint code. 
-            @param PreNode: Function taking an integer as parameter
-                            and returns the node corresponding to that label.
-        """
+		def constraint(self, PreNode, graph):
+			"""
+			Executable constraint code. 
+			@param PreNode: Function taking an integer as parameter
+					and returns the node corresponding to that label.
+			"""
         #===============================================================================
         # This code is executed after the nodes in the LHS have been matched.
         # You can access a matched node labelled n by: PreNode('n').
@@ -181,6 +181,6 @@ return True
         #    returning False forbids the rule from being applied.
         #===============================================================================
         
-        return True
+			return True
         
         

@@ -46,16 +46,16 @@ from uuid import UUID
 
 class [%= pythonClassName %](HimesisPreConditionPatternLHS):
 	def __init__(self):
-        """
-        Creates the himesis graph representing the AToM3 model [%= pythonClassName %].
-        """
-        # Flag this instance as compiled now
-        self.is_compiled = True
+		"""
+		Creates the himesis graph representing the AToM3 model [%= pythonClassName %].
+		"""
+		# Flag this instance as compiled now
+		self.is_compiled = True
         
-        super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
+		super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
         
-        # Set the graph attributes
-        self["mm__"] = pickle.loads("""(lp1
+		# Set the graph attributes
+		self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__HimesisMM'
 p2
 aS'MoTifRule'
@@ -72,10 +72,10 @@ a.""")
 
 return True
 """
-        self["name"] = """"""
-        self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=contract.name%]')
+		self["name"] = """"""
+		self["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=contract.name%]')
         
-        # Nodes that represent match classes
+		# Nodes that represent match classes
         [%
         
 		for(class in contract.match.first.class){
@@ -83,9 +83,9 @@ return True
 			var classLabel = nodeIndex + 1;
 			%]
     	# match class [%=class.className%]([%=class.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -98,11 +98,11 @@ return True
 return True
 """
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-    	self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
-    	self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
+		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -152,9 +152,9 @@ return True
 			var classLabel = nodeIndex + 1;
 			%]
     	# match class [%=class.className%]([%=class.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -167,11 +167,11 @@ return True
 return True
 """
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=classLabel%]"""  
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-    	self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
-    	self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__[%=class.className%]"""  
+		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -201,8 +201,7 @@ return True
     	}
         %]
         
-        
-        
+                
         # Nodes that represent the match associations of the property.
         [%
 		for(association in contract.match.first.association){
@@ -210,9 +209,9 @@ return True
 			var associationLabel = nodeIndex + 1;
 			%]
     	# match association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -224,12 +223,12 @@ return True
 
 return attr_value == "[%=association.associationName%]"
 """
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["mm__"] = """directLink_S"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__directLink_S"""
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
     		[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -243,9 +242,9 @@ return attr_value == "[%=association.associationName%]"
 			var associationLabel = nodeIndex + 1;
 			%]
     	# apply association [%=association.source.className%]--[%=association.associationName%]-->[%=association.target.className%] node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_pre__associationType"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
 # You can access the value of the current node's attribute value by: attr_value.
@@ -257,12 +256,12 @@ return attr_value == "[%=association.associationName%]"
 
 return True
 """
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__directLink_T"""
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__directLink_T"""
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=association.source.id + ("assoc" + nodeIndex) + association.target.id %]')
     		[%
     		nodeIndex = nodeIndex + 1;
     	}
@@ -277,14 +276,14 @@ return True
 				var hasAttributeLabel = nodeIndex + 1;
 				%]
     	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
-    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
 		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__hasAttr_S"""
 		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=matchAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=matchAttribute.id %]')
     	
     			[%
     			nodeIndex = nodeIndex + 1;
@@ -293,14 +292,14 @@ return True
     			var attributeLabel = nodeIndex + 1;
     			%]
     	# match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
-    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
 		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Attribute"""
 		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=matchAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=matchAttribute.id %]')
     			[%
     			nodeIndex = nodeIndex + 1;
     			
@@ -310,14 +309,14 @@ return True
     				
 	    			%]
     	# match attribute equation [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=matchAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -326,14 +325,14 @@ return True
 	    			var leftNodeExpLabel = nodeIndex + 1;
 	    			%]
     	# match attribute equation left expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=matchAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -341,14 +340,14 @@ return True
 	    			var rightNodeExpLabel = nodeIndex + 1;
 	    			%]
     	# match attribute equation right expr [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=matchAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=matchAttribute.id %]')
 	    			[%
 	    			nodeIndex = nodeIndex + 1;
 	    		
@@ -370,14 +369,14 @@ return True
 				
 				%]
     	# has apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
-    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
 		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__hasAttr_T"""
 		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=applyAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'has[%=applyAttribute.id %]')
     	
     			[%
 	    		nodeIndex = nodeIndex + 1;
@@ -386,17 +385,17 @@ return True
 	    		var attributeLabel = nodeIndex + 1;
 	    		%]
     	# apply attribute [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-    	self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
-    	self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=attributeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
 		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Attribute"""
 		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
 		self.vs[[%=nodeIndex%]]["MT_pre__name"] = pickle.loads("""V\u000a#===============================================================================\u000a# This code is executed when evaluating if a node shall be matched by this rule.\u000a# You can access the value of the current node's attribute value by: attr_value.\u000a# You can access any attribute x of this node by: this['x'].\u000a# If the constraint relies on attribute values from other nodes,\u000a# use the LHS/NAC constraint instead.\u000a# The given constraint must evaluate to a boolean expression.\u000a#===============================================================================\u000a\u000areturn attr_value = "[%=applyAttribute.attributeName%]"\u000a
 p1
 .""")
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=applyAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -404,14 +403,14 @@ p1
 	    		var equationNodeLabel = nodeIndex + 1;
 	    		%]
     	# apply attribute equation [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=equationNodeLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=applyAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__Equation"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Equation[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -420,14 +419,14 @@ p1
 	    		var leftNodeExpLabel = nodeIndex + 1;
 	    		%]
     	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=applyAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__leftExpr"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationLeftExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -436,14 +435,14 @@ p1
 	    		var rightNodeExpLabel = nodeIndex + 1;
 	    		%]
     	# apply attribute equation right expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
-        self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=rightNodeExpLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
-        self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=applyAttribute.id %]')
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__rightExpr"""
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'EquationRightExpr[%=applyAttribute.id %]')
 	    		[%
 	    		nodeIndex = nodeIndex + 1;
 	    		
@@ -455,7 +454,7 @@ p1
         
         
         # Add the edges
-        self.add_edges([
+		self.add_edges([
         	[%
         	// Backward links edges
         	for(backwardAssociation in contract.backwards){
@@ -528,7 +527,7 @@ p1
 		for(class in contract.match.first.class){
 			var classLabel = matchClassNodeMap.get(class) + 1;
 			%]
-    	def eval_classtype[%= classLabel %](self, attr_value, this):
+		def eval_classtype[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -539,10 +538,10 @@ p1
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
         
         
-        def eval_cardinality[%= classLabel %](self, attr_value, this):
+		def eval_cardinality[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -553,10 +552,10 @@ p1
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
 
         
-        def eval_name[%= classLabel %](self, attr_value, this):
+		def eval_name[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -567,7 +566,7 @@ p1
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return True
+			return True
         
         
         	[%
@@ -578,7 +577,7 @@ p1
 		for(association in contract.match.first.association){
 			var associationLabel = matchAssociationNodeMap.get(association) + 1;
 			%]
-    	def eval_associationType[%= associationLabel %](self, attr_value, this):
+		def eval_associationType[%= associationLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -589,19 +588,19 @@ p1
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-	        return attr_value == "[%= association.associationName %]"
+			return attr_value == "[%= association.associationName %]"
 	        
 	        
         	[%
     	}
         %]
         
-        def constraint(self, PreNode, graph):
-	        """
-	            Executable constraint code. 
-	            @param PreNode: Function taking an integer as parameter
-	                            and returns the node corresponding to that label.
-	        """
+		def constraint(self, PreNode, graph):
+			"""
+				Executable constraint code. 
+				@param PreNode: Function taking an integer as parameter
+						and returns the node corresponding to that label.
+			"""
 	        #===============================================================================
 	        # This code is executed after the nodes in the LHS have been matched.
 	        # You can access a matched node labelled n by: PreNode('n').
@@ -611,7 +610,7 @@ p1
 	        #    returning False forbids the rule from being applied.
 	        #===============================================================================
 	        
-	        return True
+			return True
         
 [%
 operation generateAttributeTermNodes(attribute, term, nodeIndex, attributeAtomNodeMap, attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
@@ -643,15 +642,15 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
 	attributeConcatNodeMap.put(concat, returnNodeIndex);
 	var concatLabel = returnNodeIndex + 1;
 	%]
-    	# attribute concat [%=attribute.attributeName%]([%=attribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=concatLabel%]"""
-        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		# attribute concat [%=attribute.attributeName%]([%=attribute.id%]) node
+		self.add_node()
+		self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=concatLabel%]"""
+		self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__Concat"""
-        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Concat[%=attribute.id + returnNodeIndex %]')
+		self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__Concat"""
+		self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Concat[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -660,15 +659,15 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
 	var hasArgsLabel = returnNodeIndex + 1;
 	%]
     	# apply attribute concat has left args [%=attribute.attributeName%]([%=attribute.id%]) node
-        self.add_node()
+		self.add_node()
         
-        self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
-        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
+		self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
-        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
+		self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
+		self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -676,14 +675,14 @@ operation generateAttributeConcatNode(attribute, concat, nodeIndex, attributeAto
 	attributeConcatRightHasArgsNodeMap.put(concat, returnNodeIndex);
 	%]
     	# apply attribute concat has right args [%=attribute.attributeName%]([%=attribute.id%]) node
-        self.add_node()
-    	self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
-        self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
-        self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+		self.add_node()
+		self.vs[[%=returnNodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=returnNodeIndex%]]["MT_label__"] = """[%=hasArgsLabel%]"""
+		self.vs[[%=returnNodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
 .""")
-        self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
-        self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
-        self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
+		self.vs[[%=returnNodeIndex%]]["mm__"] = """MT_pre__hasArgs"""
+		self.vs[[%=returnNodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'ConcatHasLeftArgs[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
@@ -713,11 +712,11 @@ operation generateAttributeAtomNode(attribute, atom, nodeIndex, attributeAtomNod
 	attributeAtomNodeMap.put(atom, returnNodeIndex);
 	%]
     	# apply attribute atom [%=attribute.attributeName%]([%=attribute.id%]) node
-    	self.add_node()
-    	self.vs[[%=returnNodeIndex%]]["name"] = """[%=atom.value%]"""
-        self.vs[[%=returnNodeIndex%]]["mm__"] = """Constant"""
-        self.vs[[%=returnNodeIndex%]]["Type"] = """'String'"""
-        #self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Atom[%=attribute.id + returnNodeIndex %]')
+		self.add_node()
+		self.vs[[%=returnNodeIndex%]]["name"] = """[%=atom.value%]"""
+		self.vs[[%=returnNodeIndex%]]["mm__"] = """Constant"""
+		self.vs[[%=returnNodeIndex%]]["Type"] = """'String'"""
+		#self.vs[[%=returnNodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'Atom[%=attribute.id + returnNodeIndex %]')
 	[%
 	returnNodeIndex = returnNodeIndex + 1;
 	
