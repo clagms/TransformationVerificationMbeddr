@@ -254,7 +254,7 @@ return attr_value == "[%=association.associationName%]"
 # The given constraint must evaluate to a boolean expression.
 #===============================================================================
 
-return True
+return attr_value == "[%=association.associationName%]"
 """
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%= associationLabel %]"""
 		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
