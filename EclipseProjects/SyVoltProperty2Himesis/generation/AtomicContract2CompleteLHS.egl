@@ -51,9 +51,9 @@ class [%= pythonClassName %](HimesisPreConditionPatternLHS):
 		"""
 		# Flag this instance as compiled now
 		self.is_compiled = True
-        
+		
 		super([%= pythonClassName%], self).__init__(name='[%= pythonClassName %]', num_nodes=0, edges=[])
-        
+		
 		# Set the graph attributes
 		self["mm__"] = pickle.loads("""(lp1
 S'MT_pre__HimesisMM'
@@ -82,7 +82,7 @@ return True
 			matchClassNodeMap.put(class, nodeIndex);
 			var classLabel = nodeIndex + 1;
 			%]
-    	# match class [%=class.className%]([%=class.id%]) node
+		# match class [%=class.className%]([%=class.id%]) node
 		self.add_node()
 		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
 		self.vs[[%=nodeIndex%]]["MT_pre__classtype"] = """
@@ -267,15 +267,35 @@ return True
     	}
         %]
         
+		# Nodes that represent trace relations
+		[%
+		for(backwardAssociation in contract.backwards){
+			backwardAssociationNodeMap.put(backwardAssociation, nodeIndex);
+			var backwardAssociationLabel = nodeIndex + 1;
+			%]
+		# backward association [%=backwardAssociation.sourceClass.className%]---->[%=backwardAssociation.targetClass.className%] node
+		self.add_node()
+		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
+		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=backwardAssociationLabel%]"""
+		self.vs[[%=nodeIndex%]]["MT_subtypes__"] = pickle.loads("""(lp1
+.""")
+		self.vs[[%=nodeIndex%]]["MT_dirty__"] = False
+		self.vs[[%=nodeIndex%]]["mm__"] = """MT_pre__trace_link"""
+		self.vs[[%=nodeIndex%]]["GUID__"] = uuid.uuid3(uuid.NAMESPACE_DNS,'[%=backwardAssociation.sourceClass.id + ("blink" + nodeIndex) + backwardAssociation.targetClass.id %]')
+    		[%
+    		nodeIndex = nodeIndex + 1;
+		}
+        %]
         
-        # Nodes that represent match attributes
+        
+		# Nodes that represent match attributes
         [%
 		for(class in contract.match.first.class){
 			for(matchAttribute in class.attribute){
 				hasMatchAttributeNodeMap.put(matchAttribute, nodeIndex);
 				var hasAttributeLabel = nodeIndex + 1;
 				%]
-    	# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
+		# has match attribute [%=matchAttribute.attributeName%]([%=matchAttribute.id%]) node
 		self.add_node()
 		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=hasAttributeLabel%]"""
@@ -418,7 +438,7 @@ p1
 	    		applyAttributeEquationLeftExpNodeMap.put(applyAttribute, nodeIndex);
 	    		var leftNodeExpLabel = nodeIndex + 1;
 	    		%]
-    	# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
+		# apply attribute equation left expr [%=applyAttribute.attributeName%]([%=applyAttribute.id%]) node
 		self.add_node()
 		self.vs[[%=nodeIndex%]]["MT_subtypeMatching__"] = False
 		self.vs[[%=nodeIndex%]]["MT_label__"] = """[%=leftNodeExpLabel%]"""
@@ -453,7 +473,7 @@ p1
         %]
         
         
-        # Add the edges
+		# Add the edges
 		self.add_edges([
         	[%
         	// Backward links edges
@@ -480,7 +500,7 @@ p1
     				%]
     		([%= applyClassNodeMap.get(class)%],[%= hasApplyAttributeNodeMap.get(attribute)%]), # apply_class [%=class.className%]([%=class.id%]) -> has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
     		([%= hasApplyAttributeNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  has_apply_attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
-            ([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationLeftExpNodeMap.get(attribute) %]), #  equation of apply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> left_expr
+			([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationLeftExpNodeMap.get(attribute) %]), #  equation of apply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> left_expr
     		([%= applyAttributeEquationLeftExpNodeMap.get(attribute) %],[%= applyAttributeNodeMap.get(attribute) %]), #  left_expr -> apply_attribute [%=attribute.attributeName%] ([%=attribute.id%])
     		([%= applyAttributeEquationNodeMap.get(attribute) %],[%= applyAttributeEquationRightExpNodeMap.get(attribute) %]), #  equation of apply attribute [%=attribute.attributeName%] ([%=attribute.id%]) -> right_expr
     				[%
@@ -528,46 +548,46 @@ p1
 			var classLabel = matchClassNodeMap.get(class) + 1;
 			%]
 		def eval_classtype[%= classLabel %](self, attr_value, this):
-        
-	        #===============================================================================
-	        # This code is executed when evaluating if a node shall be matched by this rule.
-	        # You can access the value of the current node's attribute value by: attr_value.
-	        # You can access any attribute x of this node by: this['x'].
-	        # If the constraint relies on attribute values from other nodes,
-	        # use the LHS/NAC constraint instead.
-	        # The given constraint must evaluate to a boolean expression.
-	        #===============================================================================
-	        
+		
+			#===============================================================================
+			# This code is executed when evaluating if a node shall be matched by this rule.
+			# You can access the value of the current node's attribute value by: attr_value.
+			# You can access any attribute x of this node by: this['x'].
+			# If the constraint relies on attribute values from other nodes,
+			# use the LHS/NAC constraint instead.
+			# The given constraint must evaluate to a boolean expression.
+			#===============================================================================
+
 			return True
         
         
 		def eval_cardinality[%= classLabel %](self, attr_value, this):
-        
-	        #===============================================================================
-	        # This code is executed when evaluating if a node shall be matched by this rule.
-	        # You can access the value of the current node's attribute value by: attr_value.
-	        # You can access any attribute x of this node by: this['x'].
-	        # If the constraint relies on attribute values from other nodes,
-	        # use the LHS/NAC constraint instead.
-	        # The given constraint must evaluate to a boolean expression.
-	        #===============================================================================
-	        
+			
+			#===============================================================================
+			# This code is executed when evaluating if a node shall be matched by this rule.
+			# You can access the value of the current node's attribute value by: attr_value.
+			# You can access any attribute x of this node by: this['x'].
+			# If the constraint relies on attribute values from other nodes,
+			# use the LHS/NAC constraint instead.
+			# The given constraint must evaluate to a boolean expression.
+			#===============================================================================
+			
 			return True
 
         
 		def eval_name[%= classLabel %](self, attr_value, this):
-        
-	        #===============================================================================
-	        # This code is executed when evaluating if a node shall be matched by this rule.
-	        # You can access the value of the current node's attribute value by: attr_value.
-	        # You can access any attribute x of this node by: this['x'].
-	        # If the constraint relies on attribute values from other nodes,
-	        # use the LHS/NAC constraint instead.
-	        # The given constraint must evaluate to a boolean expression.
-	        #===============================================================================
-	        
+			
+			#===============================================================================
+			# This code is executed when evaluating if a node shall be matched by this rule.
+			# You can access the value of the current node's attribute value by: attr_value.
+			# You can access any attribute x of this node by: this['x'].
+			# If the constraint relies on attribute values from other nodes,
+			# use the LHS/NAC constraint instead.
+			# The given constraint must evaluate to a boolean expression.
+			#===============================================================================
+			
 			return True
-        
+
         
         	[%
     	}
@@ -578,19 +598,19 @@ p1
 			var associationLabel = matchAssociationNodeMap.get(association) + 1;
 			%]
 		def eval_associationType[%= associationLabel %](self, attr_value, this):
-        
-	        #===============================================================================
-	        # This code is executed when evaluating if a node shall be matched by this rule.
-	        # You can access the value of the current node's attribute value by: attr_value.
-	        # You can access any attribute x of this node by: this['x'].
-	        # If the constraint relies on attribute values from other nodes,
-	        # use the LHS/NAC constraint instead.
-	        # The given constraint must evaluate to a boolean expression.
-	        #===============================================================================
-	        
+			
+			#===============================================================================
+			# This code is executed when evaluating if a node shall be matched by this rule.
+			# You can access the value of the current node's attribute value by: attr_value.
+			# You can access any attribute x of this node by: this['x'].
+			# If the constraint relies on attribute values from other nodes,
+			# use the LHS/NAC constraint instead.
+			# The given constraint must evaluate to a boolean expression.
+			#===============================================================================
+			
 			return attr_value == "[%= association.associationName %]"
-	        
-	        
+			
+
         	[%
     	}
         %]
@@ -601,17 +621,17 @@ p1
 				@param PreNode: Function taking an integer as parameter
 						and returns the node corresponding to that label.
 			"""
-	        #===============================================================================
-	        # This code is executed after the nodes in the LHS have been matched.
-	        # You can access a matched node labelled n by: PreNode('n').
-	        # To access attribute x of node n, use: PreNode('n')['x'].
-	        # The given constraint must evaluate to a boolean expression:
-	        #    returning True enables the rule to be applied,
-	        #    returning False forbids the rule from being applied.
-	        #===============================================================================
-	        
+			#===============================================================================
+			# This code is executed after the nodes in the LHS have been matched.
+			# You can access a matched node labelled n by: PreNode('n').
+			# To access attribute x of node n, use: PreNode('n')['x'].
+			# The given constraint must evaluate to a boolean expression:
+			#    returning True enables the rule to be applied,
+			#    returning False forbids the rule from being applied.
+			#===============================================================================
+
 			return True
-        
+
 [%
 operation generateAttributeTermNodes(attribute, term, nodeIndex, attributeAtomNodeMap, attributeConcatNodeMap, attributeConcatLeftHasArgsNodeMap, 
 										attributeConcatRightHasArgsNodeMap){

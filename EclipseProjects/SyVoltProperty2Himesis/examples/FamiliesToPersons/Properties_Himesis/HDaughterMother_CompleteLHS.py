@@ -112,6 +112,7 @@ return True
 return True
 """
         self.vs[1]["GUID__"] = UUID('fae6153a-51ec-4b97-a5d9-9007ad9bf3fc')
+        
         self.vs[2]["MT_subtypeMatching__"] = False
         self.vs[2]["MT_label__"] = """12"""
         self.vs[2]["MT_subtypes__"] = pickle.loads("""(lp1
@@ -119,6 +120,7 @@ return True
         self.vs[2]["MT_dirty__"] = False
         self.vs[2]["mm__"] = """MT_pre__trace_link"""
         self.vs[2]["GUID__"] = UUID('28bc4f88-4daa-41ff-9ef7-22fec5735eb9')
+        
         self.vs[3]["MT_subtypeMatching__"] = False
         self.vs[3]["MT_pre__associationType"] = pickle.loads("""V\u000a#===============================================================================\u000a# This code is executed when evaluating if a node shall be matched by this rule.\u000a# You can access the value of the current node's attribute value by: attr_value.\u000a# You can access any attribute x of this node by: this['x'].\u000a# If the constraint relies on attribute values from other nodes,\u000a# use the LHS/NAC constraint instead.\u000a# The given constraint must evaluate to a boolean expression.\u000a#===============================================================================\u000a\u000areturn attr_value == "daughter"\u000a
 p1
