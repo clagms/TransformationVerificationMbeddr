@@ -32,10 +32,16 @@
           </attributeValue>
         </attribute>
       </class>
+<<<<<<< Updated upstream:EclipseProjects/SyVoltProperty2Himesis/examples/FamiliesToPersons/Properties_Syvolt/motherFather.syvolt
+=======
+      <association associationName="has" source="//@hasProperty.0/@apply/@class.0"/>
+      <association associationName="has" source="//@hasProperty.0/@apply/@class.0"/>
+>>>>>>> Stashed changes:FamiliesToPersons/Properties_Syvolt/motherFather.syvolt
       <association associationName="has" source="//@hasProperty.0/@apply/@class.0" target="//@hasProperty.0/@apply/@class.2"/>
     </apply>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.2" sourceClass="//@hasProperty.0/@match.0/@class.2"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.0" sourceClass="//@hasProperty.0/@match.0/@class.0"/>
+    <backwards xsi:type="syvolt:Trace" targetClass="" sourceClass="//@hasProperty.0/@match.0/@class.1"/>
   </hasProperty>
   <specification value=""/>
 </syvolt:TransformationModel>

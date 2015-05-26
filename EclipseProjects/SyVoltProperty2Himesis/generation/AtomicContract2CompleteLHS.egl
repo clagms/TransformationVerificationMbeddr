@@ -42,7 +42,7 @@ var pythonClassName = "H"+contract.name+"_CompleteLHS";
 %]
 from core.himesis import Himesis, HimesisPreConditionPatternLHS
 import cPickle as pickle
-from uuid import UUID
+import uuid
 
 class [%= pythonClassName %](HimesisPreConditionPatternLHS):
 	def __init__(self):
