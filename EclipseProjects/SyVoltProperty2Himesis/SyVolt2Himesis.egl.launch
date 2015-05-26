@@ -5,7 +5,7 @@
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <intAttribute key="generateTo" value="1"/>
 <listAttribute key="models">
-<listEntry value="#&#13;&#10;#Fri May 15 11:15:42 CEST 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=Input&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://syvolt/2.0&#13;&#10;modelUri=platform\:/resource/SyVoltProperty2Himesis/examples/FamiliesToPersons/Properties_Syvolt/motherFather2.syvolt&#13;&#10;type=EMF&#13;&#10;modelFile=/SyVoltProperty2Himesis/examples/FamiliesToPersons/Properties_Syvolt/motherFather2.syvolt&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Tue May 26 19:04:36 CEST 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=Input&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://syvolt/2.0&#13;&#10;modelUri=platform\:/resource/SyVoltProperty2Himesis/examples/FamiliesToPersons/Properties_Syvolt/fourMembers.syvolt&#13;&#10;type=EMF&#13;&#10;modelFile=/SyVoltProperty2Himesis/examples/FamiliesToPersons/Properties_Syvolt/fourMembers.syvolt&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
 </listAttribute>
 <stringAttribute key="outputFilePath" value=""/>
 <booleanAttribute key="produceTrace" value="false"/>
