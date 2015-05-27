@@ -85,18 +85,6 @@ return True
 
 return True
 """
-		self.vs[[%=nodeIndex%]]["MT_pre__cardinality"] = """
-#===============================================================================
-# This code is executed when evaluating if a node shall be matched by this rule.
-# You can access the value of the current node's attribute value by: attr_value.
-# You can access any attribute x of this node by: this['x'].
-# If the constraint relies on attribute values from other nodes,
-# use the LHS/NAC constraint instead.
-# The given constraint must evaluate to a boolean expression.
-#===============================================================================
-
-return True
-"""
 		self.vs[[%=nodeIndex%]]["MT_pre__name"] = """
 #===============================================================================
 # This code is executed when evaluating if a node shall be matched by this rule.
@@ -120,7 +108,7 @@ return True
 		for(class in contract.match.first.class){
 			var classLabel = matchClassNodeMap.get(class) + 1;
 			%]
-		def eval_classtype[%= classLabel %](self, attr_value, this):
+	def eval_classtype[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -131,10 +119,10 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-			return True
+		return True
         
         
-		def eval_cardinality[%= classLabel %](self, attr_value, this):
+	def eval_cardinality[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -145,10 +133,10 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-			return True
+		return True
 
         
-		def eval_name[%= classLabel %](self, attr_value, this):
+	def eval_name[%= classLabel %](self, attr_value, this):
         
 	        #===============================================================================
 	        # This code is executed when evaluating if a node shall be matched by this rule.
@@ -159,19 +147,19 @@ return True
 	        # The given constraint must evaluate to a boolean expression.
 	        #===============================================================================
 	        
-			return True
+		return True
         
         
         	[%
     	}
         %]
         
-		def constraint(self, PreNode, graph):
-			"""
-			Executable constraint code. 
-			@param PreNode: Function taking an integer as parameter
+	def constraint(self, PreNode, graph):
+		"""
+		Executable constraint code. 
+		@param PreNode: Function taking an integer as parameter
 					and returns the node corresponding to that label.
-			"""
+		"""
         #===============================================================================
         # This code is executed after the nodes in the LHS have been matched.
         # You can access a matched node labelled n by: PreNode('n').
@@ -181,6 +169,6 @@ return True
         #    returning False forbids the rule from being applied.
         #===============================================================================
         
-			return True
+		return True
         
         
