@@ -38,4 +38,5 @@
     <backwards xsi:type="syvolt:Trace" targetClass="motherFatherclass4" sourceClass="motherFatherclass1"/>
     <backwards xsi:type="syvolt:Trace" targetClass="motherFatherclass5" sourceClass="motherFatherclass2"/>
   </hasProperty>
+  <specification value="motherFather implies motherFather"/>
 </syvolt:TransformationModel>
