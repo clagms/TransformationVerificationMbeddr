@@ -472,6 +472,8 @@
     <hasRule description="layer1rule6">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer1rule6class0" packageName="Module" className="ClientServerInterface" id="layer1rule6class0"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer1rule6class0" packageName="Module" className="ImplementationModule" id="layer1rule6class0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule6class0" target="layer1rule6class0"/>
       </match>
       <apply>
         <class description="layer1rule6class1" packageName="CModel" className="StructDeclaration" id="layer1rule6class1">
