@@ -692,10 +692,7 @@
       </apply>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule15class2" sourceClass="layer1rule15class0"/>
     </hasRule>
-  </source>
-  <source xsi:type="dsltrans:Sequential" name="layer2" description="layer2" previousSource="//@source.2" outputFilePathURI="model/ComponentsSampleInC.xmi">
-    <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
-    <hasRule description="layer2rule0">
+    <hasRule description="layer1rule16">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class0" packageName="Module" className="Operation" id="layer2rule0class0"/>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class0" packageName="Module" className="ClientServerInterface" id="layer2rule0class0"/>
@@ -717,6 +714,9 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer2rule0class1" sourceClass="layer2rule0class0"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer2rule0class2" sourceClass="layer2rule0class0"/>
     </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="layer2" description="layer2" previousSource="//@source.2" outputFilePathURI="model/ComponentsSampleInC.xmi">
+    <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
     <hasRule description="layer2rule1">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule1class0" packageName="Module" className="StringType" id="layer2rule1class0"/>
