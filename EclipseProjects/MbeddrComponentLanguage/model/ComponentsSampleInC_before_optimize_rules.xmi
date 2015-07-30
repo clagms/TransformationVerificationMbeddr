@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<org.mcgill.transformationverification:ImplementationModule xmlns:org.mcgill.transformationverification="http://mcgill.transformationverification.org/CModel/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ComponentsSample" xmi:version="2.0" xsi:schemaLocation="http://mcgill.transformationverification.org/CModel/1.0 C.ecore">
+  <contents name="ComponentsSample_Client__idata" xsi:type="org.mcgill.transformationverification:StructDeclaration">
+    <members name="client_process" xsi:type="org.mcgill.transformationverification:CFunctionPointerStructMember">
+      <type xsi:type="org.mcgill.transformationverification:FunctionRefType">
+        <returnType xsi:type="org.mcgill.transformationverification:VoidType"/>
+        <argTypes xsi:type="org.mcgill.transformationverification:PointerType">
+          <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+        </argTypes>
+      </type>
+    </members>
+  </contents>
+  <contents name="ComponentsSample_Server__idata" xsi:type="org.mcgill.transformationverification:StructDeclaration">
+    <members name="server_process" xsi:type="org.mcgill.transformationverification:CFunctionPointerStructMember">
+      <type xsi:type="org.mcgill.transformationverification:FunctionRefType">
+        <returnType xsi:type="org.mcgill.transformationverification:StringType"/>
+        <argTypes xsi:type="org.mcgill.transformationverification:StringType"/>
+        <argTypes xsi:type="org.mcgill.transformationverification:PointerType">
+          <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+        </argTypes>
+      </type>
+    </members>
+  </contents>
+  <contents name="ComponentsSample_Client__idata_t" xsi:type="org.mcgill.transformationverification:TypeDef">
+    <original struct="//@contents.0" xsi:type="org.mcgill.transformationverification:StructType"/>
+  </contents>
+  <contents name="ComponentsSample_Server__idata_t" xsi:type="org.mcgill.transformationverification:TypeDef">
+    <original struct="//@contents.1" xsi:type="org.mcgill.transformationverification:StructType"/>
+  </contents>
+  <contents name="ComponentsSample_ClientComponent__cdata" xsi:type="org.mcgill.transformationverification:StructDeclaration">
+    <members name="aMemberSoTheStructIsNotEmpty" xsi:type="org.mcgill.transformationverification:Member">
+      <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
+    </members>
+    <members name="clientcomp_serverInterface__port" xsi:type="org.mcgill.transformationverification:Member">
+      <type xsi:type="org.mcgill.transformationverification:PointerType">
+        <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+      </type>
+    </members>
+    <members name="clientcomp_serverInterface__ops" xsi:type="org.mcgill.transformationverification:Member">
+      <type xsi:type="org.mcgill.transformationverification:PointerType">
+        <baseType typeDef="//@contents.3" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+      </type>
+    </members>
+  </contents>
+  <contents name="ComponentsSample_GoodServer__cdata" xsi:type="org.mcgill.transformationverification:StructDeclaration">
+    <members name="aMemberSoTheStructIsNotEmpty" xsi:type="org.mcgill.transformationverification:Member">
+      <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
+    </members>
+  </contents>
+  <contents name="ComponentsSample_BadServer__cdata" xsi:type="org.mcgill.transformationverification:StructDeclaration">
+    <members name="aMemberSoTheStructIsNotEmpty" xsi:type="org.mcgill.transformationverification:Member">
+      <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
+    </members>
+  </contents>
+  <contents name="ComponentsSample_ClientComponent__cdata_t" xsi:type="org.mcgill.transformationverification:TypeDef">
+    <original struct="//@contents.4" xsi:type="org.mcgill.transformationverification:StructType"/>
+  </contents>
+  <contents name="ComponentsSample_GoodServer__cdata_t" xsi:type="org.mcgill.transformationverification:TypeDef">
+    <original struct="//@contents.5" xsi:type="org.mcgill.transformationverification:StructType"/>
+  </contents>
+  <contents name="ComponentsSample_BadServer__cdata_t" xsi:type="org.mcgill.transformationverification:TypeDef">
+    <original struct="//@contents.6" xsi:type="org.mcgill.transformationverification:StructType"/>
+  </contents>
+  <contents name="ComponentsSample_ClientComponent_clientcomp_clientInterface_client_process" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <arguments name="___id" xsi:type="org.mcgill.transformationverification:Argument">
+      <type xsi:type="org.mcgill.transformationverification:PointerType">
+        <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+      </type>
+    </arguments>
+  </contents>
+  <contents name="ComponentsSample_BadServer_badserver_serverInterface_server_process" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:StringType"/>
+    <arguments name="serverinterface_request" xsi:type="org.mcgill.transformationverification:Argument">
+      <type xsi:type="org.mcgill.transformationverification:StringType"/>
+    </arguments>
+    <arguments name="___id" xsi:type="org.mcgill.transformationverification:Argument">
+      <type xsi:type="org.mcgill.transformationverification:PointerType">
+        <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+      </type>
+    </arguments>
+  </contents>
+  <contents name="ComponentsSample_GoodServer_goodserver_serverInterface_server_process" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:StringType"/>
+    <arguments name="serverinterface_request" xsi:type="org.mcgill.transformationverification:Argument">
+      <type xsi:type="org.mcgill.transformationverification:StringType"/>
+    </arguments>
+    <arguments name="___id" xsi:type="org.mcgill.transformationverification:Argument">
+      <type xsi:type="org.mcgill.transformationverification:PointerType">
+        <baseType xsi:type="org.mcgill.transformationverification:VoidType"/>
+      </type>
+    </arguments>
+  </contents>
+  <contents name="ComponentsSample_blockexpr_main_2" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_instances__init" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_clientComponent__wire" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_gserverComponent__wire" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_bserverComponent__wire" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_bserverComponent_Server__ops" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.3" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_gserverComponent_Server__ops" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.3" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_clientComponent_Client__ops" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.2" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_bserverComponent__instance" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.9" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_gserverComponent__instance" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.8" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_clientComponent__instance" xsi:type="org.mcgill.transformationverification:GlobalVariableDeclaration">
+    <type typeDef="//@contents.7" xsi:type="org.mcgill.transformationverification:TypeDefType"/>
+  </contents>
+  <contents name="ComponentsSample_MainTest" xsi:type="org.mcgill.transformationverification:FunctionPrototype">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+  </contents>
+  <contents name="ComponentsSample_instances_clientComponent__wire" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+          <left xsi:type="org.mcgill.transformationverification:GenericDotExpression">
+            <expression var="//@contents.20" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+            <target member="//@contents.0/@members.0" xsi:type="org.mcgill.transformationverification:GenericMemberRef"/>
+          </left>
+          <right xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression function="//@contents.10" xsi:type="org.mcgill.transformationverification:FunctionRefExpr"/>
+          </right>
+        </expr>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+          <left xsi:type="org.mcgill.transformationverification:GenericDotExpression">
+            <expression var="//@contents.23" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+            <target member="//@contents.4/@members.1" xsi:type="org.mcgill.transformationverification:GenericMemberRef"/>
+          </left>
+          <right xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression var="//@contents.22" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+          </right>
+        </expr>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+          <left xsi:type="org.mcgill.transformationverification:GenericDotExpression">
+            <expression var="//@contents.23" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+            <target member="//@contents.4/@members.2" xsi:type="org.mcgill.transformationverification:GenericMemberRef"/>
+          </left>
+          <right xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression var="//@contents.19" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+          </right>
+        </expr>
+      </statements>
+    </body>
+  </contents>
+  <contents name="ComponentsSample_instances_gserverComponent__wire" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+          <left xsi:type="org.mcgill.transformationverification:GenericDotExpression">
+            <expression var="//@contents.19" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+            <target member="//@contents.1/@members.0" xsi:type="org.mcgill.transformationverification:GenericMemberRef"/>
+          </left>
+          <right xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression function="//@contents.12" xsi:type="org.mcgill.transformationverification:FunctionRefExpr"/>
+          </right>
+        </expr>
+      </statements>
+    </body>
+  </contents>
+  <contents name="ComponentsSample_instances_bserverComponent__wire" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr xsi:type="org.mcgill.transformationverification:AssignmentExpr">
+          <left xsi:type="org.mcgill.transformationverification:GenericDotExpression">
+            <expression var="//@contents.18" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+            <target member="//@contents.1/@members.0" xsi:type="org.mcgill.transformationverification:GenericMemberRef"/>
+          </left>
+          <right xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression function="//@contents.11" xsi:type="org.mcgill.transformationverification:FunctionRefExpr"/>
+          </right>
+        </expr>
+      </statements>
+    </body>
+  </contents>
+  <contents name="ComponentsSample_instances__init" xsi:type="org.mcgill.transformationverification:Function">
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.15" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.16" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.17" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+    </body>
+  </contents>
+  <contents name="ComponentsSample_MainTest" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.14" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.10" xsi:type="org.mcgill.transformationverification:FunctionCall">
+          <actuals xsi:type="org.mcgill.transformationverification:ReferenceExpr">
+            <expression var="//@contents.23" xsi:type="org.mcgill.transformationverification:GlobalVarRef"/>
+          </actuals>
+        </expr>
+      </statements>
+    </body>
+  </contents>
+  <contents name="ComponentsSample_blockexpr_main_2" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:VoidType"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.24" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+    </body>
+  </contents>
+  <contents name="main" xsi:type="org.mcgill.transformationverification:Function">
+    <type xsi:type="org.mcgill.transformationverification:Int32Type"/>
+    <body>
+      <statements xsi:type="org.mcgill.transformationverification:ExpressionStatement">
+        <expr function="//@contents.13" xsi:type="org.mcgill.transformationverification:FunctionCall"/>
+      </statements>
+      <statements xsi:type="org.mcgill.transformationverification:ReturnStatement">
+        <expression value="0" xsi:type="org.mcgill.transformationverification:NumberLiteral"/>
+      </statements>
+    </body>
+  </contents>
+</org.mcgill.transformationverification:ImplementationModule>
