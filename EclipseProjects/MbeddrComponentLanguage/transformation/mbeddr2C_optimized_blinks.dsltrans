@@ -698,6 +698,8 @@
     <hasRule description="layer2rule0">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class0" packageName="Module" className="Operation" id="layer2rule0class0"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class0" packageName="Module" className="ClientServerInterface" id="layer2rule0class0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer2rule0class0" target="layer2rule0class0"/>
       </match>
       <apply>
         <class description="layer2rule0class1" packageName="CModel" className="PointerType" id="layer2rule0class1">
