@@ -60,8 +60,6 @@
         <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule2class0" packageName="Module" className="Operation" id="layer0rule2class0">
           <attribute attributeName="name" description="layer0rule2class0attribute0" id="layer0rule2class0attribute0"/>
         </class>
-        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule2class1" packageName="Module" className="ClientServerInterface" id="layer0rule2class1"/>
-        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer0rule2class1" target="layer0rule2class0"/>
       </match>
       <apply>
         <class description="layer0rule2class2" packageName="CModel" className="CFunctionPointerStructMember" id="layer0rule2class2">
@@ -77,7 +75,15 @@
             <attributeValue xsi:type="dsltrans:Atom" value="FunctionRefType"/>
           </attribute>
         </class>
+        <class description="layer0rule5class2" packageName="CModel" className="PointerType" id="layer0rule5class2">
+          <attribute description="layer0rule5class2attribute0" id="layer0rule5class2attribute0">
+            <attributeValue xsi:type="dsltrans:Atom" value="InstancePointer"/>
+          </attribute>
+        </class>
+        <class description="layer0rule5class3" packageName="CModel" className="VoidType" id="layer0rule5class3"/>
         <association associationName="type" source="layer0rule2class2" target="layer0rule2class3"/>
+        <association associationName="argTypes" source="layer0rule2class3" target="layer0rule5class2"/>
+        <association associationName="baseType" source="layer0rule5class2" target="layer0rule5class3"/>
       </apply>
     </hasRule>
     <hasRule description="layer0rule3">
@@ -102,22 +108,6 @@
             <attributeValue xsi:type="dsltrans:Atom" value="VoidType"/>
           </attribute>
         </class>
-      </apply>
-    </hasRule>
-    <hasRule description="layer0rule5">
-      <match>
-        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule5class0" packageName="Module" className="Operation" id="layer0rule5class0"/>
-        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule5class1" packageName="Module" className="ClientServerInterface" id="layer0rule5class1"/>
-        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer0rule5class1" target="layer0rule5class0"/>
-      </match>
-      <apply>
-        <class description="layer0rule5class2" packageName="CModel" className="PointerType" id="layer0rule5class2">
-          <attribute description="layer0rule5class2attribute0" id="layer0rule5class2attribute0">
-            <attributeValue xsi:type="dsltrans:Atom" value="InstancePointer"/>
-          </attribute>
-        </class>
-        <class description="layer0rule5class3" packageName="CModel" className="VoidType" id="layer0rule5class3"/>
-        <association associationName="baseType" source="layer0rule5class2" target="layer0rule5class3"/>
       </apply>
     </hasRule>
     <hasRule description="layer0rule6">
@@ -691,28 +681,6 @@
         <association associationName="arguments" source="layer1rule15class2" target="layer1rule15class3"/>
       </apply>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule15class2" sourceClass="layer1rule15class0"/>
-    </hasRule>
-    <hasRule description="layer1rule16">
-      <match>
-        <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class0" packageName="Module" className="Operation" id="layer2rule0class0"/>
-        <class xsi:type="dsltrans:AnyMatchClass" description="layer2rule0class5" packageName="Module" className="ClientServerInterface" id="layer2rule0class5"/>
-        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer2rule0class5" target="layer2rule0class0"/>
-      </match>
-      <apply>
-        <class description="layer2rule0class1" packageName="CModel" className="PointerType" id="layer2rule0class1">
-          <attribute description="layer2rule0class1attribute0" id="layer2rule0class1attribute0">
-            <attributeValue xsi:type="dsltrans:Atom" value="InstancePointer"/>
-          </attribute>
-        </class>
-        <class description="layer2rule0class2" packageName="CModel" className="FunctionRefType" id="layer2rule0class2">
-          <attribute description="layer2rule0class2attribute0" id="layer2rule0class2attribute0">
-            <attributeValue xsi:type="dsltrans:Atom" value="FunctionRefType"/>
-          </attribute>
-        </class>
-        <association associationName="argTypes" source="layer2rule0class2" target="layer2rule0class1"/>
-      </apply>
-      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer2rule0class1" sourceClass="layer2rule0class0"/>
-      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer2rule0class2" sourceClass="layer2rule0class5"/>
     </hasRule>
   </source>
   <source xsi:type="dsltrans:Sequential" name="layer2" description="layer2" previousSource="//@source.2" outputFilePathURI="model/ComponentsSampleInC.xmi">
