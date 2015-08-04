@@ -8,6 +8,8 @@
 
 #include <stdbool.h>
 
+#include "UnitTestMessages_copied.h"
+
 
 
 #ifdef __cplusplus
@@ -24,9 +26,13 @@ struct ComponentsSample_BadServer__cdata {
 };
 
 struct ComponentsSample_ClientComponent__cdata {
-    /* required ports */
+    /* 
+   * required ports
+   */
 void *clientcomp_serverInterface__port;
-    /* Req port ops */
+    /* 
+   * Req port ops
+   */
 ComponentsSample_Server__idata_t *clientcomp_serverInterface__ops;
 };
 

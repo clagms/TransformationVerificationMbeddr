@@ -1,233 +1,314 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeRef="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757542307">
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="33" startPosition="2" endLine="33" endPosition="96" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="33" startPosition="48" endLine="33" endPosition="95" conceptFqName="com.mbeddr.core.expressions.structure.CastExpression" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="33" startPosition="88" endLine="33" endPosition="93" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757789149" fileName="ComponentsSample.c" startLine="34" startPosition="2" endLine="34" endPosition="49" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757789149" fileName="ComponentsSample.c" startLine="34" startPosition="2" endLine="34" endPosition="50" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757789149" fileName="ComponentsSample.c" startLine="35" startPosition="2" endLine="35" endPosition="152" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757789149" fileName="ComponentsSample.c" startLine="35" startPosition="2" endLine="35" endPosition="153" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757740200" fileName="ComponentsSample.c" startLine="37" startPosition="2" endLine="37" endPosition="16" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757741875" fileName="ComponentsSample.c" startLine="37" startPosition="14" endLine="37" endPosition="15" conceptFqName="com.mbeddr.core.expressions.structure.NumberLiteral" />
-    <nodeInfo nodeId="3749681781757762646" fileName="ComponentsSample.c" startLine="38" startPosition="9" endLine="38" endPosition="10" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757762643" fileName="ComponentsSample.c" startLine="38" startPosition="9" endLine="38" endPosition="15" conceptFqName="com.mbeddr.core.expressions.structure.GreaterEqualsExpression" />
-    <nodeInfo nodeId="3749681781757762645" fileName="ComponentsSample.c" startLine="38" startPosition="14" endLine="38" endPosition="15" conceptFqName="com.mbeddr.core.expressions.structure.NumberLiteral" />
-    <nodeInfo nodeId="3749681781757749912" fileName="ComponentsSample.c" startLine="40" startPosition="4" endLine="40" endPosition="5" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757750307" fileName="ComponentsSample.c" startLine="40" startPosition="4" endLine="40" endPosition="13" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757749913" fileName="ComponentsSample.c" startLine="40" startPosition="4" endLine="40" endPosition="14" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757755343" fileName="ComponentsSample.c" startLine="40" startPosition="8" endLine="40" endPosition="9" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757755340" fileName="ComponentsSample.c" startLine="40" startPosition="8" endLine="40" endPosition="13" conceptFqName="com.mbeddr.core.expressions.structure.PlusExpression" />
-    <nodeInfo nodeId="3749681781757755342" fileName="ComponentsSample.c" startLine="40" startPosition="12" endLine="40" endPosition="13" conceptFqName="com.mbeddr.core.expressions.structure.NumberLiteral" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="42" startPosition="2" endLine="42" endPosition="45" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="42" startPosition="2" endLine="42" endPosition="46" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="43" startPosition="2" endLine="43" endPosition="42" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="43" startPosition="2" endLine="43" endPosition="43" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="43" startPosition="21" endLine="43" endPosition="41" conceptFqName="com.mbeddr.core.expressions.structure.ParensExpression" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="43" startPosition="22" endLine="43" endPosition="40" conceptFqName="com.mbeddr.core.expressions.structure.CastExpression" />
-    <nodeInfo nodeId="9066775973819280994" fileName="ComponentsSample.c" startLine="43" startPosition="31" endLine="43" endPosition="38" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="44" startPosition="2" endLine="44" endPosition="154" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="44" startPosition="2" endLine="44" endPosition="155" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757739588" fileName="ComponentsSample.c" startLine="46" startPosition="2" endLine="46" endPosition="17" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="9066775973819281273" fileName="ComponentsSample.c" startLine="46" startPosition="9" endLine="46" endPosition="16" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="47" startPosition="2" endLine="47" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="48" startPosition="2" endLine="48" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="53" startPosition="2" endLine="53" endPosition="108" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="53" startPosition="54" endLine="53" endPosition="107" conceptFqName="com.mbeddr.core.expressions.structure.CastExpression" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="53" startPosition="100" endLine="53" endPosition="105" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757768527" fileName="ComponentsSample.c" startLine="54" startPosition="2" endLine="54" endPosition="44" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757768527" fileName="ComponentsSample.c" startLine="54" startPosition="2" endLine="54" endPosition="45" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757768527" fileName="ComponentsSample.c" startLine="55" startPosition="2" endLine="55" endPosition="158" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757768527" fileName="ComponentsSample.c" startLine="55" startPosition="2" endLine="55" endPosition="159" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="2" endLine="57" endPosition="110" conceptFqName="com.mbeddr.core.modules.structure.FunctionRefCallExpr" />
-    <nodeInfo nodeId="3749681781757730378" fileName="ComponentsSample.c" startLine="57" startPosition="2" endLine="57" endPosition="111" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="4" endLine="57" endPosition="10" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="4" endLine="57" endPosition="43" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="4" endLine="57" endPosition="59" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757730429" fileName="ComponentsSample.c" startLine="57" startPosition="61" endLine="57" endPosition="68" conceptFqName="com.mbeddr.core.pointers.structure.StringLiteral" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="69" endLine="57" endPosition="75" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757730394" fileName="ComponentsSample.c" startLine="57" startPosition="69" endLine="57" endPosition="109" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757787073" fileName="ComponentsSample.c" startLine="58" startPosition="2" endLine="58" endPosition="40" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757787073" fileName="ComponentsSample.c" startLine="58" startPosition="2" endLine="58" endPosition="41" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757787073" fileName="ComponentsSample.c" startLine="59" startPosition="2" endLine="59" endPosition="160" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757787073" fileName="ComponentsSample.c" startLine="59" startPosition="2" endLine="59" endPosition="161" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="61" startPosition="2" endLine="61" endPosition="10" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="62" startPosition="2" endLine="62" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="63" startPosition="2" endLine="63" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="68" startPosition="2" endLine="68" endPosition="98" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="68" startPosition="49" endLine="68" endPosition="97" conceptFqName="com.mbeddr.core.expressions.structure.CastExpression" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="68" startPosition="90" endLine="68" endPosition="95" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757787685" fileName="ComponentsSample.c" startLine="69" startPosition="2" endLine="69" endPosition="50" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757787685" fileName="ComponentsSample.c" startLine="69" startPosition="2" endLine="69" endPosition="51" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757787685" fileName="ComponentsSample.c" startLine="70" startPosition="2" endLine="70" endPosition="153" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757787685" fileName="ComponentsSample.c" startLine="70" startPosition="2" endLine="70" endPosition="154" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="72" startPosition="2" endLine="72" endPosition="46" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="72" startPosition="2" endLine="72" endPosition="47" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="73" startPosition="2" endLine="73" endPosition="42" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="73" startPosition="2" endLine="73" endPosition="43" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="73" startPosition="21" endLine="73" endPosition="41" conceptFqName="com.mbeddr.core.expressions.structure.ParensExpression" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="73" startPosition="22" endLine="73" endPosition="40" conceptFqName="com.mbeddr.core.expressions.structure.CastExpression" />
-    <nodeInfo nodeId="9066775973819280826" fileName="ComponentsSample.c" startLine="73" startPosition="31" endLine="73" endPosition="38" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="74" startPosition="2" endLine="74" endPosition="155" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="74" startPosition="2" endLine="74" endPosition="156" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757733021" fileName="ComponentsSample.c" startLine="76" startPosition="2" endLine="76" endPosition="17" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="9066775973819280915" fileName="ComponentsSample.c" startLine="76" startPosition="9" endLine="76" endPosition="16" conceptFqName="com.mbeddr.core.modules.structure.ArgumentRef" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="77" startPosition="2" endLine="77" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="78" startPosition="2" endLine="78" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="84" startPosition="2" endLine="84" endPosition="29" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="84" startPosition="27" endLine="84" endPosition="28" conceptFqName="com.mbeddr.core.expressions.structure.NumberLiteral" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="85" startPosition="2" endLine="85" endPosition="41" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="85" startPosition="25" endLine="85" endPosition="40" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="85" startPosition="26" endLine="85" endPosition="40" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="86" startPosition="2" endLine="86" endPosition="41" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="86" startPosition="2" endLine="86" endPosition="42" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="87" startPosition="2" endLine="87" endPosition="120" conceptFqName="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="87" startPosition="2" endLine="87" endPosition="121" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757825750" fileName="ComponentsSample.c" startLine="89" startPosition="2" endLine="89" endPosition="36" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757825750" fileName="ComponentsSample.c" startLine="89" startPosition="2" endLine="89" endPosition="37" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757826295" fileName="ComponentsSample.c" startLine="90" startPosition="2" endLine="90" endPosition="120" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757826277" fileName="ComponentsSample.c" startLine="90" startPosition="2" endLine="90" endPosition="121" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757826295" fileName="ComponentsSample.c" startLine="90" startPosition="66" endLine="90" endPosition="119" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757826295" fileName="ComponentsSample.c" startLine="90" startPosition="67" endLine="90" endPosition="119" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="91" startPosition="2" endLine="91" endPosition="24" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="91" startPosition="9" endLine="91" endPosition="23" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="96" startPosition="2" endLine="96" endPosition="29" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="96" startPosition="27" endLine="96" endPosition="28" conceptFqName="com.mbeddr.core.expressions.structure.NumberLiteral" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="97" startPosition="2" endLine="97" endPosition="41" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="97" startPosition="25" endLine="97" endPosition="40" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="97" startPosition="26" endLine="97" endPosition="40" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="2" endLine="98" endPosition="14" conceptFqName="com.mbeddr.core.pointers.structure.DerefExpr" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="2" endLine="98" endPosition="59" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="2" endLine="98" endPosition="60" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="3" endLine="98" endPosition="14" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="17" endLine="98" endPosition="29" conceptFqName="com.mbeddr.core.pointers.structure.DerefExpr" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="17" endLine="98" endPosition="59" conceptFqName="com.mbeddr.core.expressions.structure.PlusExpression" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="18" endLine="98" endPosition="29" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781758040689" fileName="ComponentsSample.c" startLine="98" startPosition="32" endLine="98" endPosition="59" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="99" startPosition="2" endLine="99" endPosition="24" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="99" startPosition="9" endLine="99" endPosition="23" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="104" startPosition="2" endLine="104" endPosition="33" conceptFqName="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="104" startPosition="31" endLine="104" endPosition="32" conceptFqName="com.mbeddr.core.pointers.structure.NullExpression" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="105" startPosition="2" endLine="105" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="106" startPosition="2" endLine="106" endPosition="52" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="106" startPosition="2" endLine="106" endPosition="53" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="107" startPosition="2" endLine="107" endPosition="53" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="107" startPosition="2" endLine="107" endPosition="54" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="108" startPosition="2" endLine="108" endPosition="53" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="108" startPosition="2" endLine="108" endPosition="54" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="109" startPosition="2" endLine="109" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="110" startPosition="2" endLine="110" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="111" startPosition="2" endLine="111" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="113" startPosition="4" endLine="113" endPosition="24" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="113" startPosition="4" endLine="113" endPosition="80" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="113" startPosition="4" endLine="113" endPosition="81" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="113" startPosition="27" endLine="113" endPosition="80" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="113" startPosition="28" endLine="113" endPosition="80" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="114" startPosition="4" endLine="114" endPosition="4" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="117" startPosition="4" endLine="117" endPosition="24" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="117" startPosition="4" endLine="117" endPosition="81" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="117" startPosition="4" endLine="117" endPosition="82" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="117" startPosition="27" endLine="117" endPosition="81" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="117" startPosition="28" endLine="117" endPosition="81" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="118" startPosition="4" endLine="118" endPosition="4" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="121" startPosition="4" endLine="121" endPosition="24" conceptFqName="com.mbeddr.core.statements.structure.LocalVarRef" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="121" startPosition="4" endLine="121" endPosition="81" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="121" startPosition="4" endLine="121" endPosition="82" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="121" startPosition="27" endLine="121" endPosition="81" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="121" startPosition="28" endLine="121" endPosition="81" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="122" startPosition="4" endLine="122" endPosition="4" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="124" startPosition="2" endLine="124" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.Statement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="137" startPosition="2" endLine="137" endPosition="56" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="137" startPosition="2" endLine="137" endPosition="71" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="137" startPosition="2" endLine="137" endPosition="132" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="137" startPosition="2" endLine="137" endPosition="133" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="137" startPosition="74" endLine="137" endPosition="132" conceptFqName="com.mbeddr.core.modules.structure.FunctionRefExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="150" startPosition="2" endLine="150" endPosition="55" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="150" startPosition="2" endLine="150" endPosition="70" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="150" startPosition="2" endLine="150" endPosition="137" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="150" startPosition="2" endLine="150" endPosition="138" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="150" startPosition="73" endLine="150" endPosition="137" conceptFqName="com.mbeddr.core.modules.structure.FunctionRefExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="2" endLine="155" endPosition="54" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="2" endLine="155" endPosition="87" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="2" endLine="155" endPosition="144" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="2" endLine="155" endPosition="145" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="90" endLine="155" endPosition="144" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="155" startPosition="91" endLine="155" endPosition="144" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="2" endLine="160" endPosition="54" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="2" endLine="160" endPosition="86" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="2" endLine="160" endPosition="144" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="2" endLine="160" endPosition="145" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="89" endLine="160" endPosition="144" conceptFqName="com.mbeddr.core.pointers.structure.ReferenceExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="160" startPosition="90" endLine="160" endPosition="144" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="173" startPosition="2" endLine="173" endPosition="56" conceptFqName="com.mbeddr.core.modules.structure.GlobalVarRef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="173" startPosition="2" endLine="173" endPosition="71" conceptFqName="com.mbeddr.core.expressions.structure.GenericDotExpression" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="173" startPosition="2" endLine="173" endPosition="133" conceptFqName="com.mbeddr.core.expressions.structure.AssignmentExpr" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="173" startPosition="2" endLine="173" endPosition="134" conceptFqName="com.mbeddr.core.statements.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="173" startPosition="74" endLine="173" endPosition="133" conceptFqName="com.mbeddr.core.modules.structure.FunctionRefExpr" />
-    <nodeInfo nodeId="9141254329931944225" fileName="ComponentsSample.c" startLine="178" startPosition="2" endLine="178" endPosition="45" conceptFqName="com.mbeddr.core.modules.structure.ReturnStatement" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="178" startPosition="9" endLine="178" endPosition="44" conceptFqName="com.mbeddr.core.modules.structure.FunctionCall" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="6" startPosition="0" endLine="7" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.blockexpr_main_2" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.instances__init" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.instances_bserverComponent__wire" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.instances_clientComponent__wire" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.instances_gserverComponent__wire" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
-    <nodeInfo nodeId="3749681781757789149" fileName="ComponentsSample.c" startLine="34" startPosition="2" endLine="36" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757739410" fileName="ComponentsSample.c" startLine="39" startPosition="2" endLine="41" endPosition="3" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757768527" fileName="ComponentsSample.c" startLine="54" startPosition="2" endLine="56" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757787073" fileName="ComponentsSample.c" startLine="58" startPosition="2" endLine="60" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757787685" fileName="ComponentsSample.c" startLine="69" startPosition="2" endLine="71" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="86" startPosition="2" endLine="88" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="9141254329931944224" fileName="ComponentsSample.c" startLine="177" startPosition="0" endLine="179" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757739409" fileName="ComponentsSample.c" startLine="38" startPosition="2" endLine="41" endPosition="3" conceptFqName="com.mbeddr.core.statements.structure.WhileStatement" />
-    <nodeInfo nodeId="3749681781757789151" fileName="ComponentsSample.c" startLine="42" startPosition="2" endLine="45" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757788164" fileName="ComponentsSample.c" startLine="72" startPosition="2" endLine="75" endPosition="2" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757819453" fileName="ComponentsSample.c" startLine="112" startPosition="2" endLine="115" endPosition="3" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757819578" fileName="ComponentsSample.c" startLine="116" startPosition="2" endLine="119" endPosition="3" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757819627" fileName="ComponentsSample.c" startLine="120" startPosition="2" endLine="123" endPosition="3" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="129" startPosition="2" endLine="132" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="133" startPosition="2" endLine="136" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="142" startPosition="2" endLine="145" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="146" startPosition="2" endLine="149" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="151" startPosition="2" endLine="154" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="156" startPosition="2" endLine="159" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="165" startPosition="2" endLine="168" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="169" startPosition="2" endLine="172" endPosition="0" conceptFqName="com.mbeddr.core.statements.structure.CommentStatement" />
-    <nodeInfo nodeId="9141254329931944223" fileName="ComponentsSample.c" startLine="176" startPosition="0" endLine="180" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="main" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="95" startPosition="0" endLine="100" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="9141254329931944226" fileName="ComponentsSample.c" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_blockexpr_main_2" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="83" startPosition="0" endLine="92" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="128" startPosition="0" endLine="138" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="164" startPosition="0" endLine="174" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="52" startPosition="0" endLine="64" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="67" startPosition="0" endLine="79" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757823876" fileName="ComponentsSample.c" startLine="81" startPosition="0" endLine="93" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_MainTest" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="127" startPosition="0" endLine="139" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_instances_bserverComponent__wire" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="163" startPosition="0" endLine="175" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_instances_gserverComponent__wire" />
-    <nodeInfo nodeId="3749681781757729830" fileName="ComponentsSample.c" startLine="51" startPosition="0" endLine="65" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_ClientComponent_clientInterface_client_process" />
-    <nodeInfo nodeId="3749681781757732859" fileName="ComponentsSample.c" startLine="66" startPosition="0" endLine="80" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_GoodServer_serverInterface_server_process" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="32" startPosition="0" endLine="49" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757739180" fileName="ComponentsSample.c" startLine="31" startPosition="0" endLine="50" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_BadServer_serverInterface_server_process" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="141" startPosition="0" endLine="161" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="103" startPosition="0" endLine="125" endPosition="1" conceptFqName="com.mbeddr.core.statements.structure.StatementList" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="140" startPosition="0" endLine="162" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_instances_clientComponent__wire" />
-    <nodeInfo nodeId="3749681781757817638" fileName="ComponentsSample.c" startLine="102" startPosition="0" endLine="126" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.Function" propertyString="ComponentsSample_instances__init" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="17" startPosition="0" endLine="17" endPosition="79" conceptFqName="com.mbeddr.core.udt.structure.TypeDef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="18" startPosition="0" endLine="18" endPosition="79" conceptFqName="com.mbeddr.core.udt.structure.TypeDef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="19" startPosition="0" endLine="19" endPosition="85" conceptFqName="com.mbeddr.core.udt.structure.TypeDef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="20" startPosition="0" endLine="20" endPosition="97" conceptFqName="com.mbeddr.core.udt.structure.TypeDef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="21" startPosition="0" endLine="21" endPosition="87" conceptFqName="com.mbeddr.core.udt.structure.TypeDef" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.BadServer_serverInterface_server_process" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.ClientComponent_clientInterface_client_process" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.GoodServer_serverInterface_server_process" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.MainTest" />
-    <nodeInfo nodeId="3749681781757542307" fileName="ComponentsSample.h" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="com.mbeddr.core.modules.structure.FunctionPrototype" propertyString="ComponentsExample.main" />
-    <unitInfo nodeId="3749681781757542307" fileName="ComponentsSample.c" startLine="1" startPosition="0" endLine="181" endPosition="0" unitName="ComponentsExample.ComponentsSample" />
+<debug-info>
+  <concept fqn="com.mbeddr.core.expressions.structure.AssignmentExpr" />
+  <concept fqn="com.mbeddr.core.expressions.structure.CastExpression" />
+  <concept fqn="com.mbeddr.core.expressions.structure.GenericDotExpression" />
+  <concept fqn="com.mbeddr.core.expressions.structure.GreaterEqualsExpression" />
+  <concept fqn="com.mbeddr.core.expressions.structure.NumberLiteral" />
+  <concept fqn="com.mbeddr.core.expressions.structure.ParensExpression" />
+  <concept fqn="com.mbeddr.core.expressions.structure.PlusExpression" />
+  <concept fqn="com.mbeddr.core.modules.structure.ArgumentRef" />
+  <concept fqn="com.mbeddr.core.modules.structure.Function" />
+  <concept fqn="com.mbeddr.core.modules.structure.FunctionCall" />
+  <concept fqn="com.mbeddr.core.modules.structure.FunctionPrototype" />
+  <concept fqn="com.mbeddr.core.modules.structure.FunctionRefCallExpr" />
+  <concept fqn="com.mbeddr.core.modules.structure.FunctionRefExpr" />
+  <concept fqn="com.mbeddr.core.modules.structure.GlobalVarRef" />
+  <concept fqn="com.mbeddr.core.modules.structure.GlobalVariableDeclaration" />
+  <concept fqn="com.mbeddr.core.modules.structure.ReturnStatement" />
+  <concept fqn="com.mbeddr.core.pointers.structure.DerefExpr" />
+  <concept fqn="com.mbeddr.core.pointers.structure.NullExpression" />
+  <concept fqn="com.mbeddr.core.pointers.structure.ReferenceExpr" />
+  <concept fqn="com.mbeddr.core.pointers.structure.StringLiteral" />
+  <concept fqn="com.mbeddr.core.statements.structure.ArbitraryTextExpression" />
+  <concept fqn="com.mbeddr.core.statements.structure.CommentStatement" />
+  <concept fqn="com.mbeddr.core.statements.structure.ExpressionStatement" />
+  <concept fqn="com.mbeddr.core.statements.structure.LocalVarRef" />
+  <concept fqn="com.mbeddr.core.statements.structure.LocalVariableDeclaration" />
+  <concept fqn="com.mbeddr.core.statements.structure.Statement" />
+  <concept fqn="com.mbeddr.core.statements.structure.StatementList" />
+  <concept fqn="com.mbeddr.core.statements.structure.WhileStatement" />
+  <concept fqn="com.mbeddr.core.udt.structure.TypeDef" />
+  <root>
+    <file name="UnitTestMessages_copied.c">
+      <unit at="1,0,97,0" name="ComponentsExample.UnitTestMessages_copied" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757542307">
+    <file name="ComponentsSample.c">
+      <node id="3749681781757739180" at="52,2,52,97" concept="24" />
+      <node id="3749681781757739180" at="52,48,52,96" concept="1" />
+      <node id="3749681781757739180" at="52,89,52,94" concept="7" />
+      <node id="3749681781757789149" at="53,2,53,179" concept="9" />
+      <node id="3749681781757789149" at="53,2,53,180" concept="22" />
+      <node id="3749681781757789149" at="53,41,53,178" concept="19" />
+      <node id="3749681781757740200" at="55,2,55,16" concept="24" />
+      <node id="3749681781757741875" at="55,14,55,15" concept="4" />
+      <node id="3749681781757762646" at="56,9,56,10" concept="23" />
+      <node id="3749681781757762643" at="56,9,56,15" concept="3" />
+      <node id="3749681781757762645" at="56,14,56,15" concept="4" />
+      <node id="3749681781757749912" at="58,4,58,5" concept="23" />
+      <node id="3749681781757750307" at="58,4,58,13" concept="0" />
+      <node id="3749681781757749913" at="58,4,58,14" concept="22" />
+      <node id="3749681781757755343" at="58,8,58,9" concept="23" />
+      <node id="3749681781757755340" at="58,8,58,13" concept="6" />
+      <node id="3749681781757755342" at="58,12,58,13" concept="4" />
+      <node id="3749681781757789151" at="60,2,60,188" concept="9" />
+      <node id="3749681781757789151" at="60,2,60,189" concept="22" />
+      <node id="9066775973819280994" at="60,39,60,46" concept="7" />
+      <node id="3749681781757789151" at="60,48,60,187" concept="19" />
+      <node id="3749681781757739588" at="62,2,62,17" concept="15" />
+      <node id="9066775973819281273" at="62,9,62,16" concept="7" />
+      <node id="3749681781757739180" at="63,2,63,2" concept="25" />
+      <node id="3749681781757739180" at="64,2,64,2" concept="25" />
+      <node id="3749681781757729830" at="69,2,69,109" concept="24" />
+      <node id="3749681781757729830" at="69,54,69,108" concept="1" />
+      <node id="3749681781757729830" at="69,101,69,106" concept="7" />
+      <node id="3749681781757768527" at="70,2,70,184" concept="9" />
+      <node id="3749681781757768527" at="70,2,70,185" concept="22" />
+      <node id="3749681781757768527" at="70,40,70,183" concept="19" />
+      <node id="3749681781757730394" at="72,2,72,110" concept="11" />
+      <node id="3749681781757730378" at="72,2,72,111" concept="22" />
+      <node id="3749681781757730394" at="72,4,72,10" concept="23" />
+      <node id="3749681781757730394" at="72,4,72,43" concept="2" />
+      <node id="3749681781757730394" at="72,4,72,59" concept="2" />
+      <node id="3749681781757730429" at="72,61,72,68" concept="19" />
+      <node id="3749681781757730394" at="72,69,72,75" concept="23" />
+      <node id="3749681781757730394" at="72,69,72,109" concept="2" />
+      <node id="3749681781757787073" at="73,2,73,184" concept="9" />
+      <node id="3749681781757787073" at="73,2,73,185" concept="22" />
+      <node id="3749681781757787073" at="73,38,73,183" concept="19" />
+      <node id="3749681781757729830" at="75,2,75,10" concept="15" />
+      <node id="3749681781757729830" at="76,2,76,2" concept="25" />
+      <node id="3749681781757729830" at="77,2,77,2" concept="25" />
+      <node id="3749681781757732859" at="82,2,82,99" concept="24" />
+      <node id="3749681781757732859" at="82,49,82,98" concept="1" />
+      <node id="3749681781757732859" at="82,91,82,96" concept="7" />
+      <node id="3749681781757787685" at="83,2,83,180" concept="9" />
+      <node id="3749681781757787685" at="83,2,83,181" concept="22" />
+      <node id="3749681781757787685" at="83,41,83,179" concept="19" />
+      <node id="3749681781757788164" at="85,2,85,189" concept="9" />
+      <node id="3749681781757788164" at="85,2,85,190" concept="22" />
+      <node id="9066775973819280826" at="85,39,85,46" concept="7" />
+      <node id="3749681781757788164" at="85,48,85,188" concept="19" />
+      <node id="3749681781757733021" at="87,2,87,17" concept="15" />
+      <node id="9066775973819280915" at="87,9,87,16" concept="7" />
+      <node id="3749681781757732859" at="88,2,88,2" concept="25" />
+      <node id="3749681781757732859" at="89,2,89,2" concept="25" />
+      <node id="3749681781757823876" at="94,2,94,29" concept="24" />
+      <node id="3749681781757823876" at="94,27,94,28" concept="4" />
+      <node id="3749681781757823876" at="95,2,95,41" concept="24" />
+      <node id="3749681781757823876" at="95,25,95,40" concept="18" />
+      <node id="3749681781757823876" at="95,26,95,40" concept="23" />
+      <node id="3749681781757823876" at="96,2,96,155" concept="9" />
+      <node id="3749681781757823876" at="96,2,96,156" concept="22" />
+      <node id="3749681781757823876" at="96,49,96,154" concept="19" />
+      <node id="3749681781757825750" at="98,2,98,36" concept="9" />
+      <node id="3749681781757825750" at="98,2,98,37" concept="22" />
+      <node id="3749681781757826295" at="99,2,99,120" concept="9" />
+      <node id="3749681781757826277" at="99,2,99,121" concept="22" />
+      <node id="3749681781757826295" at="99,66,99,119" concept="18" />
+      <node id="3749681781757826295" at="99,67,99,119" concept="13" />
+      <node id="3749681781757823876" at="100,2,100,24" concept="15" />
+      <node id="3749681781757823876" at="100,9,100,23" concept="23" />
+      <node id="9141254329931944226" at="105,2,105,29" concept="24" />
+      <node id="9141254329931944226" at="105,27,105,28" concept="4" />
+      <node id="9141254329931944226" at="106,2,106,41" concept="24" />
+      <node id="9141254329931944226" at="106,25,106,40" concept="18" />
+      <node id="9141254329931944226" at="106,26,106,40" concept="23" />
+      <node id="3749681781758040689" at="107,2,107,14" concept="16" />
+      <node id="3749681781758040689" at="107,2,107,59" concept="0" />
+      <node id="3749681781758040689" at="107,2,107,60" concept="22" />
+      <node id="3749681781758040689" at="107,3,107,14" concept="23" />
+      <node id="3749681781758040689" at="107,17,107,29" concept="16" />
+      <node id="3749681781758040689" at="107,17,107,59" concept="6" />
+      <node id="3749681781758040689" at="107,18,107,29" concept="23" />
+      <node id="3749681781758040689" at="107,32,107,59" concept="9" />
+      <node id="9141254329931944226" at="108,2,108,24" concept="15" />
+      <node id="9141254329931944226" at="108,9,108,23" concept="23" />
+      <node id="3749681781757817638" at="113,2,113,33" concept="24" />
+      <node id="3749681781757817638" at="113,31,113,32" concept="17" />
+      <node id="3749681781757817638" at="114,2,114,2" concept="25" />
+      <node id="3749681781757817638" at="115,2,115,52" concept="9" />
+      <node id="3749681781757817638" at="115,2,115,53" concept="22" />
+      <node id="3749681781757817638" at="116,2,116,53" concept="9" />
+      <node id="3749681781757817638" at="116,2,116,54" concept="22" />
+      <node id="3749681781757817638" at="117,2,117,53" concept="9" />
+      <node id="3749681781757817638" at="117,2,117,54" concept="22" />
+      <node id="3749681781757817638" at="118,2,118,2" concept="25" />
+      <node id="3749681781757817638" at="119,2,119,2" concept="26" />
+      <node id="3749681781757817638" at="120,2,120,2" concept="25" />
+      <node id="3749681781757819453" at="122,4,122,24" concept="23" />
+      <node id="3749681781757819453" at="122,4,122,80" concept="0" />
+      <node id="3749681781757819453" at="122,4,122,81" concept="22" />
+      <node id="3749681781757819453" at="122,27,122,80" concept="18" />
+      <node id="3749681781757819453" at="122,28,122,80" concept="13" />
+      <node id="3749681781757819453" at="123,4,123,4" concept="25" />
+      <node id="3749681781757819578" at="126,4,126,24" concept="23" />
+      <node id="3749681781757819578" at="126,4,126,81" concept="0" />
+      <node id="3749681781757819578" at="126,4,126,82" concept="22" />
+      <node id="3749681781757819578" at="126,27,126,81" concept="18" />
+      <node id="3749681781757819578" at="126,28,126,81" concept="13" />
+      <node id="3749681781757819578" at="127,4,127,4" concept="25" />
+      <node id="3749681781757819627" at="130,4,130,24" concept="23" />
+      <node id="3749681781757819627" at="130,4,130,81" concept="0" />
+      <node id="3749681781757819627" at="130,4,130,82" concept="22" />
+      <node id="3749681781757819627" at="130,27,130,81" concept="18" />
+      <node id="3749681781757819627" at="130,28,130,81" concept="13" />
+      <node id="3749681781757819627" at="131,4,131,4" concept="25" />
+      <node id="3749681781757817638" at="133,2,133,2" concept="25" />
+      <node id="3749681781757819627" at="146,2,146,56" concept="13" />
+      <node id="3749681781757819627" at="146,2,146,71" concept="2" />
+      <node id="3749681781757819627" at="146,2,146,132" concept="0" />
+      <node id="3749681781757819627" at="146,2,146,133" concept="22" />
+      <node id="3749681781757819627" at="146,74,146,132" concept="12" />
+      <node id="3749681781757819453" at="159,2,159,55" concept="13" />
+      <node id="3749681781757819453" at="159,2,159,70" concept="2" />
+      <node id="3749681781757819453" at="159,2,159,137" concept="0" />
+      <node id="3749681781757819453" at="159,2,159,138" concept="22" />
+      <node id="3749681781757819453" at="159,73,159,137" concept="12" />
+      <node id="3749681781757542307" at="164,2,164,54" concept="13" />
+      <node id="3749681781757542307" at="164,2,164,87" concept="2" />
+      <node id="3749681781757542307" at="164,2,164,144" concept="0" />
+      <node id="3749681781757542307" at="164,2,164,145" concept="22" />
+      <node id="3749681781757542307" at="164,90,164,144" concept="18" />
+      <node id="3749681781757542307" at="164,91,164,144" concept="13" />
+      <node id="3749681781757542307" at="169,2,169,54" concept="13" />
+      <node id="3749681781757542307" at="169,2,169,86" concept="2" />
+      <node id="3749681781757542307" at="169,2,169,144" concept="0" />
+      <node id="3749681781757542307" at="169,2,169,145" concept="22" />
+      <node id="3749681781757542307" at="169,89,169,144" concept="18" />
+      <node id="3749681781757542307" at="169,90,169,144" concept="13" />
+      <node id="3749681781757819578" at="182,2,182,56" concept="13" />
+      <node id="3749681781757819578" at="182,2,182,71" concept="2" />
+      <node id="3749681781757819578" at="182,2,182,133" concept="0" />
+      <node id="3749681781757819578" at="182,2,182,134" concept="22" />
+      <node id="3749681781757819578" at="182,74,182,133" concept="12" />
+      <node id="9141254329931944225" at="187,2,187,45" concept="15" />
+      <node id="9141254329931944226" at="187,9,187,44" concept="9" />
+      <node id="3749681781757542307" at="195,2,195,45" concept="20" />
+      <node id="3749681781757542307" at="195,2,195,46" concept="22" />
+      <node id="3749681781757542307" at="196,2,196,42" concept="20" />
+      <node id="3749681781757542307" at="196,2,196,43" concept="22" />
+      <node id="3749681781757542307" at="196,21,196,41" concept="5" />
+      <node id="3749681781757542307" at="196,22,196,40" concept="1" />
+      <node id="3749681781757542307" at="196,32,196,38" concept="7" />
+      <node id="3749681781757542307" at="197,2,197,28" concept="20" />
+      <node id="3749681781757542307" at="197,2,197,29" concept="22" />
+      <node id="3749681781757542307" at="197,23,197,26" concept="7" />
+      <node id="3749681781757542307" at="205,2,205,49" concept="20" />
+      <node id="3749681781757542307" at="205,2,205,50" concept="22" />
+      <node id="3749681781757542307" at="206,2,206,28" concept="20" />
+      <node id="3749681781757542307" at="206,2,206,29" concept="22" />
+      <node id="3749681781757542307" at="206,23,206,26" concept="7" />
+      <node id="3749681781757542307" at="214,2,214,40" concept="20" />
+      <node id="3749681781757542307" at="214,2,214,41" concept="22" />
+      <node id="3749681781757542307" at="215,2,215,28" concept="20" />
+      <node id="3749681781757542307" at="215,2,215,29" concept="22" />
+      <node id="3749681781757542307" at="215,23,215,26" concept="7" />
+      <node id="3749681781757542307" at="223,2,223,44" concept="20" />
+      <node id="3749681781757542307" at="223,2,223,45" concept="22" />
+      <node id="3749681781757542307" at="224,2,224,28" concept="20" />
+      <node id="3749681781757542307" at="224,2,224,29" concept="22" />
+      <node id="3749681781757542307" at="224,23,224,26" concept="7" />
+      <node id="3749681781757542307" at="232,2,232,46" concept="20" />
+      <node id="3749681781757542307" at="232,2,232,47" concept="22" />
+      <node id="3749681781757542307" at="233,2,233,42" concept="20" />
+      <node id="3749681781757542307" at="233,2,233,43" concept="22" />
+      <node id="3749681781757542307" at="233,21,233,41" concept="5" />
+      <node id="3749681781757542307" at="233,22,233,40" concept="1" />
+      <node id="3749681781757542307" at="233,32,233,38" concept="7" />
+      <node id="3749681781757542307" at="234,2,234,28" concept="20" />
+      <node id="3749681781757542307" at="234,2,234,29" concept="22" />
+      <node id="3749681781757542307" at="234,23,234,26" concept="7" />
+      <node id="3749681781757542307" at="242,2,242,50" concept="20" />
+      <node id="3749681781757542307" at="242,2,242,51" concept="22" />
+      <node id="3749681781757542307" at="243,2,243,28" concept="20" />
+      <node id="3749681781757542307" at="243,2,243,29" concept="22" />
+      <node id="3749681781757542307" at="243,23,243,26" concept="7" />
+      <node id="3749681781757542307" at="7,0,8,0" concept="10" trace="ComponentsExample.blockexpr_main_2" />
+      <node id="3749681781757542307" at="9,0,10,0" concept="10" trace="ComponentsExample.instances__init" />
+      <node id="3749681781757542307" at="11,0,12,0" concept="10" trace="ComponentsExample.instances_bserverComponent__wire" />
+      <node id="3749681781757542307" at="13,0,14,0" concept="10" trace="ComponentsExample.instances_clientComponent__wire" />
+      <node id="3749681781757542307" at="15,0,16,0" concept="10" trace="ComponentsExample.instances_gserverComponent__wire" />
+      <node id="3749681781757542307" at="17,0,18,0" concept="10" trace="ComponentsExample.messages_BServerEnd" />
+      <node id="3749681781757542307" at="19,0,20,0" concept="10" trace="ComponentsExample.messages_BServerStart" />
+      <node id="3749681781757542307" at="21,0,22,0" concept="10" trace="ComponentsExample.messages_ClientEnd" />
+      <node id="3749681781757542307" at="23,0,24,0" concept="10" trace="ComponentsExample.messages_ClientStart" />
+      <node id="3749681781757542307" at="25,0,26,0" concept="10" trace="ComponentsExample.messages_GServerEnd" />
+      <node id="3749681781757542307" at="27,0,28,0" concept="10" trace="ComponentsExample.messages_GServerStart" />
+      <node id="3749681781757819627" at="29,0,30,0" concept="14" />
+      <node id="3749681781757819453" at="31,0,32,0" concept="14" />
+      <node id="3749681781757819578" at="33,0,34,0" concept="14" />
+      <node id="3749681781757789149" at="53,2,54,2" concept="26" />
+      <node id="3749681781757789151" at="60,2,61,2" concept="26" />
+      <node id="3749681781757768527" at="70,2,71,2" concept="26" />
+      <node id="3749681781757787073" at="73,2,74,2" concept="26" />
+      <node id="3749681781757787685" at="83,2,84,2" concept="26" />
+      <node id="3749681781757788164" at="85,2,86,2" concept="26" />
+      <node id="3749681781757823876" at="96,2,97,2" concept="26" />
+      <node id="3749681781757739410" at="57,2,59,3" concept="26" />
+      <node id="9141254329931944224" at="186,0,188,1" concept="26" />
+      <node id="3749681781757739409" at="56,2,59,3" concept="27" />
+      <node id="3749681781757819453" at="121,2,124,3" concept="26" />
+      <node id="3749681781757819578" at="125,2,128,3" concept="26" />
+      <node id="3749681781757819627" at="129,2,132,3" concept="26" />
+      <node id="3749681781757542307" at="138,2,141,0" concept="21" />
+      <node id="3749681781757542307" at="142,2,145,0" concept="21" />
+      <node id="3749681781757542307" at="151,2,154,0" concept="21" />
+      <node id="3749681781757542307" at="155,2,158,0" concept="21" />
+      <node id="3749681781757542307" at="160,2,163,0" concept="21" />
+      <node id="3749681781757542307" at="165,2,168,0" concept="21" />
+      <node id="3749681781757542307" at="174,2,177,0" concept="21" />
+      <node id="3749681781757542307" at="178,2,181,0" concept="21" />
+      <node id="3749681781757542307" at="204,0,207,1" concept="26" />
+      <node id="3749681781757542307" at="213,0,216,1" concept="26" />
+      <node id="3749681781757542307" at="222,0,225,1" concept="26" />
+      <node id="3749681781757542307" at="241,0,244,1" concept="26" />
+      <node id="3749681781757819627" at="35,0,39,0" concept="14" />
+      <node id="3749681781757819453" at="40,0,44,0" concept="14" />
+      <node id="3749681781757819578" at="45,0,49,0" concept="14" />
+      <node id="9141254329931944223" at="185,0,189,0" concept="8" trace="main" />
+      <node id="3749681781757542307" at="194,0,198,1" concept="26" />
+      <node id="3749681781757542307" at="231,0,235,1" concept="26" />
+      <node id="9141254329931944226" at="104,0,109,1" concept="26" />
+      <node id="9141254329931944226" at="103,0,110,0" concept="8" trace="ComponentsSample_blockexpr_main_2" />
+      <node id="3749681781757823876" at="93,0,101,1" concept="26" />
+      <node id="3749681781757542307" at="200,0,208,0" concept="8" trace="ComponentsSample_messages_BServerStart" />
+      <node id="3749681781757542307" at="209,0,217,0" concept="8" trace="ComponentsSample_messages_ClientEnd" />
+      <node id="3749681781757542307" at="218,0,226,0" concept="8" trace="ComponentsSample_messages_ClientStart" />
+      <node id="3749681781757542307" at="237,0,245,0" concept="8" trace="ComponentsSample_messages_GServerStart" />
+      <node id="3749681781757732859" at="81,0,90,1" concept="26" />
+      <node id="3749681781757542307" at="190,0,199,0" concept="8" trace="ComponentsSample_messages_BServerEnd" />
+      <node id="3749681781757542307" at="227,0,236,0" concept="8" trace="ComponentsSample_messages_GServerEnd" />
+      <node id="3749681781757729830" at="68,0,78,1" concept="26" />
+      <node id="3749681781757823876" at="92,0,102,0" concept="8" trace="ComponentsSample_MainTest" />
+      <node id="3749681781757542307" at="137,0,147,1" concept="26" />
+      <node id="3749681781757542307" at="173,0,183,1" concept="26" />
+      <node id="3749681781757732859" at="80,0,91,0" concept="8" trace="ComponentsSample_GoodServer_serverInterface_server_process" />
+      <node id="3749681781757729830" at="67,0,79,0" concept="8" trace="ComponentsSample_ClientComponent_clientInterface_client_process" />
+      <node id="3749681781757542307" at="136,0,148,0" concept="8" trace="ComponentsSample_instances_bserverComponent__wire" />
+      <node id="3749681781757542307" at="172,0,184,0" concept="8" trace="ComponentsSample_instances_gserverComponent__wire" />
+      <node id="3749681781757739180" at="51,0,65,1" concept="26" />
+      <node id="3749681781757739180" at="50,0,66,0" concept="8" trace="ComponentsSample_BadServer_serverInterface_server_process" />
+      <node id="3749681781757542307" at="150,0,170,1" concept="26" />
+      <node id="3749681781757817638" at="112,0,134,1" concept="26" />
+      <node id="3749681781757542307" at="149,0,171,0" concept="8" trace="ComponentsSample_instances_clientComponent__wire" />
+      <node id="3749681781757817638" at="111,0,135,0" concept="8" trace="ComponentsSample_instances__init" />
+      <unit id="3749681781757542307" at="1,0,246,0" name="ComponentsExample.ComponentsSample" />
+    </file>
+    <file name="ComponentsSample.h">
+      <node id="3749681781757542307" at="19,0,19,79" concept="28" />
+      <node id="3749681781757542307" at="20,0,20,79" concept="28" />
+      <node id="3749681781757542307" at="21,0,21,85" concept="28" />
+      <node id="3749681781757542307" at="22,0,22,97" concept="28" />
+      <node id="3749681781757542307" at="23,0,23,87" concept="28" />
+      <node id="3749681781757542307" at="51,0,52,0" concept="10" trace="ComponentsExample.BadServer_serverInterface_server_process" />
+      <node id="3749681781757542307" at="53,0,54,0" concept="10" trace="ComponentsExample.ClientComponent_clientInterface_client_process" />
+      <node id="3749681781757542307" at="55,0,56,0" concept="10" trace="ComponentsExample.GoodServer_serverInterface_server_process" />
+      <node id="3749681781757542307" at="57,0,58,0" concept="10" trace="ComponentsExample.MainTest" />
+      <node id="3749681781757542307" at="59,0,60,0" concept="10" trace="ComponentsExample.main" />
+    </file>
+  </root>
+</debug-info>
 

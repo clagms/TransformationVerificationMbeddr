@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-std=c99
 ODIR=./bin
-_OBJ_ComponentsExec=ComponentsSample.o
+_OBJ_ComponentsExec=ComponentsSample.o UnitTestMessages_copied.o
 OBJ_ComponentsExec=$(patsubst %,$(ODIR)/%,$(_OBJ_ComponentsExec))
 
 

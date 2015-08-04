@@ -4,5 +4,7 @@
   <dependency className="ComponentsExample.ComponentsSample" file="ComponentsSample.h" />
   <dependency className="ComponentsExample.Makefile" file="Makefile" />
   <dependency className="ComponentsExample.TypeSizeConfiguration (ComponentsExample)" file="TypeSizeConfiguration (ComponentsExample)" />
+  <dependency className="ComponentsExample.UnitTestMessages_copied" file="UnitTestMessages_copied.c" />
+  <dependency className="ComponentsExample.UnitTestMessages_copied" file="UnitTestMessages_copied.h" />
 </dependenciesRoot>
 
