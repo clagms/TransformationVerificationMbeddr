@@ -605,6 +605,14 @@
     <hasRule description="layer1rule12">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer1rule12class0" packageName="Module" className="ImplementationModule" id="layer1rule12class0"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="AtomicComponent" id="layer1rule12class4"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="ProvidedPort" id="layer1rule12class5"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="ClientServerInterface" id="layer1rule12class6"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="Operation" id="layer1rule12class7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class0" target="layer1rule12class4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class4" target="layer1rule12class5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="layer1rule12class5" target="layer1rule12class6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class6" target="layer1rule12class7"/>
       </match>
       <apply>
         <class description="layer1rule12class1" packageName="CModel" className="ImplementationModule" id="layer1rule12class1">
@@ -620,7 +628,7 @@
         <association associationName="contents" source="layer1rule12class1" target="layer1rule12class2"/>
       </apply>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule12class1" sourceClass="layer1rule12class0"/>
-      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule12class2" sourceClass="layer1rule12class0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule12class2" sourceClass="layer1rule12class7"/>
     </hasRule>
     <hasRule description="layer1rule13">
       <match>
