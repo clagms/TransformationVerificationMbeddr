@@ -119,6 +119,51 @@
         </class>
       </apply>
     </hasRule>
+    <hasRule description="layer0rule11">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule11class0" packageName="Module" className="ProvidedPort" id="layer0rule11class0">
+          <attribute attributeName="name" description="layer0rule11class0attribute0" id="layer0rule11class0attribute0"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule11class1" packageName="Module" className="AtomicComponent" id="layer0rule11class1">
+          <attribute attributeName="name" description="layer0rule11class1attribute0" id="layer0rule11class1attribute0"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule11class2" packageName="Module" className="ClientServerInterface" id="layer0rule11class2"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer0rule11class3" packageName="Module" className="Operation" id="layer0rule11class3">
+          <attribute attributeName="name" description="layer0rule11class3attribute0" id="layer0rule11class3attribute0"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer0rule11class1" target="layer0rule11class0"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="layer0rule11class0" target="layer0rule11class2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer0rule11class2" target="layer0rule11class3"/>
+      </match>
+      <apply>
+        <class description="layer0rule11class5" packageName="CModel" className="FunctionPrototype" id="layer0rule11class5">
+          <attribute attributeName="name" description="layer0rule11class5attribute0" id="layer0rule11class5attribute0">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer0rule11class1attribute0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer0rule11class0attribute0"/>
+                      <rightTerm xsi:type="dsltrans:Concat">
+                        <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                        <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer0rule11class3attribute0"/>
+                      </rightTerm>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute attributeName="" description="layer0rule11class5attribute1" id="layer0rule11class5attribute1">
+            <attributeValue xsi:type="dsltrans:Atom" value="ProvidedPortFunctionPrototype"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
   </source>
   <source xsi:type="dsltrans:Sequential" name="layer1" description="layer1" previousSource="//@source.1" outputFilePathURI="model/ComponentsSampleInC.xmi">
     <metaModelId metaModelURI="model/C.ecore" metaModelName="CModel.CModel"/>
@@ -216,6 +261,34 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule10class2" sourceClass="layer1rule10class0"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule10class3" sourceClass="layer1rule10class1"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule10class4" sourceClass="layer1rule10class1"/>
+    </hasRule>
+    <hasRule description="layer1rule12">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer1rule12class0" packageName="Module" className="ImplementationModule" id="layer1rule12class0"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="AtomicComponent" id="layer1rule12class4"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="ProvidedPort" id="layer1rule12class5"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="ClientServerInterface" id="layer1rule12class6"/>
+        <class xsi:type="dsltrans:AnyMatchClass" description="" packageName="Module" className="Operation" id="layer1rule12class7"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class0" target="layer1rule12class4"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class4" target="layer1rule12class5"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="intf" source="layer1rule12class5" target="layer1rule12class6"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer1rule12class6" target="layer1rule12class7"/>
+      </match>
+      <apply>
+        <class description="layer1rule12class1" packageName="CModel" className="ImplementationModule" id="layer1rule12class1">
+          <attribute description="layer1rule12class1attribute0" id="layer1rule12class1attribute0">
+            <attributeValue xsi:type="dsltrans:Atom" value="ImplementationModule"/>
+          </attribute>
+        </class>
+        <class description="layer1rule12class2" packageName="CModel" className="FunctionPrototype" id="layer1rule12class2">
+          <attribute description="layer1rule12class2attribute0" id="layer1rule12class2attribute0">
+            <attributeValue xsi:type="dsltrans:Atom" value="ProvidedPortFunctionPrototype"/>
+          </attribute>
+        </class>
+        <association associationName="contents" source="layer1rule12class1" target="layer1rule12class2"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule12class1" sourceClass="layer1rule12class0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer1rule12class2" sourceClass="layer1rule12class7"/>
     </hasRule>
   </source>
   <source xsi:type="dsltrans:Sequential" name="layer3" description="layer3" previousSource="//@source.2" outputFilePathURI="model/ComponentsSampleInC.xmi">
