@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//contracts/contract1.syvolt=UTF-8
+encoding//contracts/contract1.syvolt_diagram=UTF-8
 encoding//model/C.ecorediag=UTF-8
 encoding//model/Module.ecorediag=UTF-8
 encoding//transformation/mbeddr2C.dsltrans=UTF-8
