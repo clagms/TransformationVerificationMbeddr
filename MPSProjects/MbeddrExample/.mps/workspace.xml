@@ -22,7 +22,7 @@
       <list>
         <TabState>
           <option name="title" value="Console" />
-          <option name="history" value="kaurqQAABAAHKG6wHxY+fU1AjLPpaROfXsIAABlUZW1wTW9kZWxfMjYxNjk4NDUzMTkwOTE4F0j4EkLpzPNFH4nq4oxZcwniAAAuVGVtcE1vZHVsZWY4MTI0MmU5LWNjZjMtNDUxZi04OWVhLWUyOGM1OTczMDllMv////+rq6urWlpaWgACzqtRlSXqTyKbkhA7lcqMDAAAF2pldGJyYWlucy5tcHMubGFuZy5jb3JlAAEAAAEQOW6qpAAADUlOYW1lZENvbmNlcHQAEgABAAABEDluwEEAAARuYW1lAAAAAN4a2G1uUEoCswbU0X9kw3UAABpqZXRicmFpbnMubXBzLmNvbnNvbGUuYmFzZQADFfs0BR9yWiwAAAtDb25zb2xlUm9vdAASAAAAAAACFfs0BR9yW68AAAdoaXN0b3J5ABX7NAUfcluxAAANY29tbWFuZEhvbGRlcgAE4nFgrLRISwAADUNvbW1hbmRIb2xkZXIAEgAAAAAAAAqDXyjBqgK+AAAHSGlzdG9yeQASAAAAAAAApaWlpQAF3hrYbW5QSgKzBtTRf2TDdQEAAAAF//////JmkdIN70wGrsYsuQxK8KQAAB1qZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0c/////8ahVTE64RDuow0bw2QxudaAAAfamV0YnJhaW5zLm1wcy5jb25zb2xlLmJsQ29tbWFuZP////+l5N5TRqNE2qqzaP3xw07QAAAhamV0YnJhaW5zLm1wcy5jb25zb2xlLmlkZUNvbW1hbmRz/////5lac5R/dkuLqSnFNEhwgQYAACZqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kc/////8AAAABF0j7wl3SXaRIOosZcJKOG2LXAAAkamV0YnJhaW5zLm1wcy5kZXZraXQuZ2VuZXJhbC1wdXJwb3NlAAAABQcoNZsdK3fERt+b8rJcvqMiVAAAJGpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZXD/////ByjnEvNTXDxCiK3Oh8lWpS/7AAAnamV0YnJhaW5zLm1wcy5jb25zb2xlLnNjcmlwdHMuc3RydWN0dXJlcP////8HKJNboO5ykUyqqAfXbo/Gk5EAAClqZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5kLnN0cnVjdHVyZXD/////BygTWmBvA3ZMXJq4QDDwUaBiAAAramV0YnJhaW5zLm1wcy5jb25zb2xlLmlkZUNvbW1hbmRzLnN0cnVjdHVyZXD/////ByiQRFIGqXNMHbdgMOXHe3SXAAAwamV0YnJhaW5zLm1wcy5jb25zb2xlLmludGVybmFsQ29tbWFuZHMuc3RydWN0dXJlcP////+6urq6AAAAAQABGBh1yJxOBXTM//97AAAAAAAAAAAAAgADGBh1yJxOBXUCAAB7AAAAAAAAAAAAAH0AAhgYdcicTgV1AwABewABAAABAAAACQAAAAAAAAAAfX0=" />
+          <option name="history" value="kaurqQAABAAHKCr/E5b1WE8RlZJXN7ijRF0AABhUZW1wTW9kZWxfMjY4NzEyMTcyODgxODMXSNCGe7N5Y0qfqhP2sLNEl64AAC5UZW1wTW9kdWxlZDA4NjdiYjMtNzk2My00YTlmLWFhMTMtZjZiMGIzNDQ5N2Fl/////6urq6taWlpaAALOq1GVJepPIpuSEDuVyowMAAAXamV0YnJhaW5zLm1wcy5sYW5nLmNvcmUAAQAAARA5bqqkAAANSU5hbWVkQ29uY2VwdAASAAEAAAEQOW7AQQAABG5hbWUAAAAA3hrYbW5QSgKzBtTRf2TDdQAAGmpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlAAMV+zQFH3JaLAAAC0NvbnNvbGVSb290ABIAAAAAAAIV+zQFH3JbrwAAB2hpc3RvcnkAFfs0BR9yW7EAAA1jb21tYW5kSG9sZGVyAATicWCstEhLAAANQ29tbWFuZEhvbGRlcgASAAAAAAAACoNfKMGqAr4AAAdIaXN0b3J5ABIAAAAAAAClpaWlAAXeGthtblBKArMG1NF/ZMN1AQAAAAX/////8maR0g3vTAauxiy5DErwpAAAHWpldGJyYWlucy5tcHMuY29uc29sZS5zY3JpcHRz/////xqFVMTrhEO6jDRvDZDG51oAAB9qZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5k/////6Xk3lNGo0TaqrNo/fHDTtAAACFqZXRicmFpbnMubXBzLmNvbnNvbGUuaWRlQ29tbWFuZHP/////mVpzlH92S4upKcU0SHCBBgAAJmpldGJyYWlucy5tcHMuY29uc29sZS5pbnRlcm5hbENvbW1hbmRz/////wAAAAEXSPvCXdJdpEg6ixlwko4bYtcAACRqZXRicmFpbnMubXBzLmRldmtpdC5nZW5lcmFsLXB1cnBvc2UAAAAFByg1mx0rd8RG35vysly+oyJUAAAkamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2Uuc3RydWN0dXJlcP////8HKOcS81NcPEKIrc6HyValL/sAACdqZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0cy5zdHJ1Y3R1cmVw/////wcok1ug7nKRTKqoB9duj8aTkQAAKWpldGJyYWlucy5tcHMuY29uc29sZS5ibENvbW1hbmQuc3RydWN0dXJlcP////8HKBNaYG8DdkxcmrhAMPBRoGIAACtqZXRicmFpbnMubXBzLmNvbnNvbGUuaWRlQ29tbWFuZHMuc3RydWN0dXJlcP////8HKJBEUgapc0wdt2Aw5cd7dJcAADBqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcy5zdHJ1Y3R1cmVw/////7q6uroAAAABAAEYbVt50yx+P6P//3sAAAAAAAAAAAACAAMYbVt50yx+P9kAAHsAAAAAAAAAAAAAfQACGG1bedMsfj/aAAF7AAEAAAEAAAAJAAAAAAAAAAB9fQ==" />
         </TabState>
       </list>
     </option>
@@ -47,22 +47,22 @@
         <entry file="mps://node://Main/ComponentsExample/ComponentsSample">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
+              <memento viewPositionX="0" viewPositionY="150">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="40" />
-                    <property name="caretX" value="71" />
+                    <property name="caretXRelative" value="32" />
+                    <property name="caretX" value="63" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
-                      <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757737393" />
+                    <cellInfo cellId="Constant_9hod0t_a0" cellNumber="0" isInList="false">
+                      <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757819578" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757737393" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757819578" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
@@ -90,10 +90,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1096" />
-    <option name="height" value="1896" />
+    <option name="width" value="1040" />
+    <option name="height" value="1256" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -330,6 +330,7 @@
     </navigator>
     <panes>
       <pane id="FileSystem" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,7 +359,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,8 +448,8 @@
     <configuration>C:\Users\clagms\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1096" height="1896" extended-state="0" />
-    <editor active="false" />
+    <frame x="1912" y="-8" width="1040" height="1256" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Search" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -466,7 +466,7 @@
       <window_info id="Tree" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Bookmarks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16503906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4749467" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -479,7 +479,7 @@
       <window_info id="mbeddr TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Graph Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23907028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23847167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependencies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CBMC raw result" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -557,22 +557,22 @@
     <entry file="mps://node://Main/ComponentsExample/ComponentsSample">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
+          <memento viewPositionX="0" viewPositionY="150">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="40" />
-                <property name="caretX" value="71" />
+                <property name="caretXRelative" value="32" />
+                <property name="caretX" value="63" />
                 <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
-                  <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757737393" />
+                <cellInfo cellId="Constant_9hod0t_a0" cellNumber="0" isInList="false">
+                  <node node_reference="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757819578" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757737393" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:05b27177-f968-4f4b-b363-323f6b133f5f(ComponentsExample)/3749681781757819578" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />

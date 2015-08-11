@@ -29,7 +29,7 @@
         <attribute attributeName="name">
           <attributeValue xsi:type="syvolt:Concat">
             <leftTerm xsi:type="syvolt:Wildcard"/>
-            <rightTerm xsi:type="syvolt:Atom" value="__inst"/>
+            <rightTerm xsi:type="syvolt:Atom" value="__instance"/>
           </attributeValue>
         </attribute>
       </class>
@@ -49,11 +49,21 @@
         <attribute attributeName="name">
           <attributeValue xsi:type="syvolt:Concat">
             <leftTerm xsi:type="syvolt:Wildcard"/>
+            <rightTerm xsi:type="syvolt:Atom" value="__cdata"/>
+          </attributeValue>
+        </attribute>
+      </class>
+      <class className="Member">
+        <attribute attributeName="name">
+          <attributeValue xsi:type="syvolt:Concat">
+            <leftTerm xsi:type="syvolt:Wildcard"/>
             <rightTerm xsi:type="syvolt:Atom" value="__ops"/>
           </attributeValue>
         </attribute>
       </class>
-      <class className="Member"/>
+      <class className="TypeDefType"/>
+      <class className="TypeDef"/>
+      <class className="StructType"/>
       <association associationName="left" source="//@hasProperty.0/@apply/@class.7" target="//@hasProperty.0/@apply/@class.0"/>
       <association associationName="right" source="//@hasProperty.0/@apply/@class.7" target="//@hasProperty.0/@apply/@class.3"/>
       <association associationName="expression" source="//@hasProperty.0/@apply/@class.0" target="//@hasProperty.0/@apply/@class.6"/>
@@ -63,10 +73,15 @@
       <association associationName="member" source="//@hasProperty.0/@apply/@class.4" target="//@hasProperty.0/@apply/@class.9"/>
       <association associationName="members" source="//@hasProperty.0/@apply/@class.8" target="//@hasProperty.0/@apply/@class.9"/>
       <association associationName="var" source="//@hasProperty.0/@apply/@class.1" target="//@hasProperty.0/@apply/@class.5"/>
+      <association associationName="type" source="//@hasProperty.0/@apply/@class.2" target="//@hasProperty.0/@apply/@class.10"/>
+      <association associationName="typeDef" source="//@hasProperty.0/@apply/@class.10" target="//@hasProperty.0/@apply/@class.11"/>
+      <association associationName="original" source="//@hasProperty.0/@apply/@class.11" target="//@hasProperty.0/@apply/@class.12"/>
+      <association associationName="struct" source="//@hasProperty.0/@apply/@class.12" target="//@hasProperty.0/@apply/@class.8"/>
     </apply>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.2" sourceClass="//@hasProperty.0/@match.0/@class.2"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.8" sourceClass="//@hasProperty.0/@match.0/@class.4"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.5" sourceClass="//@hasProperty.0/@match.0/@class.6"/>
+    <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.9" sourceClass="//@hasProperty.0/@match.0/@class.3"/>
   </hasProperty>
   <hasProperty name="GlobalVarGetsCorrectFunctionAddress at the initialization">
     <match>
