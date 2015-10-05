@@ -73,7 +73,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_J_2BQzxVEeWcZYo7zsIb7w"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_J_2BRDxVEeWcZYo7zsIb7w"/>
             <element xmi:type="syvolt:AnyMatchClass" href="contract1.syvolt#//@hasProperty.0/@match.0/@class.6"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J_2BRTxVEeWcZYo7zsIb7w" x="699" y="63"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J_2BRTxVEeWcZYo7zsIb7w" x="695" y="49"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_KNCIsDxVEeWcZYo7zsIb7w" type="3031">
             <children xmi:type="notation:DecorationNode" xmi:id="_KNCItjxVEeWcZYo7zsIb7w" type="5014"/>
@@ -369,7 +369,7 @@
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.0/@apply/@class.12"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eysR5UA2EeWScbw9haCjcA" x="215" y="585"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_AUYqcEA4EeWScbw9haCjcA" type="Note" fontName="Segoe UI" description="Concrete syntax for this:&#xD;&#xA;typedef struct ComponentsSample_ClientComponent__cdata ComponentsSample_ClientComponent__cdata_t;&#xD;&#xA;...&#xD;&#xA;struct ComponentsSample_ClientComponent__cdata {&#xD;&#xA;  void *clientcomp_serverInterface__port;&#xD;&#xA;  ComponentsSample_Server__idata_t *clientcomp_serverInterface__ops;&#xD;&#xA;};&#xD;&#xA;...&#xD;&#xA;static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_clientComponent__instance;&#xD;&#xA;static ComponentsSample_Server__idata_t ComponentsSample_gserverComponent_serverInterface__ops;&#xD;&#xA;...&#xD;&#xA;ComponentsSample_instances_clientComponent__instance.clientcomp_serverInterface__ops = &amp;ComponentsSample_gserverComponent_serverInterface__ops;" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+          <children xmi:type="notation:Shape" xmi:id="_AUYqcEA4EeWScbw9haCjcA" type="Note" fontName="Segoe UI" description="Concrete syntax for this:&#xD;&#xA;ComponentsSample_instances_clientComponent__instance.clientcomp_serverInterface__ops = &amp;ComponentsSample_gserverComponent_serverInterface__ops;" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_AUh0YEA4EeWScbw9haCjcA" type="DiagramName">
               <element xsi:nil="true"/>
             </children>
@@ -379,7 +379,19 @@
             <styles xmi:type="notation:TextStyle" xmi:id="_AUYqcUA4EeWScbw9haCjcA"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_AUYqckA4EeWScbw9haCjcA"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AUYqc0A4EeWScbw9haCjcA" x="560" y="515"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AUYqc0A4EeWScbw9haCjcA" x="540" y="505"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_09v_IGrFEeWc7cLiqPW9ow" type="Note" fontName="Segoe UI" description="Background:&#xD;&#xA;&#xD;&#xA;typedef struct ComponentsSample_ClientComponent__cdata ComponentsSample_ClientComponent__cdata_t;&#xD;&#xA;...&#xD;&#xA;struct ComponentsSample_ClientComponent__cdata {&#xD;&#xA;  void *clientcomp_serverInterface__port;&#xD;&#xA;  ComponentsSample_Server__idata_t *clientcomp_serverInterface__ops;&#xD;&#xA;};&#xD;&#xA;...&#xD;&#xA;static ComponentsSample_ClientComponent__cdata_t ComponentsSample_instances_clientComponent__instance;&#xD;&#xA;static ComponentsSample_Server__idata_t ComponentsSample_gserverComponent_serverInterface__ops;&#xD;&#xA;..." fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_09xNQGrFEeWc7cLiqPW9ow" type="DiagramName">
+              <element xsi:nil="true"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_09xNQWrFEeWc7cLiqPW9ow" type="Description">
+              <element xsi:nil="true"/>
+            </children>
+            <styles xmi:type="notation:TextStyle" xmi:id="_09v_IWrFEeWc7cLiqPW9ow"/>
+            <styles xmi:type="notation:LineTypeStyle" xmi:id="_09v_ImrFEeWc7cLiqPW9ow"/>
+            <element xsi:nil="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_09v_I2rFEeWc7cLiqPW9ow" x="546" y="599" width="855"/>
           </children>
         </children>
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_WG_EITxTEeWcZYo7zsIb7w"/>
@@ -407,7 +419,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_BrqAsTxZEeWcZYo7zsIb7w"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_BrqAsjxZEeWcZYo7zsIb7w"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BrqAszxZEeWcZYo7zsIb7w" x="235" y="1195"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BrqAszxZEeWcZYo7zsIb7w" x="230" y="1255"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3Q-t8DzOEeWFBJlytgbFOQ" type="2004">
     <children xmi:type="notation:DecorationNode" xmi:id="_3Q-t9jzOEeWFBJlytgbFOQ" type="5019"/>
@@ -498,7 +510,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_4zdX4zzPEeWFBJlytgbFOQ"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4zdX5DzPEeWFBJlytgbFOQ"/>
             <element xmi:type="syvolt:AnyMatchClass" href="contract1.syvolt#//@hasProperty.1/@match.0/@class.6"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4zdX5TzPEeWFBJlytgbFOQ" x="689" y="62"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4zdX5TzPEeWFBJlytgbFOQ" x="704" y="62"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_47G4ADzPEeWFBJlytgbFOQ" type="3031">
             <children xmi:type="notation:DecorationNode" xmi:id="_47G4BjzPEeWFBJlytgbFOQ" type="5014"/>
@@ -570,7 +582,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_AvT0IzzQEeWFBJlytgbFOQ"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_AvT0JDzQEeWFBJlytgbFOQ"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.1/@apply/@class.4"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AvT0JTzQEeWFBJlytgbFOQ" x="317" y="533"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AvT0JTzQEeWFBJlytgbFOQ" x="302" y="544"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_A5lxgDzQEeWFBJlytgbFOQ" type="3034">
             <children xmi:type="notation:DecorationNode" xmi:id="_A5lxhjzQEeWFBJlytgbFOQ" type="5016"/>
@@ -910,7 +922,7 @@
             <styles xmi:type="notation:TextStyle" xmi:id="_uhuu4UA8EeWScbw9haCjcA"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_uhuu4kA8EeWScbw9haCjcA"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhuu40A8EeWScbw9haCjcA" x="607" y="159"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhuu40A8EeWScbw9haCjcA" x="592" y="74"/>
           </children>
         </children>
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_A-OPUTzPEeWFBJlytgbFOQ"/>
@@ -926,7 +938,7 @@
     <styles xmi:type="notation:LineStyle" xmi:id="_3Q-t8zzOEeWFBJlytgbFOQ"/>
     <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_3Q-t9DzOEeWFBJlytgbFOQ"/>
     <element xmi:type="syvolt:AtomicContract" href="contract1.syvolt#//@hasProperty.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Q-t9TzOEeWFBJlytgbFOQ" x="140" y="1315"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Q-t9TzOEeWFBJlytgbFOQ" x="135" y="1375"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ONW1cTxTEeWcZYo7zsIb7w"/>
   <element xmi:type="syvolt:TransformationModel" href="contract1.syvolt#/"/>
@@ -989,7 +1001,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_UsApADxVEeWcZYo7zsIb7w" type="4003" source="_BEU3wDxVEeWcZYo7zsIb7w" target="_J_2BQDxVEeWcZYo7zsIb7w">
     <children xmi:type="notation:DecorationNode" xmi:id="_UsApBDxVEeWcZYo7zsIb7w" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_UsApBTxVEeWcZYo7zsIb7w" x="6" y="-15"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UsApBTxVEeWcZYo7zsIb7w" x="-11" y="25"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_UsApATxVEeWcZYo7zsIb7w"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_UsApAjxVEeWcZYo7zsIb7w" fontName="Segoe UI"/>
@@ -1118,12 +1130,12 @@
     <element xmi:type="syvolt:ApplyAssociation" href="contract1.syvolt#//@hasProperty.0/@apply/@association.8"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0YglEzxXEeWcZYo7zsIb7w" points="[7, 22, 2, -53]$[7, 53, 2, -22]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_L-n6wDxYEeWcZYo7zsIb7w" type="4013" source="_J_2BQDxVEeWcZYo7zsIb7w" target="_niiDEDxVEeWcZYo7zsIb7w">
+  <edges xmi:type="notation:Edge" xmi:id="_L-n6wDxYEeWcZYo7zsIb7w" type="4013" source="_KNCIsDxVEeWcZYo7zsIb7w" target="_niiDEDxVEeWcZYo7zsIb7w">
     <styles xmi:type="notation:RoutingStyle" xmi:id="_L-n6wTxYEeWcZYo7zsIb7w"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_L-n6wjxYEeWcZYo7zsIb7w" fontName="Segoe UI"/>
     <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.2"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_L-n6wzxYEeWcZYo7zsIb7w" points="[35, 22, -17, -391]$[87, 54, 35, -359]$[53, 404, 1, -9]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L-n6xDxYEeWcZYo7zsIb7w" id="(0.8830409356725146,0.0410958904109589)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_L-n6wzxYEeWcZYo7zsIb7w" points="[7, 22, -101, -320]$[107, 339, -1, -3]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L-n6xDxYEeWcZYo7zsIb7w" id="(0.09696969696969697,0.013452914798206279)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_3p55YDzQEeWFBJlytgbFOQ" type="4013" source="_4rDCwDzPEeWFBJlytgbFOQ" target="_BNK00DzQEeWFBJlytgbFOQ">
     <styles xmi:type="notation:RoutingStyle" xmi:id="_3p55YTzQEeWFBJlytgbFOQ"/>
@@ -1285,7 +1297,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_qA-zUDzVEeWFBJlytgbFOQ" type="4005" source="_B5PQoDzQEeWFBJlytgbFOQ" target="_AJkp0DzQEeWFBJlytgbFOQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_qA-zVDzVEeWFBJlytgbFOQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_qA-zVTzVEeWFBJlytgbFOQ" x="16" y="-34"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qA-zVTzVEeWFBJlytgbFOQ" y="-14"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_qA-zUTzVEeWFBJlytgbFOQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_qA-zUjzVEeWFBJlytgbFOQ" fontName="Segoe UI"/>
@@ -1295,7 +1307,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_qL30sDzVEeWFBJlytgbFOQ" type="4005" source="_AJkp0DzQEeWFBJlytgbFOQ" target="_AvT0IDzQEeWFBJlytgbFOQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_qL30tDzVEeWFBJlytgbFOQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_qL30tTzVEeWFBJlytgbFOQ" x="7" y="-38"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qL30tTzVEeWFBJlytgbFOQ" y="40"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_qL30sTzVEeWFBJlytgbFOQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_qL30sjzVEeWFBJlytgbFOQ" fontName="Segoe UI"/>
@@ -1405,7 +1417,7 @@
     <element xmi:type="syvolt:PositiveMatchAssociation" href="contract1.syvolt#//@hasProperty.1/@match.0/@association.8"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mh97IzzWEeWFBJlytgbFOQ" points="[-55, -22, 166, 58]$[-216, -102, 5, -22]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_V13BADzZEeWFBJlytgbFOQ" type="4013" source="_3HpWUDzPEeWFBJlytgbFOQ" target="_vNpsgDzVEeWFBJlytgbFOQ">
+  <edges xmi:type="notation:Edge" xmi:id="_V13BADzZEeWFBJlytgbFOQ" type="4013" source="_4kcEcDzPEeWFBJlytgbFOQ" target="_vNpsgDzVEeWFBJlytgbFOQ">
     <styles xmi:type="notation:RoutingStyle" xmi:id="_V13BATzZEeWFBJlytgbFOQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_V13BAjzZEeWFBJlytgbFOQ" fontName="Segoe UI"/>
     <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.1/@backwards.4"/>
