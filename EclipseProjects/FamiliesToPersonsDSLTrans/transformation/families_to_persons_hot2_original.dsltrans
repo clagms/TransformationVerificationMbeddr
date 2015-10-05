@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsltrans:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsltrans="http://dsltrans/2.0">
+  <source xsi:type="dsltrans:FilePort" name="maininput" filePathURI="./model/Family.xmi">
+    <metaModelId metaModelURI="./model/Families.ecore" metaModelName="household.Household"/>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="UnionFather" description="UnionFather" previousSource="//@source.2" outputFilePathURI="./model/Community.xmi">
+    <metaModelId metaModelURI="./model/Community.ecore" metaModelName="community.Community"/>
+    <hasRule description="UnionManRule">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="household" className="Family"/>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="household" className="Member"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="father" source="//@source.1/@hasRule.0/@match.0/@class.0" target="//@source.1/@hasRule.0/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="community" className="Man">
+          <attribute attributeName="ApplyAttribute">
+            <attributeValue xsi:type="dsltrans:Atom" value="famMemberFather"/>
+          </attribute>
+        </class>
+        <class packageName="community" className="Community">
+          <attribute attributeName="ApplyAttribute">
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+        <association associationName="has" source="//@source.1/@hasRule.0/@apply/@class.1" target="//@source.1/@hasRule.0/@apply/@class.0"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.1/@hasRule.0/@apply/@class.0" sourceClass="//@source.1/@hasRule.0/@match.0/@class.1"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="//@source.1/@hasRule.0/@apply/@class.1" sourceClass="//@source.1/@hasRule.0/@match.0/@class.0"/>
+    </hasRule>
+  </source>
+  <source xsi:type="dsltrans:Sequential" name="Root" description="Root" previousSource="//@source.0" groupName="">
+    <metaModelId metaModelURI="./model/Community.ecore" metaModelName="community.Community"/>
+    <hasRule description="FamilyRule">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="household" className="Family"/>
+      </match>
+      <apply>
+        <class packageName="community" className="Community">
+          <attribute attributeName="ApplyAttribute">
+            <attributeValue xsi:type="dsltrans:Atom" value="root"/>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+    <hasRule description="FatherRule">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="household" className="Family">
+          <attribute attributeName="name"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" packageName="household" className="Member">
+          <attribute attributeName="name"/>
+        </class>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="father" source="//@source.2/@hasRule.1/@match.0/@class.0" target="//@source.2/@hasRule.1/@match.0/@class.1"/>
+      </match>
+      <apply>
+        <class packageName="community" className="Man">
+          <attribute attributeName="ApplyAttribute">
+            <attributeValue xsi:type="dsltrans:Atom" value="famMemberFather"/>
+          </attribute>
+          <attribute attributeName="name">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.1/@attribute.0"/>
+              <rightTerm xsi:type="dsltrans:AttributeRef" attributeRef="//@source.2/@hasRule.1/@match.0/@class.0/@attribute.0"/>
+            </attributeValue>
+          </attribute>
+        </class>
+      </apply>
+    </hasRule>
+  </source>
+</dsltrans:TransformationModel>

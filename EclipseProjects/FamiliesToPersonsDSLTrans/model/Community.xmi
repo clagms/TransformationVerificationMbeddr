@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<community:Community xmlns:community="community" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="community Community.ecore">
+  <has name="JonhSmith" xsi:type="community:Man"/>
+</community:Community>

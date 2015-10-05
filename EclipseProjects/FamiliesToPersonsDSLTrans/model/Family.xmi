@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<household:Family
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:household="household"
+    xsi:schemaLocation="household Families.ecore"
+    name="Smith">
+  <father name="Jonh "/>
+</household:Family>
