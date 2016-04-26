@@ -231,7 +231,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_niiDEzxVEeWcZYo7zsIb7w"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_niiDFDxVEeWcZYo7zsIb7w"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.0/@apply/@class.5"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_niiDFTxVEeWcZYo7zsIb7w" x="675" y="245"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_niiDFTxVEeWcZYo7zsIb7w" x="675" y="260"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_nqAkEDxVEeWcZYo7zsIb7w" type="3034">
             <children xmi:type="notation:DecorationNode" xmi:id="_nqAkFjxVEeWcZYo7zsIb7w" type="5016"/>
@@ -251,7 +251,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_nxkkozxVEeWcZYo7zsIb7w"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_nxkkpDxVEeWcZYo7zsIb7w"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.0/@apply/@class.7"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nxkkpTxVEeWcZYo7zsIb7w" x="400" y="25"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nxkkpTxVEeWcZYo7zsIb7w" x="475" y="25"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_oUvjIDxVEeWcZYo7zsIb7w" type="3034">
             <children xmi:type="notation:DecorationNode" xmi:id="_oUvjJjxVEeWcZYo7zsIb7w" type="5016"/>
@@ -288,7 +288,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_oUvjIzxVEeWcZYo7zsIb7w"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_oUvjJDxVEeWcZYo7zsIb7w"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.0/@apply/@class.8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oUvjJTxVEeWcZYo7zsIb7w" x="335" y="505"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oUvjJTxVEeWcZYo7zsIb7w" x="335" y="520"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_oleGwDxVEeWcZYo7zsIb7w" type="3034">
             <children xmi:type="notation:DecorationNode" xmi:id="_oleGxjxVEeWcZYo7zsIb7w" type="5016"/>
@@ -325,7 +325,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_oleGwzxVEeWcZYo7zsIb7w"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_oleGxDxVEeWcZYo7zsIb7w"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.0/@apply/@class.9"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oleGxTxVEeWcZYo7zsIb7w" x="340" y="250"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oleGxTxVEeWcZYo7zsIb7w" x="340" y="265"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_usn7sDzYEeWFBJlytgbFOQ" type="Note" fontName="Segoe UI" description="I've added the typing information between the instance and the struct declaration." fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_uspJ0DzYEeWFBJlytgbFOQ" type="DiagramName">
@@ -875,7 +875,7 @@
             <styles xmi:type="notation:LineStyle" xmi:id="_vTt4QzzVEeWFBJlytgbFOQ"/>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_vTt4RDzVEeWFBJlytgbFOQ"/>
             <element xmi:type="syvolt:ApplyClass" href="contract1.syvolt#//@hasProperty.1/@apply/@class.16"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vTt4RTzVEeWFBJlytgbFOQ" x="607" y="954"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vTt4RTzVEeWFBJlytgbFOQ" x="602" y="940"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_0HAoIDzVEeWFBJlytgbFOQ" type="3034">
             <children xmi:type="notation:DecorationNode" xmi:id="_0HAoJjzVEeWFBJlytgbFOQ" type="5016"/>
@@ -1382,7 +1382,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1B6xMDzVEeWFBJlytgbFOQ" type="4005" source="_vTt4QDzVEeWFBJlytgbFOQ" target="_0HAoIDzVEeWFBJlytgbFOQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_1B6xNDzVEeWFBJlytgbFOQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1B6xNTzVEeWFBJlytgbFOQ" x="18" y="55"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1B6xNTzVEeWFBJlytgbFOQ" x="6" y="33"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_1B6xMTzVEeWFBJlytgbFOQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1B6xMjzVEeWFBJlytgbFOQ" fontName="Segoe UI"/>
