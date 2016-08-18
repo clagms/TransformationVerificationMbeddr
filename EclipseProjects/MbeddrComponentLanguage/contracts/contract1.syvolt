@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syvolt:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:syvolt="http://syvolt/2.0">
-  <hasProperty name="AssignmentInstance">
+  <hasProperty name="AssignmentInstance_UniqueAssignment">
     <match>
       <class xsi:type="syvolt:AnyMatchClass" className="AssemblyConnector"/>
       <class xsi:type="syvolt:AnyMatchClass" className="InstancePortRef"/>
@@ -78,10 +78,7 @@
       <association associationName="original" source="//@hasProperty.0/@apply/@class.11" target="//@hasProperty.0/@apply/@class.12"/>
       <association associationName="struct" source="//@hasProperty.0/@apply/@class.12" target="//@hasProperty.0/@apply/@class.8"/>
     </apply>
-    <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.2" sourceClass="//@hasProperty.0/@match.0/@class.2"/>
-    <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.8" sourceClass="//@hasProperty.0/@match.0/@class.4"/>
     <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.5" sourceClass="//@hasProperty.0/@match.0/@class.7"/>
-    <backwards xsi:type="syvolt:Trace" targetClass="//@hasProperty.0/@apply/@class.9" sourceClass="//@hasProperty.0/@match.0/@class.3"/>
   </hasProperty>
   <hasProperty name="GlobalVarGetsCorrectFunctionAddress at the initialization">
     <match>

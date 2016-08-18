@@ -1089,12 +1089,6 @@
     <element xmi:type="syvolt:ApplyAssociation" href="contract1.syvolt#//@hasProperty.0/@apply/@association.5"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_74bvwzxWEeWcZYo7zsIb7w" points="[-29, 22, 82, -68]$[-110, 68, 1, -22]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="__63qcDxWEeWcZYo7zsIb7w" type="4013" source="_mfgVQDxUEeWcZYo7zsIb7w" target="_m9xJIDxVEeWcZYo7zsIb7w">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="__63qcTxWEeWcZYo7zsIb7w"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="__63qcjxWEeWcZYo7zsIb7w" fontName="Segoe UI"/>
-    <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.0"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__63qczxWEeWcZYo7zsIb7w" points="[-69, 20, -43, -416]$[-133, 39, -107, -397]$[-133, 384, -107, -52]$[-71, 414, -45, -22]"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_UUIpoDxXEeWcZYo7zsIb7w" type="4005" source="_nVBLgDxVEeWcZYo7zsIb7w" target="_oleGwDxVEeWcZYo7zsIb7w">
     <children xmi:type="notation:DecorationNode" xmi:id="_UUIppDxXEeWcZYo7zsIb7w" type="6004">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_UUIppTxXEeWcZYo7zsIb7w" x="-11" y="26"/>
@@ -1113,14 +1107,6 @@
     <element xmi:type="syvolt:ApplyAssociation" href="contract1.syvolt#//@hasProperty.0/@apply/@association.7"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jNY84zxXEeWcZYo7zsIb7w" points="[8, -22, 1, 83]$[8, -127, 1, -22]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_qsnHgDxXEeWcZYo7zsIb7w" type="4013" source="_0lxsYDxUEeWcZYo7zsIb7w" target="_oUvjIDxVEeWcZYo7zsIb7w">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_qsnHgTxXEeWcZYo7zsIb7w"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_qsnHgjxXEeWcZYo7zsIb7w" fontName="Segoe UI"/>
-    <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.1"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qsnHgzxXEeWcZYo7zsIb7w" points="[0, 29, -242, -410]$[0, 91, -242, -348]$[232, 426, -10, -13]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qsnHhDxXEeWcZYo7zsIb7w" id="(0.24812030075187969,0.3409090909090909)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qsnHhTxXEeWcZYo7zsIb7w" id="(0.19078947368421054,0.058823529411764705)"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_0YglEDxXEeWcZYo7zsIb7w" type="4005" source="_m2ljEDxVEeWcZYo7zsIb7w" target="_niiDEDxVEeWcZYo7zsIb7w">
     <children xmi:type="notation:DecorationNode" xmi:id="_0YglFDxXEeWcZYo7zsIb7w" type="6004">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_0YglFTxXEeWcZYo7zsIb7w" x="-3" y="19"/>
@@ -1133,7 +1119,7 @@
   <edges xmi:type="notation:Edge" xmi:id="_L-n6wDxYEeWcZYo7zsIb7w" type="4013" source="_KNCIsDxVEeWcZYo7zsIb7w" target="_niiDEDxVEeWcZYo7zsIb7w">
     <styles xmi:type="notation:RoutingStyle" xmi:id="_L-n6wTxYEeWcZYo7zsIb7w"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_L-n6wjxYEeWcZYo7zsIb7w" fontName="Segoe UI"/>
-    <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.2"/>
+    <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.0"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_L-n6wzxYEeWcZYo7zsIb7w" points="[7, 22, -101, -320]$[107, 339, -1, -3]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L-n6xDxYEeWcZYo7zsIb7w" id="(0.09696969696969697,0.013452914798206279)"/>
   </edges>
@@ -1487,12 +1473,5 @@
     <element xmi:type="syvolt:ApplyAssociation" href="contract1.syvolt#//@hasProperty.0/@apply/@association.12"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ET63k0A3EeWScbw9haCjcA" points="[10, -22, 0, 239]$[3, -277, -7, -16]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ET63lkA3EeWScbw9haCjcA" id="(0.23076923076923078,0.07239819004524888)"/>
-  </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_yGnkMEA3EeWScbw9haCjcA" type="4013" source="_vxWUEDxUEeWcZYo7zsIb7w" target="_oleGwDxVEeWcZYo7zsIb7w">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_yGnkMUA3EeWScbw9haCjcA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_yGnkMkA3EeWScbw9haCjcA" fontName="Segoe UI"/>
-    <element xmi:type="syvolt:Trace" href="contract1.syvolt#//@hasProperty.0/@backwards.3"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yGnkM0A3EeWScbw9haCjcA" points="[6, 22, -88, -348]$[87, 352, -7, -18]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yGnkNEA3EeWScbw9haCjcA" id="(0.29936305732484075,0.08144796380090498)"/>
   </edges>
 </notation:Diagram>
