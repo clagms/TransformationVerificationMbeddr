@@ -1001,6 +1001,64 @@
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer3rule4class4" sourceClass="layer3rule4class0"/>
       <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer3rule4class6" sourceClass="layer3rule4class3"/>
     </hasRule>
+	<hasRule description="layer3rule4dup">
+      <match>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer3rule4dupclass0" packageName="Module" className="ImplementationModule" id="layer3rule4dupclass0">
+          <attribute attributeName="name" description="layer3rule4dupclass0attribute0" id="layer3rule4dupclass0attribute0"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer3rule4dupclass1" packageName="Module" className="InstanceConfiguration" id="layer3rule4dupclass1">
+          <attribute attributeName="name" description="layer3rule4dupclass1attribute0" id="layer3rule4dupclass1attribute0"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer3rule4dupclass2" packageName="Module" className="ComponentInstance" id="layer3rule4dupclass2">
+          <attribute attributeName="name" description="layer3rule4dupclass2attribute0" id="layer3rule4dupclass2attribute0"/>
+        </class>
+        <class xsi:type="dsltrans:AnyMatchClass" description="layer3rule4dupclass3" packageName="Module" className="AtomicComponent" id="layer3rule4dupclass3"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer3rule4dupclass0" target="layer3rule4dupclass1"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="contents" source="layer3rule4dupclass1" target="layer3rule4dupclass2"/>
+        <association xsi:type="dsltrans:PositiveMatchAssociation" associationName="component" source="layer3rule4dupclass2" target="layer3rule4dupclass3"/>
+      </match>
+      <apply>
+        <class description="layer3rule4dupclass4" packageName="CModel" className="ImplementationModule" id="layer3rule4dupclass4">
+          <attribute description="layer3rule4dupclass4attribute0" id="layer3rule4dupclass4attribute0">
+            <attributeValue xsi:type="dsltrans:Atom" value="ImplementationModule"/>
+          </attribute>
+        </class>
+        <class description="layer3rule4dupclass5" packageName="CModel" className="GlobalVariableDeclaration" id="layer3rule4dupclass5">
+          <attribute attributeName="name" description="layer3rule4dupclass5attribute0" id="layer3rule4dupclass5attribute0">
+            <attributeValue xsi:type="dsltrans:Concat">
+              <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer3rule4dupclass0attribute0"/>
+              <rightTerm xsi:type="dsltrans:Concat">
+                <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                <rightTerm xsi:type="dsltrans:Concat">
+                  <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer3rule4dupclass1attribute0"/>
+                  <rightTerm xsi:type="dsltrans:Concat">
+                    <leftTerm xsi:type="dsltrans:Atom" value="_"/>
+                    <rightTerm xsi:type="dsltrans:Concat">
+                      <leftTerm xsi:type="dsltrans:AttributeRef" attributeRef="layer3rule4dupclass2attribute0"/>
+                      <rightTerm xsi:type="dsltrans:Atom" value="__instance"/>
+                    </rightTerm>
+                  </rightTerm>
+                </rightTerm>
+              </rightTerm>
+            </attributeValue>
+          </attribute>
+          <attribute description="layer3rule4dupclass5attribute1" id="layer3rule4dupclass5attribute1">
+            <attributeValue xsi:type="dsltrans:Atom" value="GlobalComponentInstanceDeclaration"/>
+          </attribute>
+        </class>
+        <class description="layer3rule4dupclass6" packageName="CModel" className="TypeDef" id="layer3rule4dupclass6">
+          <attribute description="layer3rule4dupclass6attribute0" id="layer3rule4dupclass6attribute0">
+            <attributeValue xsi:type="dsltrans:Atom" value="TypeDefComponentStruct"/>
+          </attribute>
+        </class>
+        <class description="layer3rule4dupclass7" packageName="CModel" className="TypeDefType" id="layer3rule4dupclass7"/>
+        <association associationName="contents" source="layer3rule4dupclass4" target="layer3rule4dupclass5"/>
+        <association associationName="type" source="layer3rule4dupclass5" target="layer3rule4dupclass7"/>
+        <association associationName="typeDef" source="layer3rule4dupclass7" target="layer3rule4dupclass6"/>
+      </apply>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer3rule4dupclass4" sourceClass="layer3rule4dupclass0"/>
+      <backwards xsi:type="dsltrans:PositiveBackwardRestriction" targetClass="layer3rule4dupclass6" sourceClass="layer3rule4dupclass3"/>
+    </hasRule>
     <hasRule description="layer3rule5">
       <match>
         <class xsi:type="dsltrans:AnyMatchClass" description="layer3rule5class0" packageName="Module" className="ImplementationModule" id="layer3rule5class0">
