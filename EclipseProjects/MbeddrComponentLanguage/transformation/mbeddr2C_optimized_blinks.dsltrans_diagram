@@ -4239,18 +4239,6 @@
                 <element xmi:type="dsltrans:AnyMatchClass" href="mbeddr2C_optimized_blinks.dsltrans#layer5rule1class10"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xDUKtYxqEeSKxqyq9ziORA" x="942" y="117"/>
               </children>
-              <children xmi:type="notation:Shape" xmi:id="_H0oqoGnLEeWSO5otKhzwMQ" type="Note" fontName="Segoe UI" description="Find the bug." fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
-                <children xmi:type="notation:BasicDecorationNode" xmi:id="_H0rt8GnLEeWSO5otKhzwMQ" type="DiagramName">
-                  <element xsi:nil="true"/>
-                </children>
-                <children xmi:type="notation:BasicDecorationNode" xmi:id="_H0rt8WnLEeWSO5otKhzwMQ" type="Description">
-                  <element xsi:nil="true"/>
-                </children>
-                <styles xmi:type="notation:TextStyle" xmi:id="_H0oqoWnLEeWSO5otKhzwMQ"/>
-                <styles xmi:type="notation:LineTypeStyle" xmi:id="_H0oqomnLEeWSO5otKhzwMQ"/>
-                <element xsi:nil="true"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H0oqo2nLEeWSO5otKhzwMQ" x="2" y="302" height="36"/>
-              </children>
             </children>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_EFOSN4xnEeSKxqyq9ziORA"/>
             <element xmi:type="dsltrans:MatchModel" href="mbeddr2C_optimized_blinks.dsltrans#//@source.6/@hasRule.1/@match.0"/>
@@ -4300,7 +4288,7 @@
                 <children xmi:type="notation:BasicCompartment" xmi:id="_EFYDToxnEeSKxqyq9ziORA" type="7011"/>
                 <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_EFYDS4xnEeSKxqyq9ziORA"/>
                 <element xmi:type="dsltrans:ApplyClass" href="mbeddr2C_optimized_blinks.dsltrans#layer5rule1class16"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EFYDTIxnEeSKxqyq9ziORA" x="772" y="149"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EFYDTIxnEeSKxqyq9ziORA" x="772" y="157"/>
               </children>
               <children xmi:type="notation:Shape" xmi:id="_EFYDT4xnEeSKxqyq9ziORA" type="3011" fontName="Segoe UI">
                 <children xmi:type="notation:DecorationNode" xmi:id="_EFYDUoxnEeSKxqyq9ziORA" type="5031"/>
